@@ -31,11 +31,11 @@
             <div class="post-footer">
                 <div class="meta">
                     <div class="info">
+                        <!-- Displays the publish date instead of date when post was started -->
                         <em class="fas fa-calendar-day"></em>
-                        <span class="date">{{ if isset .Site.Params "indexdateformat" }}
-                                                 {{ .Date.Format .Site.Params.indexDateFormat }}
-                                             {{ else }} {{.Date.Format "Mon, Jan 2, 2006"}}
-                                             {{ end }}</span>
+                        <time datetime="{{ dateFormat "2006-01-02T15:04:05-07:00" (default .Date (.PublishDate)) }}">
+                        {{ dateFormat "2 Jan, 2006" (default .Date (.PublishDate)) }}
+                        </time>
 
                         <em class="fas fa-stopwatch"></em>
                         <span class="reading-time">{{ i18n "reading_time" .ReadingTime }}</span>

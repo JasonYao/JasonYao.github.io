@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <!-- Typo fix that displays the metadata properly on the post. Also adds in OpenGraph semantics instead of divs -->
+  <!-- Typo fix that displays the metadata properly on the post. Also adds in OpenGraph semantics instead of  -->
     <div class="post {{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}">
         <div class="post-content">
             {{ if .Params.thumbnail }}
@@ -9,13 +9,14 @@
                 <h3>{{ .Title }}</h3>
                 {{ if eq .Type "posts"}}
                     <div class="info">
-                        <em class="fas fa-calendar-day"></em>
-                        <span class="date">{{ if isset .Site.Params "singledateformat" }}
-                                                {{ .Date.Format .Site.Params.singleDateFormat }}
-                                           {{ else }} {{.Date.Format "Mon, Jan 2, 2006"}}
-                                           {{ end }}</span>
-                        <em class="fas fa-stopwatch"></em>
-                        <span class="reading-time">{{ i18n "reading_time" .ReadingTime }}</span>
+                      <!-- Displays the publish date instead of date when post was started. Originally from https://discourse.gohugo.io/t/how-to-use-the-publishdate-if-both-publishdate-and-date-are-set-in-frontmatter/5142/3 -->
+                      <em class="fas fa-calendar-day"></em>
+                      <time datetime="{{ dateFormat "2006-01-02T15:04:05-07:00" (default .Date (.PublishDate)) }}">
+                      {{ dateFormat "2 Jan, 2006" (default .Date (.PublishDate)) }}
+                      </time>
+
+                      <em class="fas fa-stopwatch"></em>
+                      <span class="reading-time">{{ i18n "reading_time" .ReadingTime }}</span>
                     </div>
                 {{ end }}
             </div>
