@@ -1,0 +1,3 @@
+{
+    "git_information" : {{ block "response" .}}{{ end }}
+}
