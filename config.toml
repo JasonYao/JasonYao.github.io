@@ -1,5 +1,5 @@
 # For more theme config options, see https://github.com/lxndrblz/anatole#modifying-the-configtoml
-baseURL = "https://jasonyao.com/"
+baseURL = "https://jasonyao.com"
 languageCode = "en-us"
 title = "Home"
 theme = "anatole"
