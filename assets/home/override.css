@@ -1,0 +1,7 @@
+/*
+ * Moves the left-side up since it was pushed down too
+ * far by default when a profile picture was added
+ */
+.sidebar .logo-title {
+    padding-top: 120px;
+}

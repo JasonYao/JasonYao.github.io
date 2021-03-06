@@ -1,0 +1,99 @@
+# For more theme config options, see https://github.com/lxndrblz/anatole#modifying-the-configtoml
+baseURL = "https://jasonyao.com/"
+languageCode = "en-us"
+title = "Home"
+theme = "anatole"
+
+# Theme-specific configs
+summarylength = 10
+enableEmoji = true
+enableRobotsTXT = true
+
+[markup]
+  [markup.highlight]
+    lineNos = true
+
+[params]
+displayMode = "dark"
+title = "Jason Yao"
+author = "Jason Yao"
+description = "Software engineer, DnD player, bad shower singer."
+profilePicture = "assets/home/profile.jpg"
+images = ["assets/home/default-hamilton.jpg"]
+favicon = "assets/favicons/"
+
+##
+# Theme overrides
+##
+customCss = ["global/override.css", "home/override.css"]
+
+################### DISABLED FOR NOW
+# example ["js/custom.js"]
+#customJs = []
+
+# Use an empty list if having a custom root page instead of post listings
+#mainSections = ["post"]
+
+# Form Spree Contact Form
+#contactFormAction = "https://formspree.io/f/your-form-hash-here"
+#################### DISABLED FOR NOW
+
+# Swaps the generated URL routes from just the
+# title to include publish year/month
+[permalinks]
+  posts = "posts/:year/:month/:day/:title/"
+
+##
+# SEO
+##
+googleSiteVerify = "bS_JqKuXEPzN-1VZ4w0kc-PhpPeTs-ng8VtsvpnwXCU"
+
+##
+# Social links
+##
+
+# use 'fab' when brand icons, use 'fas' when standard solid icons.
+[[params.socialIcons]]
+icon = "fab fa-linkedin"
+title = "Linkedin"
+url = "https://www.linkedin.com/in/jasonyaonyu/"
+
+[[params.socialIcons]]
+icon = "fab fa-github"
+title = "GitHub"
+url = "https://github.com/JasonYao"
+
+[[params.socialIcons]]
+icon = "fas fa-envelope"
+title = "e-mail"
+url = "mailto:hello+personal.site@JasonYao.com"
+
+##
+# Nav menu
+##
+
+[menu]
+
+  [[menu.main]]
+  name = "Home"
+  identifier = "home"
+  weight = 100
+  url = "/"
+
+  [[menu.main]]
+  name = "Posts"
+  weight = 200
+  identifier = "posts"
+  url = "/posts/"
+
+  [[menu.main]]
+  name = "About"
+  weight = 300
+  identifier = "about"
+  url = "/about/"
+
+  [[menu.main]]
+  name = "Resume"
+  weight = 400
+  identifier = "resume"
+  url = "/resume/"
