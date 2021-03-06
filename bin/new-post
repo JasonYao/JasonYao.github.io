@@ -11,6 +11,7 @@
 #   - E.g. `bin/new-post.sh hello-world`
 ##
 
+# Fails script if any line below fails
 set -e
 
 POST_SLUG="$1"
