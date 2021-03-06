@@ -4,6 +4,9 @@ languageCode = "en-us"
 title = "Home"
 theme = "anatole"
 
+# Enables access to SHA and other git information
+enableGitInfo = true
+
 # Theme-specific configs
 summarylength = 10
 enableEmoji = true

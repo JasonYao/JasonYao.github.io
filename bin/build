@@ -18,5 +18,5 @@ function warn () {
   printf "\r\033[2K  [\033[0;31mWARN\033[0m] %s\n" "$1"
 }
 
-#hugo --gc --minify --enableGitInfo
-hugo --enableGitInfo
+hugo --gc --minify --enableGitInfo
+#hugo --enableGitInfo
