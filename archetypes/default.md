@@ -1,6 +1,6 @@
 ---
-title: "{{ .TranslationBaseName | replaceRE ".{21}" "" | replaceRE "-" " " | title }}"
-slug: {{ .TranslationBaseName | replaceRE "^[0-9]{14}-" ""  }}
+title: "{{ .TranslationBaseName | replaceRE "^.{1,21}" "" | replaceRE "-" " " | title }}"
+slug: {{ .TranslationBaseName | replaceRE "^.{1,21}" "" }}
 date: {{ .Date }}
 publishdate: {{ .Date }}
 categories: ["development practices", "tutorial", "tips & tricks", "portfolio"]

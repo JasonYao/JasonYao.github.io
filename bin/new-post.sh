@@ -20,7 +20,7 @@ fi
 
 TIMESTAMP=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
 POST_FILENAME="${TIMESTAMP}-${POST_SLUG}.md"
-SLUG_PREFIX=`date -u +"%Y/%m"`
+SLUG_PREFIX=`date -u +"%Y/%m/%d"`
 
 hugo new "posts/${POST_FILENAME}"
 (
