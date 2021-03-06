@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Home</title>
+    <link>https://jasonyao.com/posts/</link>
+    <description>Recent content in Posts on Home</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 22 May 2017 00:00:00 +0800</lastBuildDate><atom:link href="https://jasonyao.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Canadian Existential Crisis Introduction</title>
+      <link>https://jasonyao.com/posts/2017/05/22/a-canadian-existential-crisis-introduction/</link>
+      <pubDate>Mon, 22 May 2017 00:00:00 +0800</pubDate>
+      
+      <guid>https://jasonyao.com/posts/2017/05/22/a-canadian-existential-crisis-introduction/</guid>
+      <description>Editor&amp;rsquo;s Note  The platform description below described my previous setup, for an updated look at this current site&amp;rsquo;s setup, see here  Intro Hey there!</description>
+    </item>
+    
+  </channel>
+</rss>
