@@ -49,7 +49,7 @@ if (navigator && navigator.clipboard) {
 } else {
     var script = document.createElement('script');
     script.src = 'https://cdnjs.cloudflare.com/ajax/libs/clipboard-polyfill/3.0.2/promise/clipboard-polyfill.promise.min.js';
-    script.integrity = 'sha512-O9Q+AhI1w7LT1/tHysPWDwwrgB1fKJ/nXPNLC30i8LF6RdSz4dGZyWB9WySag3DZMdGuK5yHJEdKXMKI2m5uSQ==';
+    script.integrity = 'sha384-3HmgCGnEQynNhj31qqqf7+bNviXS5XVIc/uvWbn1SfqnPwLvGZ9bssxdqtAV0tSA';
     script.crossOrigin = 'anonymous';
     script.onload = function() {
         addCopyButtons(clipboard);
