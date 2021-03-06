@@ -1,0 +1,4 @@
+{
+    "posts" : {{ block "response" .}}{{ end }},
+    "count" : "{{ len .Data.Pages }}"
+}

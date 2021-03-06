@@ -52,6 +52,18 @@ customCss = ["global/override.css", "home/override.css"]
 googleSiteVerify = "bS_JqKuXEPzN-1VZ4w0kc-PhpPeTs-ng8VtsvpnwXCU"
 
 ##
+# Enables up ability to create static JSON blobs that
+#   can be served as a read-only API.
+#
+# E.g. All posts will now generate an index.json containing
+#   the post metadata
+##
+[outputs]
+    page = ["html", "json"]
+    section = ["html", "rss", "json"]
+    home = ["html", "rss", "json"]
+
+##
 # Social links
 ##
 
