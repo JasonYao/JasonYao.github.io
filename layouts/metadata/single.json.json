@@ -5,7 +5,7 @@
         "commit_timestamp": "{{ .GitInfo.AuthorDate }}",
         "author": "{{ .GitInfo.AuthorName }} <{{ .GitInfo.AuthorEmail }}>",
         "full_hash": "{{ .GitInfo.Hash }}",
-        "subject": "{{ .GitInfo.Subject }}",
+        "subject": {{ .GitInfo.Subject | plainify | jsonify }},
         "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/{{ .GitInfo.Hash }}"
     }
 }

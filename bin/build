@@ -38,7 +38,7 @@ if {
     echo "        \"commit_timestamp\": \"$(git log -1 --pretty=format:'%ad' --date=iso-strict | date -u +"%Y-%m-%dT%H:%M:%SZ")\","
     echo "        \"author\": \"$(git log -1 --pretty=format:'%an <%ae>')\","
     echo "        \"full_hash\": \"$(git rev-parse HEAD)\","
-    echo "        \"subject\": \"$(git log -1 --pretty=format:'%B')\","
+    echo "        \"subject\": \"$(git log -1 --pretty=format:'%B' | head -n 1)\","
     echo "        \"commit_link\": \"https://github.com/JasonYao/JasonYao.github.io/commit/$(git rev-parse HEAD)\""
     echo "    },"
     echo "    \"deployment_information\": {"
