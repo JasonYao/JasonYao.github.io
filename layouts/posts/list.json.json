@@ -1,6 +1,9 @@
-{{ define "response" }}[
-    {{ range $index, $e := .Data.Pages }}
-    {{ if $index }}, {{ end }}{{ .Render "item" }}
-    {{ end }}
-]
+{{ define "main" }}
+{
+    "posts" : [
+      {{ range $index, $e := .Data.Pages }}
+      {{ if gt $index 0 }}, {{ end }}{{ .Render "single" }}{{ end }}
+    ],
+    "count" : "{{ len .Data.Pages }}"
+}
 {{ end }}

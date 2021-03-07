@@ -8,5 +8,6 @@ categories: ["development practices", "tutorial", "tips & tricks", "portfolio"]
 tags: ["replaceme", "todo"]
 #thumbnail: "assets/posts/{{ .Name }}/hero.jpg"
 thumbnail: "assets/home/default-hamilton.jpg"
+thumbnail_alt_text: "If you're reading this you probably need a hobby- have you considered DnD?"
 draft: true
 ---
