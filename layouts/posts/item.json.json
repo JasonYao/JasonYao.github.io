@@ -29,7 +29,8 @@
       {{ end }}
     ],
     "thumbnail": "{{ .Params.thumbnail }}",
-    "permalink": "{{ .Permalink }}"
+    "permalink": "{{ .Permalink }}",
+    "summary": "{{ .Summary }}"
   },
   "data": {
     "content": {{ .Content | plainify | jsonify }}

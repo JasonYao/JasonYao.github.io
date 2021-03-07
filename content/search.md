@@ -8,10 +8,21 @@ date: "2021-03-04T02:38:30+08:00"
 var idx, searchInput, searchResults = null
 var documents = {}
 
-function renderSearchResults(results){
+function createSearchResult(resultData) {
+  // create result item
+  var article = document.createElement('article')
+  article.classList.add('search-result');
+  article.innerHTML = `
+  <a href="${resultData.permalink}"><h3 class="title">${resultData.title}</h3></a>
+  <img width="150" src="${resultData.thumbnail}" />
+  <p>${resultData.summary}</p>
+  <br>
+  `
+  return article;
+}
 
+function renderSearchResults(results) {
     if (results.length > 0) {
-
         // show max 10 results
         if (results.length > 9){
             results = results.slice(0,10)
@@ -22,15 +33,9 @@ function renderSearchResults(results){
 
         // append results
         results.forEach(result => {
-
-            // create result item
-            var article = document.createElement('article')
-            article.innerHTML = `
-            <a href="${result.ref}"><h3 class="title">${documents[result.ref].title}</h3></a>
-            <p><a href="${result.ref}">${result.ref}</a></p>
-            <br>
-            `
-            searchResults.appendChild(article)
+          const resultData = documents[result.ref];
+          const renderedSearchResult = createSearchResult(resultData);
+          searchResults.appendChild(renderedSearchResult)
         })
 
     // if results are empty
@@ -39,15 +44,12 @@ function renderSearchResults(results){
     }
 }
 
-
 function registerSearchHandler() {
-
     // register on input event
     searchInput.oninput = function(event) {
 
         // remove search results if the user empties the search input field
         if (searchInput.value == '') {
-
             searchResults.innerHTML = ''
         } else {
 
@@ -85,6 +87,7 @@ window.onload = function() {
         this.field('categories');
         this.field('tags');
         this.field('content');
+        this.field('summary');
 
         ({ posts } = response);
 
@@ -95,12 +98,17 @@ window.onload = function() {
             'categories': doc.metadata.categories,
             'tags': doc.metadata.tags,
             'content': doc.data.content,
+            'thumbnail': doc.metadata.thumbnail,
+            'summary': doc.metadata.summary,
           });
           documents[doc.metadata.permalink] = {
+            'permalink': doc.metadata.permalink,
             'title': doc.metadata.title,
             'categories': doc.metadata.categories,
             'tags': doc.metadata.tags,
             'content': doc.data.content,
+            'thumbnail': doc.metadata.thumbnail,
+            'summary': doc.metadata.summary,
           };
         }, this)
       })
