@@ -103,4 +103,24 @@
 
     <!-- Open Graph -->
     {{ template "_internal/opengraph.html" . }}
+
+    <!-- Search libraries and styling -->
+    {{ $searchStyle := resources.Get "search/search-bar.css" }}
+    {{ $secureSearchStyle := $searchStyle | resources.Minify | resources.Fingerprint "sha384" }}
+    <link rel="stylesheet"
+        href="{{ $secureSearchStyle.Permalink }}"
+        integrity="{{ $secureSearchStyle.Data.Integrity }}"
+        crossorigin="anonymous"
+        type="text/css">
+
+    <script defer src="https://unpkg.com/lunr/lunr.js"></script>
+
+    <!-- We don't want to index or fetch the raw metadata until after everything else is working, so we use defer here (See https://flaviocopes.com/javascript-async-defer/) -->
+    {{ $searchJs := resources.Get "search/search.js" }}
+    {{ $secureSearchJS := $searchJs |  resources.Minify | resources.Fingerprint "sha384" }}
+    <script defer type="text/javascript"
+        src="{{ $secureSearchJS.Permalink }}"
+        integrity="{{ $secureSearchJS.Data.Integrity }}"
+        crossorigin="anonymous"></script>
+
 </head>

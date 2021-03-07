@@ -25,6 +25,10 @@ profilePicture = "assets/home/profile.jpg"
 images = ["assets/home/default-hamilton.jpg"]
 favicon = "assets/favicons/"
 
+# Enables direct embedding of HTML snippets in the markdown files
+# [markup.goldmark.renderer]
+# unsafe= true
+
 ##
 # Theme overrides
 ##

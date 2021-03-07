@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="{{- site.Language.Lang -}}" data-theme="{{- .Site.Params.displayMode -}}">
+{{- partial "head.html" . -}}
+<body>
+
+{{- partial "sidebar.html" . -}}
+<div class="main">
+    {{ partial "navbar.html" . }}
+    <div class="autopagerize_page_element">
+        <div class="content">
+          <!-- Search results -->
+          <section id="search-results" class="search-results"></section>
+
+          <!-- Copy of anatole theme's layout, but adding in the search results -->
+            {{- block "main" . }}{{- end }}
+        </div>
+    </div>
+</div>
+
+{{- partial "footer.html" . -}}
+{{- if (eq .Site.Params.simpleAnalytics.enable true) -}}
+    {{- partial "analytics/simpleanalytics.html" . -}}
+{{- end -}}
+</body>
+
+</html>
