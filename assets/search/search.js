@@ -25,7 +25,7 @@ function createSearchResult(resultData) {
 
   article.innerHTML = `<div class="post-thumbnail">
       <a href="${resultData.permalink}">
-          <img width="150" src="${resultData.thumbnail}" alt="Thumbnail image" loading="lazy">
+          <img width="150" src="${resultData.thumbnail}" alt="${resultData.thumbnail_alt_text}" loading="lazy">
       </a>
   </div>
 
@@ -176,6 +176,7 @@ window.onload = function() {
             'tags': doc.metadata.tags,
             'content': doc.data.content,
             'thumbnail': doc.metadata.thumbnail,
+            'thumbnail_alt_text': doc.metadata.thumbnail_alt_text,
             'summary': doc.metadata.summary,
             'publish_date': doc.metadata.published_on,
             'reading_time': doc.metadata.reading_time

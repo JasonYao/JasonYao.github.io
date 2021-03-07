@@ -17,7 +17,7 @@
             {{ if .Params.thumbnail }}
             <div class="post-thumbnail">
                 <a href="{{ .RelPermalink }}">
-                <img src="{{ .Params.thumbnail | relURL }}" alt="Thumbnail image" loading="lazy">
+                <img src="{{ .Params.thumbnail | relURL }}" alt="{{ .Params.thumbnail_alt_text }}" loading="lazy">
                 </a>
             </div>
             {{ end }}
