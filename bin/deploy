@@ -6,36 +6,26 @@ set -e
 ###
 # Helper functions
 ##
+
 function info () {
-	printf "\r  [ \033[00;34m..\033[0m ] %s\n" "$1"
+	printf "\\t  [\\033[00;34mINFO\\033[0m] %s\\n" "${1}"
+}
+
+function user () {
+	printf "\\t  [ \\033[0;33m??\\033[0m ] %s\\n" "${1}"
 }
 
 function success () {
-	printf "\r\033[2K  [ \033[00;32mOK\033[0m ] %s\n" "$1"
+	printf "\\t\\033[2K  [ \\033[00;32mOK\\033[0m ] %s\\n" "${1}"
 }
 
 function warn () {
-  printf "\r\033[2K  [\033[0;31mWARN\033[0m] %s\n" "$1"
+	printf "\\t\\033[2K  [\\033[38:2:255:165:0mWARN\\033[0m] %s\\n" "${1}"
 }
 
-function sub_warn () {
-  printf "\r\033[2K  [\033[0;31mWARN\033[0m] \t%s\n" "$1"
-}
-
-function stash_pop () {
-	# Puts back the stuff that wasn't committed
-	info "Git stashing: Putting back temporarily stashed files"
-	git stash pop -q
-}
-
-function stash_push () {
-    info "Git stashing: Stashing non-committed files temporarily"
-    if git stash -q --keep-index ; then
-        success "Git stashing: All non-committed files have been temporarily stashed"
-    else
-        warn "Git stashing: An error occurred trying to stash non-relevant files, please check for any merge conflicts"
-        exit 1
-    fi
+function fail () {
+	printf "\\t\\033[2K  [\\033[0;31mFAIL\\033[0m] %s\\n" "${1}"
+  exit 1
 }
 
 # Some source used from the sample .pre-commit files by the golang team,
@@ -65,11 +55,19 @@ if [[ "$CURRENT_BRANCH" == "source" ]]; then
     git fetch upstream
     git reset upstream/publish
     git add -A .
-    git commit -m "[Build] ${CURRENT_BUILD_SHA}"
-    git push -q upstream HEAD:publish
 
-    success "Deployment: Site is now deployed"
+    # It turns out git commit returns an error code if there's nothing to commit
+    git_commit_output=$(git commit -m "[Build] ${CURRENT_BUILD_SHA}")
 
+    if [[ $git_commit_output == *"[Build] ${CURRENT_BUILD_SHA}"* ]]; then
+      success "Committed new site build"
+      git push -q upstream HEAD:publish
+      success "Deployment: Site is now deployed"
+    elif [[ $git_commit_output == *"nothing to commit, working tree clean"* ]]; then
+      success "Newly generated site matches old one, so no need to commit"
+    else
+      fail "An error occurred when trying to commit the new site for publishing"
+    fi
 else
     info "Deployment: Skipping deployment of the site due to not meeting deployment conditions"
 fi

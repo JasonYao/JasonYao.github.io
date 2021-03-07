@@ -1,4 +1,5 @@
 {
+  "metadata": {
     "title": "{{ .Title }}",
     "slug": "{{ .Params.slug }}",
     "created_on": "{{ .Params.date }}",
@@ -29,4 +30,13 @@
     ],
     "thumbnail": "{{ .Params.thumbnail }}",
     "permalink": "{{ .Permalink }}"
+  },
+  "git_information": {
+      "short_hash": "{{ .GitInfo.AbbreviatedHash }}",
+      "commit_timestamp": "{{ .GitInfo.AuthorDate }}",
+      "author": "{{ .GitInfo.AuthorName }} <{{ .GitInfo.AuthorEmail }}>",
+      "full_hash": "{{ .GitInfo.Hash }}",
+      "subject": "{{ .GitInfo.Subject }}",
+      "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/{{ .GitInfo.Hash }}"
+  },
 }

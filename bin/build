@@ -7,16 +7,46 @@ set -e
 # Helper functions
 ##
 function info () {
-	printf "\r  [ \033[00;34m..\033[0m ] %s\n" "$1"
+	printf "\\t  [\\033[00;34mINFO\\033[0m] %s\\n" "${1}"
+}
+
+function user () {
+	printf "\\t  [ \\033[0;33m??\\033[0m ] %s\\n" "${1}"
 }
 
 function success () {
-	printf "\r\033[2K  [ \033[00;32mOK\033[0m ] %s\n" "$1"
+	printf "\\t\\033[2K  [ \\033[00;32mOK\\033[0m ] %s\\n" "${1}"
 }
 
 function warn () {
-  printf "\r\033[2K  [\033[0;31mWARN\033[0m] %s\n" "$1"
+	printf "\\t\\033[2K  [\\033[38:2:255:165:0mWARN\\033[0m] %s\\n" "${1}"
 }
 
+function fail () {
+	printf "\\t\\033[2K  [\\033[0;31mFAIL\\033[0m] %s\\n" "${1}"
+  exit 1
+}
+
+# Builds the static site with minified info
 hugo --gc --minify --enableGitInfo
-#hugo --enableGitInfo
+
+# Overwrites the site metadata to include deployment info
+if {
+    echo "{"
+    echo "    \"git_information\": {"
+    echo "        \"short_hash\": \"$(git rev-parse --short HEAD)\","
+    echo "        \"commit_timestamp\": \"$(git log -1 --pretty=format:'%ad' --date=iso-strict | date -u +"%Y-%m-%dT%H:%M:%SZ")\","
+    echo "        \"author\": \"$(git log -1 --pretty=format:'%an <%ae>')\","
+    echo "        \"full_hash\": \"$(git rev-parse HEAD)\","
+    echo "        \"subject\": \"$(git log -1 --pretty=format:'%B')\","
+    echo "        \"commit_link\": \"https://github.com/JasonYao/JasonYao.github.io/commit/$(git rev-parse HEAD)\""
+    echo "    },"
+    echo "    \"deployment_information\": {"
+    echo "        \"build_time\": \"$(date -u +"%Y-%m-%dT%H:%M:%SZ")\""
+    echo "    }"
+    echo "}"
+} | tee public/metadata/deployment/index.json ; then
+    success "Successfully overwrote git and deployment information"
+else
+    fail "Failed to overwrite git and deployment information"
+fi
