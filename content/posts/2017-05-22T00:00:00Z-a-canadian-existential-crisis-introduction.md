@@ -2,11 +2,12 @@
 title: "A Canadian Existential Crisis Introduction"
 slug: a-canadian-existential-crisis-introduction
 date: 2017-05-22T00:00:00+08:00
+summary: An introduction to the site with an explanation of the stack and why they were chosen
 publishdate: 2017-05-22T00:00:00+08:00
 categories: ["featured"]
 tags: ["introduction", "existential dread"]
 #thumbnail: "assets/posts/2021-03-06T01:37:47Z-a-canadian-existential-crisis-introduction/hero.jpg"
-thumbnail: "assets/home/default-hamilton.jpg"
+thumbnail: "/assets/home/default-hamilton.jpg"
 draft: false
 ---
 
