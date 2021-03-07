@@ -106,6 +106,7 @@
 
     <!-- Search libraries and styling -->
     <script src="https://unpkg.com/lunr/lunr.js"></script>
+
     {{ $searchStyle := resources.Get "search/search-bar.css" }}
     {{ $secureSearchStyle := $searchStyle | resources.Minify | resources.Fingerprint "sha384" }}
     <link rel="stylesheet"
@@ -113,4 +114,13 @@
         integrity="{{ $secureSearchStyle.Data.Integrity }}"
         crossorigin="anonymous"
         type="text/css">
+
+    <!-- We don't want to index or fetch the raw metadata until after everything else is working, so we use defer here (See https://flaviocopes.com/javascript-async-defer/) -->
+    {{ $searchJs := resources.Get "search/search.js" }}
+    {{ $secureSearchJS := $searchJs |  resources.Minify | resources.Fingerprint "sha384" }}
+    <script defer type="text/javascript"
+        src="{{ $secureSearchJS.Permalink }}"
+        integrity="{{ $secureSearchJS.Data.Integrity }}"
+        crossorigin="anonymous"></script>
+
 </head>
