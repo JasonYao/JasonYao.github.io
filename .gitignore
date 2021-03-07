@@ -1,5 +1,8 @@
 # Deploy dir
 public/
 
+# Build dir
+resources/
+
 # Platform ignores
 .DS_Store
