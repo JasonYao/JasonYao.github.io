@@ -1,13 +1,13 @@
 {
     "git_information": {
-        "short_hash": "68fa064",
-        "commit_timestamp": "2021-03-07T19:51:17Z",
+        "short_hash": "4c28d1e",
+        "commit_timestamp": "2021-03-07T20:08:42Z",
         "author": "Jason Yao <Hello@JasonYao.com>",
-        "full_hash": "68fa0641a57540ec16ccf7106a7ab174f957dfac",
-        "subject": "fixes git deploy info with long commit messages",
-        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/68fa0641a57540ec16ccf7106a7ab174f957dfac"
+        "full_hash": "4c28d1e0acfb2eaaee6534d6413d6faf4134424d",
+        "subject": "Actually used code fences correctly for second example",
+        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/4c28d1e0acfb2eaaee6534d6413d6faf4134424d"
     },
     "deployment_information": {
-        "build_time": "2021-03-07T19:51:17Z"
+        "build_time": "2021-03-07T20:08:42Z"
     }
 }
