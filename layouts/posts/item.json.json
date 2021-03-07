@@ -31,6 +31,9 @@
     "thumbnail": "{{ .Params.thumbnail }}",
     "permalink": "{{ .Permalink }}"
   },
+  "data": {
+    "content": {{ .Content | plainify | jsonify }}
+  },
   "git_information": {
       "short_hash": "{{ .GitInfo.AbbreviatedHash }}",
       "commit_timestamp": "{{ .GitInfo.AuthorDate }}",
@@ -38,5 +41,5 @@
       "full_hash": "{{ .GitInfo.Hash }}",
       "subject": "{{ .GitInfo.Subject }}",
       "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/{{ .GitInfo.Hash }}"
-  },
+  }
 }
