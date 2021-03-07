@@ -10,9 +10,6 @@
         {{ .Content }}
     </div>
 
-    <!-- Search results -->
-    <section id="search-results" class="search-results post {{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}"></section>
-
     {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
     {{ range $paginator.Pages }}
 
