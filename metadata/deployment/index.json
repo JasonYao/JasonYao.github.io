@@ -1,13 +1,13 @@
 {
     "git_information": {
-        "short_hash": "3193dc8",
-        "commit_timestamp": "2021-03-07T01:10:57Z",
+        "short_hash": "14f327b",
+        "commit_timestamp": "2021-03-07T01:27:52Z",
         "author": "Jason Yao <Hello@JasonYao.com>",
-        "full_hash": "3193dc83e7d1f5ff57b8d5589565f051ca0dd11f",
-        "subject": "bugfix: Old git info shown instead of new one",
-        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/3193dc83e7d1f5ff57b8d5589565f051ca0dd11f"
+        "full_hash": "14f327ba43f7671c50f1b2ac71501ced976ccdb3",
+        "subject": "Adds in sitemap to robots.txt",
+        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/14f327ba43f7671c50f1b2ac71501ced976ccdb3"
     },
     "deployment_information": {
-        "build_time": "2021-03-07T01:10:57Z"
+        "build_time": "2021-03-07T01:27:52Z"
     }
 }
