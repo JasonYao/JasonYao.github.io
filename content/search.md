@@ -13,9 +13,9 @@ function createSearchResult(resultData) {
   var article = document.createElement('article')
   article.classList.add('search-result');
   article.innerHTML = `
-  <a href="${resultData.permalink}"><h3 class="title">${resultData.title}</h3></a>
+  <a href="${resultData.permalink}"><h3 class="search-title">${resultData.title}</h3></a>
   <img width="150" src="${resultData.thumbnail}" />
-  <p>${resultData.summary}</p>
+  <p class="search-summary">${resultData.summary}</p>
   <br>
   `
   return article;
@@ -80,6 +80,10 @@ window.onload = function() {
     })
     .then((response) => response.json())
     .then((response) => {
+
+     // TODO: Add in date, reading time, and other metadata
+
+
       // index document
       idx = lunr(function() {
         this.ref('permalink');

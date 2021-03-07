@@ -1,10 +1,22 @@
 /*
  * Search bar styling
  */
-.wrapper {
-  position: relative;
-  display: flex;
-  min-width: 100px;
+
+ @media only screen and (min-width: 961px) {
+   .search-wrapper {
+     position: relative;
+     max-width: 250px;
+     display: inline flow-root list-item;
+   }
+}
+
+@media only screen and (max-width: 960px) {
+  .search-wrapper {
+    max-width: 250px;
+    display: block;
+    margin: auto;
+    position: relative;
+  }
 }
 
 .search {
@@ -36,4 +48,14 @@
 .search:hover, .search:focus {
   border: 1px solid #009688;
   background-color: white;
+}
+
+.search-title {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.search-summary {
+    font-size: 1.2em;
 }
