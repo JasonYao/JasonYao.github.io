@@ -1,13 +1,45 @@
 {
     "git_information": {
-        "short_hash": "14f327b",
-        "commit_timestamp": "2021-03-07T01:27:52Z",
+        "short_hash": "d6ac304",
+        "commit_timestamp": "2021-03-07T19:44:10Z",
         "author": "Jason Yao <Hello@JasonYao.com>",
-        "full_hash": "14f327ba43f7671c50f1b2ac71501ced976ccdb3",
-        "subject": "Adds in sitemap to robots.txt",
-        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/14f327ba43f7671c50f1b2ac71501ced976ccdb3"
+        "full_hash": "d6ac3048c02264fa0c3dd74ada390b859cf6ea6b",
+        "subject": "Add search (#15)
+
+* working search unstyled no lookahead
+
+* Added in summaries for content
+
+* Adds in summary, still unstyled and with no lookahead
+
+* ignores build dir for any processed SCSS files
+
+* Added barebones styling for searchbar, no styling for search results
+
+* working styled searchbar unstyled results and buggy result layout
+
+* Migrated from search page to search bar
+
+* Moved search results into main section, remaining tasks: index additional metadata, and style search results correctly
+
+* Correctly styled search results to match existing index
+
+* disables direct html embedding
+
+* defering search scripts
+
+* cleanup
+
+* migrates json to correct layout
+
+* metadata generation cleanup
+
+* Added search results to all templates
+
+* Added in alt text support",
+        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/d6ac3048c02264fa0c3dd74ada390b859cf6ea6b"
     },
     "deployment_information": {
-        "build_time": "2021-03-07T01:27:52Z"
+        "build_time": "2021-03-07T19:44:10Z"
     }
 }
