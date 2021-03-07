@@ -1,5 +1,9 @@
 {{ define "main" }}
   <!-- Typo fix that displays the metadata properly on the post. Also adds in OpenGraph semantics instead of  -->
+
+  <!-- Search results -->
+  <section id="search-results" class="search-results"></section>
+
     <div class="post {{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}">
         <div class="post-content">
             {{ if .Params.thumbnail }}

@@ -10,6 +10,9 @@
         {{ .Content }}
     </div>
 
+    <!-- Search results -->
+    <section id="search-results" class="search-results"></section>
+
     {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
     {{ range $paginator.Pages }}
 
