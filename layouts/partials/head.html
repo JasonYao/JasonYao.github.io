@@ -104,6 +104,13 @@
     <!-- Open Graph -->
     {{ template "_internal/opengraph.html" . }}
 
+    <!-- Search libraries and styling -->
     <script src="https://unpkg.com/lunr/lunr.js"></script>
-    <link rel="stylesheet" href="/assets/search/search.css" crossorigin="anonymous" />
+    {{ $searchStyle := resources.Get "search/search-bar.css" }}
+    {{ $secureSearchStyle := $searchStyle | resources.Minify | resources.Fingerprint "sha384" }}
+    <link rel="stylesheet"
+        href="{{ $secureSearchStyle.Permalink }}"
+        integrity="{{ $secureSearchStyle.Data.Integrity }}"
+        crossorigin="anonymous"
+        type="text/css">
 </head>
