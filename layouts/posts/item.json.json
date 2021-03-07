@@ -30,7 +30,8 @@
     ],
     "thumbnail": "{{ .Params.thumbnail }}",
     "permalink": "{{ .Permalink }}",
-    "summary": "{{ .Summary }}"
+    "summary": "{{ .Summary }}",
+    "reading_time": "{{ i18n "reading_time" .ReadingTime }}"
   },
   "data": {
     "content": {{ .Content | plainify | jsonify }}

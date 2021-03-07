@@ -19,6 +19,10 @@
   }
 }
 
+.page-top .nav a.current {
+  padding-bottom: 15px;
+}
+
 .search {
   border: 1px solid grey;
   border-radius: 5px;
