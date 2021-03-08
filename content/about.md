@@ -14,7 +14,29 @@ I assure you that even I don't know the answer to those questions.
 
 Either way, welcome!
 
-> If you give someone a program, you will frustrate them for a day. If you teach them how to program, you will frustrate them for a lifetime. -
+> If you give someone a program, you will frustrate them for a day. If you teach them how to program, you will frustrate them for a lifetime. - Abraham Lincoln
+
+## General info
+I am:
+- A New York based software engineer, currently working at **Squarespace**
+  on their **Domains team** since March 2018
+- A nerd that can talk your ear off about everything from public transportation
+  to fire codes, and be able to tie it back somehow to software engineering
+- Somebody who once made [spicy rice cakes](https://www.google.com/search?q=Tteokbokki)
+  without the rice cakes (don't ask)
+- Canadian born, Hong Kong raised, American educated, and probably trying
+  (and failing) to find the something equivalent to [Wah Fung](https://goo.gl/maps/KgPHw6D6Eg2fwNCs6)'s
+  quality and price (seriously, $5.50 USD for the equivalent to 2 meals of meat
+  is just crazy).
+
+### Education
+Like all NYU alumni, I too chose that great school to learn in
+after getting rejected from Columbia for the 7th time.
+
+There may or may not be a video of me singing "Hey there Columbia" to
+the tune of "Hey there Delilah" floating around somewhere.
+
+Bachelor of Arts in Computer Science from Courant at New York University, 2017 grad.
 
 ## For my friends
 For those in the former group, a hint: there's 7 secrets on this site,
@@ -31,6 +53,10 @@ I'll be up-front on one aspect, in that in general
 one please save both of us some time and send me your favorite
 food recipe instead, with no expectations that I'll respond to
 inquiries.
+
+I'm also not open to relocating from New York city, mostly
+because NYC and Montreal are the only places to get an
+actually good bagel.
 
 ## The part where I'm supposed to brag or something i dunno
 For a "Top Hits" of my work:
@@ -63,14 +89,6 @@ For a "Top Hits" of my work:
   Squarespace to begin taking a proactive approach to fraudulent behavior,
   instead of a reactive one.
 
-## Education
-Like all NYU alumni, I too chose that great school to learn in
-after getting rejected from Columbia for the 7th time.
-
-There may or may not be a video of me singing "Hey there Columbia" to
-the tune of "Hey there Delilah" floating around somewhere.
-
-Bachelor of Arts in Computer Science from Courant at New York University, 2017 grad.
 
 ## Pure self-promotional shilling written back in 2017
 > Honestly it's kinda fun to take a look back at this
