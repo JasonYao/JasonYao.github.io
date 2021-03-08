@@ -1,13 +1,13 @@
 {
     "git_information": {
-        "short_hash": "e92832d",
-        "commit_timestamp": "2021-03-08T15:29:00Z",
+        "short_hash": "01d81cd",
+        "commit_timestamp": "2021-03-08T19:33:10Z",
         "author": "Jason Yao <Hello@JasonYao.com>",
-        "full_hash": "e92832d3017db625cdf78629a033855d511d5714",
-        "subject": "Added in coloring override",
-        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/e92832d3017db625cdf78629a033855d511d5714"
+        "full_hash": "01d81cd7281d20ec1dba77639b9e08fdbd232c9d",
+        "subject": "Added in rebuild script",
+        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/01d81cd7281d20ec1dba77639b9e08fdbd232c9d"
     },
     "deployment_information": {
-        "build_time": "2021-03-08T15:29:00Z"
+        "build_time": "2021-03-08T19:33:10Z"
     }
 }
