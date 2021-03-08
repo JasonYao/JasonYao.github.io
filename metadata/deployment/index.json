@@ -1,13 +1,13 @@
 {
     "git_information": {
-        "short_hash": "4c28d1e",
-        "commit_timestamp": "2021-03-07T20:08:42Z",
+        "short_hash": "a368742",
+        "commit_timestamp": "2021-03-08T14:46:59Z",
         "author": "Jason Yao <Hello@JasonYao.com>",
-        "full_hash": "4c28d1e0acfb2eaaee6534d6413d6faf4134424d",
-        "subject": "Actually used code fences correctly for second example",
-        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/4c28d1e0acfb2eaaee6534d6413d6faf4134424d"
+        "full_hash": "a3687424af13cb8211710d3ed2fb2ffedd41f9cd",
+        "subject": "Enabled post comments",
+        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/a3687424af13cb8211710d3ed2fb2ffedd41f9cd"
     },
     "deployment_information": {
-        "build_time": "2021-03-07T20:08:42Z"
+        "build_time": "2021-03-08T14:46:59Z"
     }
 }
