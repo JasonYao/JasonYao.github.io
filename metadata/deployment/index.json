@@ -1,13 +1,13 @@
 {
     "git_information": {
-        "short_hash": "01d81cd",
-        "commit_timestamp": "2021-03-08T19:33:10Z",
+        "short_hash": "2fb64f1",
+        "commit_timestamp": "2021-03-08T20:09:15Z",
         "author": "Jason Yao <Hello@JasonYao.com>",
-        "full_hash": "01d81cd7281d20ec1dba77639b9e08fdbd232c9d",
-        "subject": "Added in rebuild script",
-        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/01d81cd7281d20ec1dba77639b9e08fdbd232c9d"
+        "full_hash": "2fb64f19ad7e03fb11a0bcaca5e42101d255d858",
+        "subject": "Adds in automated updates to the resume repo",
+        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/2fb64f19ad7e03fb11a0bcaca5e42101d255d858"
     },
     "deployment_information": {
-        "build_time": "2021-03-08T19:33:10Z"
+        "build_time": "2021-03-08T20:09:15Z"
     }
 }
