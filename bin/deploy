@@ -47,8 +47,8 @@ function publish_to_resume_repo() {
 
     info "Successfully cloned resume repo"
 
-    # We should already be inside of the public dir
-    cp resume/index.html resume-repo/docs/index.html
+    # We should already be inside of the new-site-publish dir
+    cp docs/resume/index.html resume-repo/docs/index.html
 
     info "Copied resume index into file correctly"
 
@@ -87,7 +87,14 @@ if [[ "$CURRENT_BRANCH" == "source" ]]; then
     info "Deployment: Starting deployment of site"
 
     # Converts the generated site into its own repo
-    cd public
+    #   Previously we just had the published site be delivered from root,
+    #   but now that we have github actions to run during publish
+    #   builds, we now namespace everything into the /docs directory
+    mkdir -p new-site-publish
+    mv public new-site-publish
+    cp -r .github new-site-publish
+    cd new-site-publish
+    mv public docs
     git init
 
     # Sets up the repo to push as myself

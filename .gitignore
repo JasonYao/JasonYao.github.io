@@ -2,7 +2,7 @@
 public/
 
 # Build dir
-resources/
+/resources
 
 # Platform ignores
 .DS_Store
