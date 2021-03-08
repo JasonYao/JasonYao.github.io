@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+# Fails script if any line below fails
+set -e
+
+##
+# Sometimes, Github builds pages inconsistently, and has been observed
+#   multiple times to serve up stale content (tested in both Chrome
+#   and Firefox in private browsers with caches off), causing pretty
+#   blatant issues due to SRI protections now showing mismatched hashes
+#   and minified file names, even if the `publish` branch in the
+#   github repo shows the correct filepath and SHA hash.
+#
+# This script is meant to try and fix that, by triggering a new
+#   github pages build in one command, and hoping that the rebuild
+#   clears whatever weird thing is going on with github.
+#
+# NOTE: This will change the SHA hash of the latest commit, and
+#   NOT pollute the git history with empty commits, so be cognizant
+#   if others end up doing stuff to this repo.
+##
+
+git commit --amend --no-edit
+git push --force-with-lease
