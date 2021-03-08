@@ -8,24 +8,24 @@ set -e
 ##
 
 function info () {
-	printf "\\t  [\\033[00;34mINFO\\033[0m] %s\\n" "${1}"
+     printf "\\t  [\\033[00;34mINFO\\033[0m] %s\\n" "${1}"
 }
 
 function user () {
-	printf "\\t  [ \\033[0;33m??\\033[0m ] %s\\n" "${1}"
+    printf "\\t  [ \\033[0;33m??\\033[0m ] %s\\n" "${1}"
 }
 
 function success () {
-	printf "\\t\\033[2K  [ \\033[00;32mOK\\033[0m ] %s\\n" "${1}"
+    printf "\\t\\033[2K  [ \\033[00;32mOK\\033[0m ] %s\\n" "${1}"
 }
 
 function warn () {
-	printf "\\t\\033[2K  [\\033[38:2:255:165:0mWARN\\033[0m] %s\\n" "${1}"
+    printf "\\t\\033[2K  [\\033[38:2:255:165:0mWARN\\033[0m] %s\\n" "${1}"
 }
 
 function fail () {
-	printf "\\t\\033[2K  [\\033[0;31mFAIL\\033[0m] %s\\n" "${1}"
-  exit 1
+    printf "\\t\\033[2K  [\\033[0;31mFAIL\\033[0m] %s\\n" "${1}"
+    exit 1
 }
 
 # Some source used from the sample .pre-commit files by the golang team,
@@ -39,6 +39,40 @@ info "The CURRENT_BUILD_SHA value is: ${CURRENT_BUILD_SHA}"
 
 GITHUB_DEPLOYMENT_TOKEN=$2
 
+function publish_to_resume_repo() {
+    info "Deployment: Starting deployment of resume index page"
+
+    # Note: resume is already a repo here so we namespace to a different dir when cloning
+    git clone --single-branch --branch master https://github.com/JasonYao/resume.git resume-repo
+
+    # We should already be inside of the public dir
+    cp resume/index.html resume-repo/docs/index.html
+
+    # Pushes up the new file
+    cd resume-repo
+    git config user.name "Jason Yao"
+    git config user.email "Hello@JasonYao.com"
+    git remote add upstream "https://${GITHUB_DEPLOYMENT_TOKEN}@github.com/JasonYao/resume.git"
+
+    git fetch upstream
+    git reset upstream/master
+    git add docs/index.html
+
+    # It turns out git commit returns an error code if there's nothing to commit
+    git_commit_output=$(git commit -m "[Build] ${CURRENT_BUILD_SHA}")
+
+    if [[ $git_commit_output == *"[Build] ${CURRENT_BUILD_SHA}"* ]]; then
+        success "Committed new resume index file"
+        git push -q upstream HEAD:master
+        success "Deployment: New resume index file is now deployed"
+    elif [[ $git_commit_output == *"nothing to commit, working tree clean"* ]]; then
+        success "Newly generated resume index matches old one, so no need to commit"
+    else
+        fail "An error occurred when trying to commit the new resume index page for publishing"
+    fi
+}
+
+# Publishes a new build to the publish branch
 if [[ "$CURRENT_BRANCH" == "source" ]]; then
     info "Deployment: Starting deployment of site"
 
@@ -68,6 +102,9 @@ if [[ "$CURRENT_BRANCH" == "source" ]]; then
     else
       fail "An error occurred when trying to commit the new site for publishing"
     fi
+
+    # Publishes only the resume/index.html file to the resume repo
+    publish_to_resume_repo
 else
     info "Deployment: Skipping deployment of the site due to not meeting deployment conditions"
 fi
