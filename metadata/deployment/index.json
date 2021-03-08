@@ -1,13 +1,13 @@
 {
     "git_information": {
-        "short_hash": "7805677",
-        "commit_timestamp": "2021-03-08T22:08:45Z",
+        "short_hash": "0a2b701",
+        "commit_timestamp": "2021-03-08T22:14:18Z",
         "author": "Jason Yao <Hello@JasonYao.com>",
-        "full_hash": "780567735593e1df5c888fe744090a515ecacd8c",
+        "full_hash": "0a2b701d6c2408cdbc2cf77d9cae77008f24c1cf",
         "subject": "Added in linting for json and html",
-        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/780567735593e1df5c888fe744090a515ecacd8c"
+        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/0a2b701d6c2408cdbc2cf77d9cae77008f24c1cf"
     },
     "deployment_information": {
-        "build_time": "2021-03-08T22:08:45Z"
+        "build_time": "2021-03-08T22:14:18Z"
     }
 }
