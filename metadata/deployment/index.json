@@ -1,13 +1,13 @@
 {
     "git_information": {
-        "short_hash": "2fb64f1",
-        "commit_timestamp": "2021-03-08T20:09:15Z",
+        "short_hash": "5b2a677",
+        "commit_timestamp": "2021-03-08T20:12:36Z",
         "author": "Jason Yao <Hello@JasonYao.com>",
-        "full_hash": "2fb64f19ad7e03fb11a0bcaca5e42101d255d858",
+        "full_hash": "5b2a67762ec36181626b5698e3e64f4ca48c02a4",
         "subject": "Adds in automated updates to the resume repo",
-        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/2fb64f19ad7e03fb11a0bcaca5e42101d255d858"
+        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/5b2a67762ec36181626b5698e3e64f4ca48c02a4"
     },
     "deployment_information": {
-        "build_time": "2021-03-08T20:09:15Z"
+        "build_time": "2021-03-08T20:12:36Z"
     }
 }
