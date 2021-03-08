@@ -1,13 +1,13 @@
 {
     "git_information": {
-        "short_hash": "2589cf9",
-        "commit_timestamp": "2021-03-08T23:27:25Z",
+        "short_hash": "9057ec7",
+        "commit_timestamp": "2021-03-08T23:50:54Z",
         "author": "Jason Yao <Hello@JasonYao.com>",
-        "full_hash": "2589cf9e9095901921826c32d58d92c208645491",
-        "subject": "Added in lighthouse on every site publish",
-        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/2589cf9e9095901921826c32d58d92c208645491"
+        "full_hash": "9057ec753cc391733d726fba0d2c5161c98c0afd",
+        "subject": "uploads artifacts to temp public storage",
+        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/9057ec753cc391733d726fba0d2c5161c98c0afd"
     },
     "deployment_information": {
-        "build_time": "2021-03-08T23:27:25Z"
+        "build_time": "2021-03-08T23:50:54Z"
     }
 }
