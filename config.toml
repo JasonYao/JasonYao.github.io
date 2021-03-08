@@ -12,6 +12,9 @@ summarylength = 10
 enableEmoji = true
 enableRobotsTXT = true
 
+# Adds ability for people to leave comments on posts
+disqusShortname = "jasonyao"
+
 [markup]
   [markup.highlight]
     lineNos = true
