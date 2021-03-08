@@ -1,13 +1,13 @@
 {
     "git_information": {
-        "short_hash": "8f6cc0f",
-        "commit_timestamp": "2021-03-08T22:23:49Z",
+        "short_hash": "cbb51c2",
+        "commit_timestamp": "2021-03-08T22:51:37Z",
         "author": "Jason Yao <Hello@JasonYao.com>",
-        "full_hash": "8f6cc0f96cbf81aa95e16c8543f6a2dc0ba53e29",
-        "subject": "Added in linting for json and html",
-        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/8f6cc0f96cbf81aa95e16c8543f6a2dc0ba53e29"
+        "full_hash": "cbb51c2bef3780975519928cbe6fa4935cb7242e",
+        "subject": "Added in lighthouse on every site publish",
+        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/cbb51c2bef3780975519928cbe6fa4935cb7242e"
     },
     "deployment_information": {
-        "build_time": "2021-03-08T22:23:49Z"
+        "build_time": "2021-03-08T22:51:37Z"
     }
 }
