@@ -45,8 +45,12 @@ function publish_to_resume_repo() {
     # Note: resume is already a repo here so we namespace to a different dir when cloning
     git clone --single-branch --branch master https://github.com/JasonYao/resume.git resume-repo
 
+    info "Successfully cloned resume repo"
+
     # We should already be inside of the public dir
     cp resume/index.html resume-repo/docs/index.html
+
+    info "Copied resume index into file correctly"
 
     # Pushes up the new file
     cd resume-repo
@@ -58,10 +62,16 @@ function publish_to_resume_repo() {
     git reset upstream/master
     git add docs/index.html
 
-    # It turns out git commit returns an error code if there's nothing to commit
-    git_commit_output=$(git commit -m "[Build] ${CURRENT_BUILD_SHA}")
+    info "Commiting resume index file to git"
 
-    if [[ $git_commit_output == *"[Build] ${CURRENT_BUILD_SHA}"* ]]; then
+    # It turns out git commit returns an error code if there's nothing to commit
+    set +e
+    git_commit_output=$(git commit -m "[Build] https://github.com/JasonYao/JasonYao.github.io/commit/${GITHUB_SHA}")
+    set -e
+
+    info "The git commit output is: ${git_commit_output}"
+
+    if [[ $git_commit_output == *"${GITHUB_SHA}"* ]]; then
         success "Committed new resume index file"
         git push -q upstream HEAD:master
         success "Deployment: New resume index file is now deployed"
@@ -83,7 +93,7 @@ if [[ "$CURRENT_BRANCH" == "source" ]]; then
     # Sets up the repo to push as myself
     git config user.name "Jason Yao"
     git config user.email "Hello@JasonYao.com"
-    git remote add upstream "https://${GITHUB_DEPLOYMENT_TOKEN}@github.com/JasonYao/personal-site.git"
+    git remote add upstream "https://${GITHUB_DEPLOYMENT_TOKEN}@github.com/JasonYao/JasonYao.github.io.git"
 
     # Commit a new build and push to the publishing branch (which will auto deploy to Github Pages)
     git fetch upstream

@@ -14,7 +14,7 @@ draft: false
 
 ## Editor's Note
 - The platform description below described my previous setup, for
-  an updated look at this current site's setup, see [here](#TODO)
+  an updated look at this current site's setup, see here.
 
 ## Intro
 Hey there! My name is Jason, and for some reason you've stumbled onto my site.

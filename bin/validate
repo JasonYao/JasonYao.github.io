@@ -1,0 +1,73 @@
+#!/usr/bin/env bash
+
+# Fails script if any line below fails
+set -e
+
+###
+# Helper functions
+##
+function info () {
+    printf "\\t  [\\033[00;34mINFO\\033[0m] %s\\n" "${1}"
+}
+
+function user () {
+    printf "\\t  [ \\033[0;33m??\\033[0m ] %s\\n" "${1}"
+}
+
+function success () {
+    printf "\\t\\033[2K  [ \\033[00;32mOK\\033[0m ] %s\\n" "${1}"
+}
+
+function warn () {
+    printf "\\t\\033[2K  [\\033[38:2:255:165:0mWARN\\033[0m] %s\\n" "${1}"
+}
+
+function fail () {
+    printf "\\t\\033[2K  [\\033[0;31mFAIL\\033[0m] %s\\n" "${1}"
+    exit 1
+}
+
+# TOML lint (disabled for now) since tomll actually strips out comments,
+#   and I've noticed that the linted output actually has some whitespace issues
+# cat config.toml | tomll > linted.toml
+# if diff config.toml linted.toml ; then
+#     success "Site configuration file matches lint rules"
+# else
+#     fail "Site configuration file has a lint mismatch"
+# fi
+
+# HTML lint
+#   NOTE: we use htmlproofer here, and tried out https://github.com/mozilla/html5-lint
+#   as well since it's mozilla's approach, but it doesn't look like it's maintained
+#   since the last update was in 2016
+info "Checking site HTML validity"
+
+# Error code 999 is given from Linkedin, so we ignore the error here
+#   To add in more, use commas: --http-status-ignore "999,404,401"
+#   Likewise, we ignore error code 0s due to a bug in the travis environment
+#   https://github.com/gjtorikian/html-proofer/issues/376#issuecomment-331696490
+if htmlproofer --http-status-ignore "999" --assume-extension ./public; then
+    success "Site HTML was successfully validated"
+else
+    warn "Site HTML failed validation, please correct the found errors above"
+    exit 1
+fi
+
+# JSON generation
+if [[ -f public/posts/index.json ]] ; then
+    success "Successfully generated post list json metadata (and a good indicator we successfully generated the other files)"
+else
+    fail "Failed to generate post list json metadata (are we correctly generating all JSON?)"
+fi
+
+info "jsonlint lives at $(which jsonlint)"
+info "jsonlint version is: $(jsonlint --version)"
+
+# JSON lint
+info "Checking all generated JSON files for integrity"
+if find public -name "*.json" -type f | xargs -L 1 jsonlint -q ; then
+    success "The following JSON files were linted:"
+    find public -name "*.json" -type f
+else
+    fail "1 or more generated JSON files had lint errors"
+fi
