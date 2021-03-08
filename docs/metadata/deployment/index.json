@@ -1,0 +1,13 @@
+{
+    "git_information": {
+        "short_hash": "933427b",
+        "commit_timestamp": "2021-03-08T23:03:22Z",
+        "author": "Jason Yao <Hello@JasonYao.com>",
+        "full_hash": "933427b7b346252077ba374b027acc2ba6ab71e2",
+        "subject": "Added in lighthouse on every site publish",
+        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/933427b7b346252077ba374b027acc2ba6ab71e2"
+    },
+    "deployment_information": {
+        "build_time": "2021-03-08T23:03:22Z"
+    }
+}
