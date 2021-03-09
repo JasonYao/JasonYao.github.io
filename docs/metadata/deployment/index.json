@@ -1,13 +1,13 @@
 {
     "git_information": {
-        "short_hash": "11e74c9",
-        "commit_timestamp": "2021-03-09T00:04:54Z",
+        "short_hash": "ef7b110",
+        "commit_timestamp": "2021-03-09T00:56:34Z",
         "author": "Jason Yao <Hello@JasonYao.com>",
-        "full_hash": "11e74c973b29f237646dde8ee7f0910af8eecd3d",
-        "subject": "Adding back in resume",
-        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/11e74c973b29f237646dde8ee7f0910af8eecd3d"
+        "full_hash": "ef7b1103e3a852765447503b76c6c6f02c543858",
+        "subject": "SRI hack fix because github or cloudflare is optimizing protected assets",
+        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/ef7b1103e3a852765447503b76c6c6f02c543858"
     },
     "deployment_information": {
-        "build_time": "2021-03-09T00:04:54Z"
+        "build_time": "2021-03-09T00:56:34Z"
     }
 }
