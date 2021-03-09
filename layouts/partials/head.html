@@ -12,7 +12,7 @@
     {{- end -}}
 
     <!-- CSS -->
-    {{ $style := resources.Get "css/style.css" }}
+    {{ $style := resources.Get "global/style.css" }}
     {{ $secureStyle := $style | resources.Minify | resources.Fingerprint "sha384" }}
     <link rel="stylesheet"
           href="{{ $secureStyle.Permalink }}"
