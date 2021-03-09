@@ -1,13 +1,13 @@
 {
     "git_information": {
-        "short_hash": "9057ec7",
-        "commit_timestamp": "2021-03-08T23:50:54Z",
+        "short_hash": "11e74c9",
+        "commit_timestamp": "2021-03-09T00:04:54Z",
         "author": "Jason Yao <Hello@JasonYao.com>",
-        "full_hash": "9057ec753cc391733d726fba0d2c5161c98c0afd",
-        "subject": "uploads artifacts to temp public storage",
-        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/9057ec753cc391733d726fba0d2c5161c98c0afd"
+        "full_hash": "11e74c973b29f237646dde8ee7f0910af8eecd3d",
+        "subject": "Adding back in resume",
+        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/11e74c973b29f237646dde8ee7f0910af8eecd3d"
     },
     "deployment_information": {
-        "build_time": "2021-03-08T23:50:54Z"
+        "build_time": "2021-03-09T00:04:54Z"
     }
 }
