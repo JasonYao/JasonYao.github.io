@@ -1,6 +1,7 @@
-<!-- Copy of anatole's theme except it adds in a search bar to the navbar -->
-<div class="page-top {{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}">
+<!-- Copy of anatole's theme except it adds in a search bar to the navbar, and uses semantic nav tag -->
+<nav class="page-top {{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}">
     <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <!-- this could have been <i class="fa fa-bars"></i> instead, but leaving as-is for now -->
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
@@ -41,4 +42,4 @@
             </li>
         {{ end }}
     </ul>
-</div>
+</nav>

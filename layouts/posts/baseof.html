@@ -1,8 +1,8 @@
 {{ define "main" }}
   <!-- Typo fix that displays the metadata properly on the post. Also adds in OpenGraph metadata and semantic elements instead of just divs everywhere  -->
 
-    <div class="post {{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}">
-        <div class="post-content">
+    <article class="post {{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}">
+        <main class="post-content">
             {{ if .Params.thumbnail }}
             <img class="post-thumbnail" src="{{ .Params.thumbnail | absURL }}" alt="{{ .Params.thumbnail_alt_text }}">
             {{ end }}
@@ -28,7 +28,7 @@
               {{- partial "contact.html" . -}}
             {{- end -}}
 
-        </div>
+        </main>
         <div class="post-footer">
             <div class="info">
                 {{ with .Page.Params.Categories }}{{ partial "taxonomy/categories.html" . }}{{ end }}
@@ -36,7 +36,7 @@
             </div>
         </div>
 
-        {{ if eq .Type "posts" }}
+        {{ if eq .Type "posts"}}
             {{- if .Site.DisqusShortname -}}
                 <div id="fb_comments_container">
                     <h2>{{ i18n "comments" }}</h2>
@@ -50,6 +50,6 @@
             </div>
             {{- end -}}
         {{ end }}
-    </div>
+    </article>
 
 {{ end }}
