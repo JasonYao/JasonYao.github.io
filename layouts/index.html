@@ -13,27 +13,29 @@
     {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
     {{ range $paginator.Pages }}
 
-        <div class="post {{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}">
+        <article class="post {{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}" itemscope itemtype="http://schema.org/BlogPosting">
+
             {{ if .Params.thumbnail }}
-            <div class="post-thumbnail">
-                <a href="{{ .RelPermalink }}">
-                <img src="{{ .Params.thumbnail | relURL }}" alt="{{ .Params.thumbnail_alt_text }}" loading="lazy">
-                </a>
+            <div class="post-thumbnail" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+                <a href="{{ .RelPermalink }}"><img src="{{ .Params.thumbnail | relURL }}" alt="{{ .Params.thumbnail_alt_text }}" loading="lazy" itemprop="contentUrl"></a>
+                <meta itemprop="url" content="{{ .Params.thumbnail }}">
             </div>
             {{ end }}
-            <div class="post-title">
-                <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                </h3>
+
+            <div class="post-title" >
+                <a href="{{ .RelPermalink }}"><h3 itemprop="headline">{{ .Title }}</h3></a>
             </div>
-            <div class="post-content">
+
+            <div class="post-content" itemprop="description">
                 <div class="p_part"><p>{{ .Summary }}</p></div>
             </div>
+
             <div class="post-footer">
                 <div class="meta">
                     <div class="info">
                         <!-- Displays the publish date instead of date when post was started -->
                         <em class="fas fa-calendar-day"></em>
-                        <time datetime="{{ dateFormat "2006-01-02T15:04:05-07:00" (default .Date (.PublishDate)) }}">
+                        <time datetime="{{ dateFormat "2006-01-02T15:04:05-07:00" (default .Date (.PublishDate)) }}" itemprop="datePublished">
                         {{ dateFormat "2 Jan, 2006" (default .Date (.PublishDate)) }}
                         </time>
 
@@ -53,9 +55,11 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </article>
     {{ end }}
+
     <div class="pagination">
         {{ template "_internal/pagination.html" . }}
     </div>
+
 {{ end }}

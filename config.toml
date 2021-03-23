@@ -25,53 +25,12 @@ title = "Jason Yao"
 author = "Jason Yao"
 description = "Software engineer, Chaotic Stupid DnD player, bad shower singer."
 profilePicture = "assets/home/profile.jpg"
-images = ["assets/home/default-hamilton.jpg"]
+image = "assets/home/default-hamilton.jpg"
 favicon = "assets/favicons/"
 
 # Enables direct embedding of HTML snippets in the markdown files
 # [markup.goldmark.renderer]
 # unsafe= true
-
-[[biography]]
-[[biography.general]]
-name = "Jason Yao"
-site = "https://www.jasonyao.com"
-email = "mailto:hello+personal.site@JasonYao.com"
-description = "Jason Yao is a Canadian software engineer in New York working on democratizing the internet at Squarespace on their Domains team. He is Canadian born, Hong Kong raised, and American educated, with an interest in internet privacy rights, and is an advocate for privacy-centric software engineering as a culture and mindset."
-images = ["assets/home/profile.jpg"]
-
-[[biography.occupation]]
-job_title = "Software engineer"
-
-[[biography.education]]
-name = "New York University"
-link = "https://en.wikipedia.org/wiki/New_York_University"
-kind = "CollegeOrUniversity"
-start_date = "2014"
-end_date = "2017"
-
-[[biography.education]]
-name = "Hong Kong International School"
-link = "https://en.wikipedia.org/wiki/Hong_Kong_International_School"
-kind = "School"
-start_date = "2000"
-end_date = "2013"
-
-[[biography.work.current]]
-title = "Software Engineer"
-organization_name = "Squarespace"
-start_date = "2018-03-27"
-
-[[biography.work.previous]]
-title = "Software Engineer"
-organization_name = "MediaMath"
-start_date = "2017-07-03"
-end_date = "2018-03-23"
-
-[schemas.owner.address]
-locality = "New York"
-region = "NY"
-postal_code = "10038"
 
 ##
 # Theme overrides
@@ -127,11 +86,6 @@ url = "https://www.linkedin.com/in/jasonyaonyu/"
 icon = "fab fa-github"
 title = "GitHub"
 url = "https://github.com/JasonYao"
-
-[[params.socialIcons]]
-icon = "fas fa-envelope"
-title = "e-mail"
-url = "mailto:hello+personal.site@JasonYao.com"
 
 ##
 # Nav menu
