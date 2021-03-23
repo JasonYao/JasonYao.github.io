@@ -1,0 +1,57 @@
+<!-- Author information, usage: { { partial "global/authorship" } }  -->
+<div class="meta" itemscope itemtype="https://schema.org/Person" itemprop="author">
+    <meta itemprop="image" content="{{ index (.Site.Data.biography.general.images) 0 | absURL }}">
+    <meta itemprop="url" content="{{ .Site.BaseURL | safeHTML }}">
+    <meta itemprop="name" content="{{ .Site.Data.biography.general.name }}">
+    <meta itemprop="description" content="{{ .Site.Data.biography.general.description }}">
+
+    {{ range $item := .Site.Params.socialIcons }}
+    <meta itemprop="sameAs" content="{{ $item.url }}" rel="me" aria-label="{{ $item.title }}">
+    {{ end }}
+
+    <!-- Email handled explicitly since it uses different microdata -->
+    <meta itemprop="email" content="{{ .Site.Data.biography.general.email }}" rel="me" aria-label="e-mail">
+
+    <!-- Current job -->
+    {{ with .Site.Data.biography.work.current }}
+    <div class="meta">
+        <meta itemprop="jobTitle" content="{{ .title }}">
+
+        <span itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
+            <span itemprop="name">{{ .organization_name }}</span>
+            <span itemprop="start" itemref="person1" itemtype="http://schema.org/Person">
+                <meta itemprop="roleName" content="{{ .title }}">
+                <meta itemprop="startDate" content="{{ .start_date }}">
+                <meta itemprop="sameAs" content="{{ .link }}">
+            </span>
+        </span>
+    </div>
+    {{ end }}
+
+    <!-- Education -->
+    {{ range .Site.Data.biography.education }}
+    <div class="meta" itemprop="alumniOf" itemscope itemtype="https://schema.org/OrganizationRole">
+        <div itemprop="alumniOf" itemscope itemtype="https://schema.org/{{ .kind }}">
+            <span itemprop="name">{{ .name }}</span>
+            <link itemprop="sameAs" href="{{ .link }}">
+        </div>
+        <span itemprop="startDate">{{ .start_date }}</span>
+        <span itemprop="endDate">{{ .end_date }}</span>
+    </div>
+    {{ end }}
+
+    <!-- Previous jobs -->
+    {{ range .Site.Data.biography.work.previous }}
+    <div class="meta" itemprop="alumniOf" itemscope itemtype="https://schema.org/OrganizationRole">
+        <div itemprop="alumniOf" itemscope itemtype="http://schema.org/Organization">
+            <span itemprop="name">{{ .organization_name }}</span>
+            <span itemprop="start" itemref="person1" itemtype="http://schema.org/Person">
+                <meta itemprop="roleName" content="{{ .title }}">
+                <meta itemprop="startDate" content="{{ .start_date }}">
+                <meta itemprop="endDate" content="{{ .end_date }}">
+                <link itemprop="sameAs" href="{{ .link }}">
+            </span>
+        </div>
+    </div>
+    {{ end }}
+</div> <!-- End of authorship info -->

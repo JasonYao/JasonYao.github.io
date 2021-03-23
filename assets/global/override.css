@@ -85,3 +85,23 @@
 .list-with-title .listing-title {
      color: var(--heading-color);
 }
+
+/* Used for hiding schema.org microdata */
+.meta {
+    display: none;
+}
+
+/* Used in the full-sized image for an article */
+.post-hero {
+    width: 100%;
+
+    padding-bottom: 1em;
+    box-shadow: black;
+    border-radius: 0.5em;
+    overflow: hidden;
+    transition: box-shadow .3s ease;
+
+    object-fit: cover;
+    border: 1px solid var(--border-color);
+    border-bottom: 0px;
+}

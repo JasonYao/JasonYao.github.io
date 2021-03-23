@@ -1,0 +1,49 @@
+{
+    "general": {
+        "name": "Jason Yao",
+        "site": "https://www.jasonyao.com",
+        "email": "mailto:hello+personal.site@JasonYao.com",
+        "description": "Jason Yao is a Canadian software engineer in New York working on democratizing the internet at Squarespace on their Domains team. He is Canadian born, Hong Kong raised, and American educated, with an interest in internet privacy rights, and is an advocate for privacy-centric software engineering as a culture and mindset.",
+        "images": [
+            "assets/home/profile.jpg"
+        ]
+    },
+    "education": [
+        {
+            "name": "New York University",
+            "link": "https://en.wikipedia.org/wiki/New_York_University",
+            "kind": "CollegeOrUniversity",
+            "start_date": "2014",
+            "end_date": "2017"
+        },
+        {
+            "name": "Hong Kong International School",
+            "link": "https://en.wikipedia.org/wiki/Hong_Kong_International_School",
+            "kind": "School",
+            "start_date": "2000",
+            "end_date": "2013"
+        }
+    ],
+    "work": {
+        "current": {
+            "title": "Software Engineer",
+            "organization_name": "Squarespace",
+            "link": "https://www.squarespace.com",
+            "start_date": "2018-03-27"
+        },
+        "previous": [
+            {
+                "title": "Software Engineer",
+                "organization_name": "MediaMath",
+                "link": "https://www.mediamath.com",
+                "start_date": "2017-07-03",
+                "end_date": "2018-03-23"
+            }
+        ]
+    },
+    "location": {
+        "locality": "New York",
+        "region": "NY",
+        "postal_code": "10038"
+    }
+}

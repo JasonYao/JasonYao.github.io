@@ -1,0 +1,76 @@
+<div class="sidebar{{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}" itemscope itemtype="https://schema.org/Person">
+
+    <div class="logo-title">
+        <div class="title">
+            <img src="{{ index (.Site.Data.biography.general.images) 0 | absURL }}" alt="profile picture" itemprop="image">
+            <a href="{{ .Site.BaseURL | safeHTML }}" itemprop="url"><h3 itemprop="name">{{ .Site.Data.biography.general.name }}</h3></a>
+            <div class="description"><p>{{ .Site.Params.description }}</p></div>
+            <meta itemprop="description" content="{{ .Site.Data.biography.general.description }}">
+        </div>
+    </div>
+
+    <ul class="social-links">
+        {{ range $item := .Site.Params.socialIcons }}
+            <li>
+                <a href="{{ $item.url }}" rel="me" aria-label="{{ $item.title }}" itemprop=”sameAs”>
+                    <i class="{{ $item.icon }} fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        {{ end }}
+
+        <!-- Email handled explicitly since it uses different microdata -->
+        <li>
+            <a href="{{ .Site.Data.biography.general.email }}" rel="me" aria-label="e-mail" itemprop="email">
+                <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+
+    <div class="footer" itemprop="caption description">
+        <div class="by_farbox" itemprop="copyrightHolder">&copy; {{ .Site.Params.author }} {{ if isset .Site.Params "copyright" }} {{ .Site.Params.copyright }} {{ else }} {{ now.Format "2006"}} {{end}}</div>
+    </div>
+
+    <!-- Current job -->
+    {{ with .Site.Data.biography.work.current }}
+    <div class="meta">
+        <meta itemprop="jobTitle" content="{{ .title }}">
+
+        <span itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
+            <span itemprop="name">{{ .organization_name }}</span>
+            <span itemprop="start" itemref="person1" itemtype="http://schema.org/Person">
+                <meta itemprop="roleName" content="{{ .title }}">
+                <meta itemprop="startDate" content="{{ .start_date }}">
+                <meta itemprop="sameAs" content="{{ .link }}">
+            </span>
+        </span>
+    </div>
+    {{ end }}
+
+    <!-- Education -->
+    {{ range .Site.Data.biography.education }}
+    <div class="meta" itemprop="alumniOf" itemscope itemtype="https://schema.org/OrganizationRole">
+        <div itemprop="alumniOf" itemscope itemtype="https://schema.org/{{ .kind }}">
+            <span itemprop="name">{{ .name }}</span>
+            <link itemprop="sameAs" href="{{ .link }}">
+        </div>
+        <span itemprop="startDate">{{ .start_date }}</span>
+        <span itemprop="endDate">{{ .end_date }}</span>
+    </div>
+    {{ end }}
+
+    <!-- Previous jobs -->
+    {{ range .Site.Data.biography.work.previous }}
+    <div class="meta" itemprop="alumniOf" itemscope itemtype="https://schema.org/OrganizationRole">
+        <div itemprop="alumniOf" itemscope itemtype="http://schema.org/Organization">
+            <span itemprop="name">{{ .organization_name }}</span>
+            <span itemprop="start" itemref="person1" itemtype="http://schema.org/Person">
+                <meta itemprop="roleName" content="{{ .title }}">
+                <meta itemprop="startDate" content="{{ .start_date }}">
+                <meta itemprop="endDate" content="{{ .end_date }}">
+                <link itemprop="sameAs" href="{{ .link }}">
+            </span>
+        </div>
+    </div>
+    {{ end }}
+
+</div>

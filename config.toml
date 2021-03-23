@@ -23,9 +23,9 @@ disqusShortname = "jasonyao"
 displayMode = "dark"
 title = "Jason Yao"
 author = "Jason Yao"
-description = "Software engineer, DnD player, bad shower singer."
+description = "Software engineer, Chaotic Stupid DnD player, bad shower singer."
 profilePicture = "assets/home/profile.jpg"
-images = ["assets/home/default-hamilton.jpg"]
+image = "assets/home/default-hamilton.jpg"
 favicon = "assets/favicons/"
 
 # Enables direct embedding of HTML snippets in the markdown files
@@ -86,11 +86,6 @@ url = "https://www.linkedin.com/in/jasonyaonyu/"
 icon = "fab fa-github"
 title = "GitHub"
 url = "https://github.com/JasonYao"
-
-[[params.socialIcons]]
-icon = "fas fa-envelope"
-title = "e-mail"
-url = "mailto:hello+personal.site@JasonYao.com"
 
 ##
 # Nav menu
