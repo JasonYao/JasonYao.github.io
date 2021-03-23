@@ -25,7 +25,7 @@ I am:
 - Somebody who once made [spicy rice cakes](https://www.google.com/search?q=Tteokbokki)
   without the rice cakes (don't ask)
 - Canadian born, Hong Kong raised, American educated, and probably trying
-  (and failing) to find the something equivalent to [Wah Fung](https://goo.gl/maps/KgPHw6D6Eg2fwNCs6)'s
+  (and failing) to find something equivalent to [Wah Fung](https://goo.gl/maps/KgPHw6D6Eg2fwNCs6)'s
   quality and price (seriously, $5.50 USD for the equivalent to 2 meals of meat
   is just crazy).
 

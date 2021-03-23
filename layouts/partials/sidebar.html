@@ -39,7 +39,7 @@
             <span itemprop="name">{{ .organization_name }}</span>
             <span itemprop="start" itemref="person1" itemtype="http://schema.org/Person">
                 <meta itemprop="roleName" content="{{ .title }}">
-                <meta itemprop="startDate" content="{{ .startDate }}">
+                <meta itemprop="startDate" content="{{ .start_date }}">
                 <meta itemprop="sameAs" content="{{ .link }}">
             </span>
         </span>
@@ -49,7 +49,7 @@
     <!-- Education -->
     {{ range .Site.Data.biography.education }}
     <div class="meta" itemprop="alumniOf" itemscope itemtype="https://schema.org/OrganizationRole">
-        <div itemprop="alumniOf" itemscope itemtype="{{ .kind }}">
+        <div itemprop="alumniOf" itemscope itemtype="https://schema.org/{{ .kind }}">
             <span itemprop="name">{{ .name }}</span>
             <link itemprop="sameAs" href="{{ .link }}">
         </div>
