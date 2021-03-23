@@ -85,3 +85,8 @@
 .list-with-title .listing-title {
      color: var(--heading-color);
 }
+
+/* Used for hiding schema.org microdata */
+.meta {
+    display: none;
+}
