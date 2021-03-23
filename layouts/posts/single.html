@@ -29,6 +29,7 @@
 
             <meta itemprop="description" content="{{ .Summary }}">
             <meta itemprop="wordCount" content="{{ .WordCount }}">
+            <meta itemprop="dateModified" content="{{ .GitInfo.AuthorDate }}">
 
             <div itemprop="articleBody">
                 {{ .Content }}
