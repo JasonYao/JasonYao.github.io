@@ -1,13 +1,13 @@
 {
     "git_information": {
-        "short_hash": "c19e606",
-        "commit_timestamp": "2021-03-11T17:04:05Z",
+        "short_hash": "bded4fb",
+        "commit_timestamp": "2021-03-23T16:00:04Z",
         "author": "Jason Yao <Hello@JasonYao.com>",
-        "full_hash": "c19e60613630bc4b5bbb163f994879f450ecc07b",
-        "subject": "reverting SRI bugfix hack now that cloudflare optimizations are off",
-        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/c19e60613630bc4b5bbb163f994879f450ecc07b"
+        "full_hash": "bded4fb3963be439409bb2f301fabae5842a1ec6",
+        "subject": "Adding opengraph support, semantic markup via schema.org, and semantic HTML (#28)",
+        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/bded4fb3963be439409bb2f301fabae5842a1ec6"
     },
     "deployment_information": {
-        "build_time": "2021-03-11T17:04:05Z"
+        "build_time": "2021-03-23T16:00:04Z"
     }
 }
