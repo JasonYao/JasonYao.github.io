@@ -9,6 +9,8 @@
             <div class="post-title">
                 <h3>{{ .Title }}</h3>
                 {{ if eq .Type "posts"}}
+
+                {{ partial "global/authorship" . }}
                     <div class="info">
                       <!-- Displays the publish date instead of date when post was started. Originally from https://discourse.gohugo.io/t/how-to-use-the-publishdate-if-both-publishdate-and-date-are-set-in-frontmatter/5142/3 -->
                       <em class="fas fa-calendar-day"></em>

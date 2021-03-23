@@ -1,28 +1,38 @@
 {{ define "main" }}
   <!-- Typo fix that displays the metadata properly on the post. Also adds in OpenGraph metadata and semantic elements instead of just divs everywhere  -->
-
-    <article class="post {{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}">
+    <article class="post {{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}" itemscope itemtype="http://schema.org/BlogPosting">
         <main class="post-content">
+
             {{ if .Params.thumbnail }}
-            <img class="post-thumbnail" src="{{ .Params.thumbnail | absURL }}" alt="{{ .Params.thumbnail_alt_text }}">
+                {{ partial "global/image" (dict "linked_location" .RelPermalink "image_location" .Params.thumbnail "thumbnail_alt_text" .Params.thumbnail_alt_text "classes" "post-hero") }}
             {{ end }}
+
             <div class="post-title">
-                <h3>{{ .Title }}</h3>
+                <h3 itemprop="headline">{{ .Title }}</h3>
+
+                {{ partial "global/authorship" . }}
+
                 {{ if eq .Type "posts"}}
                     <div class="info">
                       <!-- Displays the publish date instead of date when post was started. Originally from https://discourse.gohugo.io/t/how-to-use-the-publishdate-if-both-publishdate-and-date-are-set-in-frontmatter/5142/3 -->
                       <em class="fas fa-calendar-day"></em>
-                      <time datetime="{{ dateFormat "2006-01-02T15:04:05-07:00" (default .Date (.PublishDate)) }}">
+                      <time datetime="{{ dateFormat "2006-01-02T15:04:05-07:00" (default .Date (.PublishDate)) }}" itemprop="datePublished">
                       {{ dateFormat "2 Jan, 2006" (default .Date (.PublishDate)) }}
                       </time>
 
+                      <!-- TODO: Try and get the reading time into schema data -->
                       <em class="fas fa-stopwatch"></em>
                       <span class="reading-time">{{ i18n "reading_time" .ReadingTime }}</span>
                     </div>
                 {{ end }}
             </div>
 
-            {{ .Content }}
+            <meta itemprop="description" content="{{ .Summary }}">
+            <meta itemprop="wordCount" content="{{ .WordCount }}">
+
+            <div itemprop="articleBody">
+                {{ .Content }}
+            </div>
 
             {{- if (eq .Params.contact true) -}}
               {{- partial "contact.html" . -}}
