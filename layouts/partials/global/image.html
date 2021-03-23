@@ -1,5 +1,5 @@
 <!-- Opengraph optimized image Usage: { { partial "global/image" (dict "linked_location" .RelPermalink "image_location" .Params.thumbnail "thumbnail_alt_text" .Params.thumbnail_alt_text) } } -->
-{{ $img := imageConfig (add "/static" (.context.destination | safeURL)) }}
+{{ $img := imageConfig (add "/static" (.image_location | safeURL)) }}
 <div class="post-thumbnail" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
     <a href="{{ .linked_location }}"><img src="{{ .image_location | relURL }}" alt="{{ .thumbnail_alt_text }}" loading="lazy" itemprop="contentUrl"></a>
     <meta itemprop="url" content="{{ .image_location }}">

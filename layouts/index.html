@@ -16,10 +16,7 @@
         <article class="post {{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}" itemscope itemtype="http://schema.org/BlogPosting">
 
             {{ if .Params.thumbnail }}
-            <div class="post-thumbnail" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-                <a href="{{ .RelPermalink }}"><img src="{{ .Params.thumbnail | relURL }}" alt="{{ .Params.thumbnail_alt_text }}" loading="lazy" itemprop="contentUrl"></a>
-                <meta itemprop="url" content="{{ .Params.thumbnail }}">
-            </div>
+                {{ partial "global/image" (dict "linked_location" .RelPermalink "image_location" .Params.thumbnail "thumbnail_alt_text" .Params.thumbnail_alt_text) }}
             {{ end }}
 
             <div class="post-title" >
