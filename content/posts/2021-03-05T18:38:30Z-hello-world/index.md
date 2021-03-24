@@ -92,5 +92,11 @@ partim** laticem vobis Thebae feror dixit *graminis*? Aliae rarescit
 ## Another example
 - Adds in another section to test automated "updated_on" functionality
 
-## Image examplea
-![]("example-image-1.png")
+## Image example
+
+### Using a shortcode from the global assets directory (direct .Resources)
+- Useful for globally useful images like profile pic/default hero image
+{{< img-global src="global/default-hamilton.png" alt="global image example" >}}
+
+### Using a shortcode referencing from the page's resource
+{{< img src="images/watermelon-hat.jpg" alt="For the days when you just want a watermelon hat" >}}
