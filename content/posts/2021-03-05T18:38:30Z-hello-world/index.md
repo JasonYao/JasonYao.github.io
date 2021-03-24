@@ -91,3 +91,6 @@ partim** laticem vobis Thebae feror dixit *graminis*? Aliae rarescit
 
 ## Another example
 - Adds in another section to test automated "updated_on" functionality
+
+## Image examplea
+![]("example-image-1.png")
