@@ -28,7 +28,17 @@
         crossorigin="anonymous"
         type="text/css">
 
-    {{ range .Site.Params.customCss }}
+    {{ range .Site.Params.criticalCss }}
+        {{ $minstyles := resources.Get . }}
+        {{ $secureMinstyles := $minstyles | resources.Minify | resources.Fingerprint "sha384" }}
+        <link rel="stylesheet"
+        href="{{ $secureMinstyles.Permalink }}"
+        integrity="{{ $secureMinstyles.Data.Integrity }}"
+        crossorigin="anonymous"
+        media="screen" />
+    {{ end }}
+
+    {{ range .Site.Params.deferredCss }}
         {{ $minstyles := resources.Get . }}
         {{ $secureMinstyles := $minstyles | resources.Minify | resources.Fingerprint "sha384" }}
         <link rel="stylesheet"
