@@ -1,8 +1,8 @@
 <!-- Opengraph optimized full-sized image. Usage: { { partial "global/thumbnail" (dict "linked_location" .RelPermalink "image_location" .Params.thumbnail "thumbnail_alt_text" .Params.thumbnail_alt_text "classes" "post-thumbnail" || "post-hero") } } -->
 {{ $img := resources.Get (.image_location | safeURL) }}
-{{ $thumbnailSmall := $img.Resize "400x q100 Box" }}
-{{ $thumbnailMedium := $img.Resize "660x q80 Box" }}
-{{ $thumbnailLarge := $img.Resize "900x q80 Box" }}
+{{ $thumbnailSmall := $img.Resize "400x jpg #ffffff q100 Box" }}
+{{ $thumbnailMedium := $img.Resize "660x jpg #ffffff q80 Box" }}
+{{ $thumbnailLarge := $img.Resize "900x jpg #ffffff q80 Box" }}
 <div class="{{ .classes }}" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
     <a href="{{ .linked_location }}">
         <img
