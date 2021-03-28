@@ -10,22 +10,24 @@
 {{ else }}
 {{/* set image sizes, these are hardcoded for now */}}
 
+{{ $thumbnailw := default "200x" }}
 {{ $tinyw := default "500x" }}
 {{ $smallw := default "800x" }}
 {{ $mediumw := default "1200x" }}
 
 {{/* resize the src image to the given sizes */}}
 
+{{ .Scratch.Set "thumbnail" ($src.Resize $thumbnailw) }}
 {{ .Scratch.Set "tiny" ($src.Resize $tinyw) }}
 {{ .Scratch.Set "small" ($src.Resize $smallw) }}
 {{ .Scratch.Set "medium" ($src.Resize $mediumw) }}
 
 {{/* add the processed images to the scratch */}}
 
+{{ $thumbnail := .Scratch.Get "thumbnail" }}
 {{ $tiny := .Scratch.Get "tiny" }}
 {{ $small := .Scratch.Get "small" }}
 {{ $medium := .Scratch.Get "medium" }}
-{{ $large := .Scratch.Get "large" }}
 
 {{/* only use images smaller than or equal to the src (original) image size */}}
 <img
@@ -33,6 +35,9 @@
   {{ else }}
   sizes="(min-width: 35em) 720px, 100vw"{{ end }}
   srcset='
+  {{ if ge $src.Width "200" }}
+    {{ with $thumbnail.RelPermalink }}{{.}} 200w{{ end }}
+  {{ end }}
   {{ if ge $src.Width "500" }}
     {{ with $tiny.RelPermalink }}{{.}} 500w{{ end }}
   {{ end }}
@@ -42,6 +47,7 @@
   {{ if ge $src.Width "1200" }}
     {{ with $medium.RelPermalink }}, {{.}} 1200w{{ end }}
   {{ end }}'
+
   {{ if .Get (print $medium) }}
     src="{{ $medium.RelPermalink }}"
   {{ else }}

@@ -7,7 +7,7 @@ publishdate: 2021-03-05T02:38:30+08:00
 categories: ["development practices", "tutorial", "tips & tricks", "portfolio"]
 tags: ["replaceme", "todo"]
 #thumbnail: "assets/posts/2021-03-05T18:38:30Z-hello-world/hero.jpg"
-thumbnail: "/assets/home/default-hamilton.jpg"
+thumbnail: "global/default-hamilton.png"
 thumbnail_alt_text: "If you're reading this you probably need a hobby- have you considered DnD?"
 draft: true
 ---

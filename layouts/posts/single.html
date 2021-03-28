@@ -4,7 +4,7 @@
         <main class="post-content">
 
             {{ if .Params.thumbnail }}
-                {{ partial "global/image" (dict "linked_location" .RelPermalink "image_location" .Params.thumbnail "thumbnail_alt_text" .Params.thumbnail_alt_text "classes" "post-hero") }}
+                {{ partial "global/thumbnail" (dict "linked_location" .RelPermalink "image_location" .Params.thumbnail "thumbnail_alt_text" .Params.thumbnail_alt_text "classes" "post-hero") }}
             {{ end }}
 
             <div class="post-title">
