@@ -94,9 +94,10 @@ partim** laticem vobis Thebae feror dixit *graminis*? Aliae rarescit
 
 ## Image example
 
-### Using a shortcode from the global assets directory (direct .Resources)
+### Using a shortcode from the global assets directory (direct .Resources via /assets)
+- NOTE: This image is rooted in the `/assets` directory, NOT `/static/assets`
 - Useful for globally useful images like profile pic/default hero image
-{{< img-global src="global/default-hamilton.png" alt="global image example" >}}
+{{< global/img src="global/default-hamilton.png" alt="global image example" >}}
 
-### Using a shortcode referencing from the page's resource
+### Using a shortcode referencing from the local page's resource
 {{< img src="images/watermelon-hat.jpg" alt="For the days when you just want a watermelon hat" >}}
