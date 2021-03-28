@@ -42,3 +42,14 @@
      /* Avoid pushing up the copy buttons. */
      margin: 0;
  }
+
+ /* Non critical: Adds in the ability to have title anchors */
+ .hanchor {
+     font-size: 50%;
+     visibility: hidden;
+     color:silver;
+ }
+
+ h1:hover a, h2:hover a, h3:hover a, h4:hover a {
+     visibility: visible;
+ }

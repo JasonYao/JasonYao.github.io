@@ -107,4 +107,25 @@
         integrity="{{ $secureSearchJS.Data.Integrity }}"
         crossorigin="anonymous"></script>
 
+    <!-- Our wiring code that overwrites some of the generated HTML for one reason or another. It's tempting to do range resources.Match "global/deferred/*" here, but we have some conditions guarding each script, since they're not wholly global -->
+    {{ $codeFenceJs := resources.Get "global/deferred/0-add-code-fence-copy-button.js" }}
+    {{ $secureCodeFenceJs := $codeFenceJs |  resources.Minify | resources.Fingerprint "sha384" }}
+    {{ if (findRE "<pre" .Content 1) }}
+        <script defer
+            src="{{ $secureCodeFenceJs.Permalink }}"
+            integrity="{{ $secureCodeFenceJs.Data.Integrity }}"
+            crossorigin="anonymous"
+        ></script>
+    {{ end }}
+
+    {{ $headerAnchorJs := resources.Get "global/deferred/1-add-header-anchors.js" }}
+    {{ $secureHeaderAnchorJs := $headerAnchorJs |  resources.Minify | resources.Fingerprint "sha384" }}
+    {{ if (findRE "<h2" .Content 1) }}
+        <script defer
+            src="{{ $secureHeaderAnchorJs.Permalink }}"
+            integrity="{{ $secureHeaderAnchorJs.Data.Integrity }}"
+            crossorigin="anonymous"
+        ></script>
+    {{ end }}
+
 </head>
