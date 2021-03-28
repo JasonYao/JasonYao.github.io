@@ -1,21 +1,24 @@
-<!-- Opengraph optimized full-sized image. Usage: { { partial "global/thumbnail" (dict "linked_location" .RelPermalink "image_location" .Params.thumbnail "thumbnail_alt_text" .Params.thumbnail_alt_text "classes" "post-thumbnail" || "post-hero") } } -->
+<!-- Opengraph optimized full-sized image. Usage: { { partial "global/image" (dict "linked_location" .RelPermalink "image_location" .Params.thumbnail "thumbnail_alt_text" .Params.thumbnail_alt_text "classes" "post-thumbnail" || "post-hero") } } -->
 {{ $img := resources.Get (.image_location | safeURL) }}
-{{ $thumbnailSmall := $img.Resize "400x jpg #ffffff q100 Box" }}
-{{ $thumbnailMedium := $img.Resize "660x jpg #ffffff q80 Box" }}
-{{ $thumbnailLarge := $img.Resize "900x jpg #ffffff q80 Box" }}
+{{ $thumbnailSmall := $img.Resize "400x jpg #ffffff q75 Box" }}
+{{ $thumbnailMedium := $img.Resize "660x jpg #ffffff q75 Box" }}
+{{ $thumbnailLarge := $img.Resize "900x jpg #ffffff q75 Box" }}
 <div class="{{ .classes }}" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
     <a href="{{ .linked_location }}">
         <img
-        src="{{ $thumbnailSmall.RelPermalink }}"
+        src="{{ $img.RelPermalink }}"
         alt="{{ .thumbnail_alt_text }}"
         loading="lazy"
         itemprop="contentUrl"
         srcset="
         {{ with $thumbnailSmall.RelPermalink }}{{.}} 400w{{ end }},
         {{ with $thumbnailMedium.RelPermalink }}{{.}} 660w{{ end }},
-        {{ with $thumbnailLarge.RelPermalink }}{{.}} 900w{{ end }}
+        {{ with $thumbnailLarge.RelPermalink }}{{.}} 900w{{ end }},
+        {{ with $img.RelPermalink }}{{.}}{{ end }} {{ $img.Width }}w
         "
-        sizes="100vw"
+        sizes="100vw",
+        width="{{ $img.Width }}",
+        height="{{ $img.Height }}"
         >
     </a>
     <meta itemprop="url" content="{{ .image_location }}">

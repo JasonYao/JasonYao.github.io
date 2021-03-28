@@ -1,11 +1,9 @@
 <div class="sidebar{{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}" itemscope itemtype="https://schema.org/Person">
 
     <div class="logo-title">
-
         {{ $linked_location := .Site.BaseURL | safeHTML }}
         {{ $image_location := index (.Site.Data.biography.general.images) 0 }}
-{{ partial "global/thumbnail" (dict "linked_location" $linked_location "image_location" $image_location "thumbnail_alt_text" "When you just can't hold in the blaspheming" "classes" "title") }}
-
+        {{ partial "global/profile" (dict "linked_location" $linked_location "image_location" $image_location "thumbnail_alt_text" "When you just can't hold in the blaspheming" "classes" "title") }}
     </div>
 
     <ul class="social-links">

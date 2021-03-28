@@ -18,13 +18,14 @@ disqusShortname = "jasonyao"
 [markup]
   [markup.highlight]
     lineNos = true
+    noClasses = false
 
 [params]
 displayMode = "dark"
 title = "Jason Yao"
 author = "Jason Yao"
 description = "Software engineer, Chaotic Stupid DnD player, bad shower singer."
-profilePicture = "assets/home/profile.jpg"
+profilePicture = "global/profile-church.png"
 image = "assets/home/default-hamilton.jpg"
 favicon = "assets/favicons/"
 

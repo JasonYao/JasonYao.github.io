@@ -60,12 +60,24 @@
      --blockquote-border-color: #dfe2e5;
      --thumbnail-height: 15em;
      scroll-padding-top: 100px;
+
+     /* Higher contrast colors for lighthouse */
+     --link-color: #205497;
+
+     /* Code syntax highlighting increased color contrast */
+     --chr-cm-color: #00AD00; /* Multiline code comment */
+     --chr-c1-color: #00AD00; /* Single line code comment */
+     --chr-n-color: #f8f8f2; /* Normal text color */
+     --chr-nn-color: var(--chr-nc-color); /* Python package name */
+     --chr-lnt-color: #B3B3B3; /* Line numbers */
+     --chr-kn-color: #FA4C8C; /* Import color */
+     --chr-def-bg-color: #272822; /* Makes sure to use the dark bg even in light theme */
  }
 
  html[data-theme='dark'] {
-     --bg-color: #292a2d;/* new #2B2D2F or #2a2a2a */
+     --bg-color: #141415;/* new #2B2D2F or #2a2a2a */
      --secondary-bg-color: #2c2d32;
-     --heading-color: rgba(224, 21, 61, 0.7); /* old rgb(169, 169, 179), rgb new is #a10f2b, brighter is e0153d, 224,21,61 */
+     --heading-color: rgba(251, 4, 53, 1.0); /* old rgb(169, 169, 179), rgb new is #a10f2b, brighter is e0153d, 224,21,61 */
      --body-color: rgb(169, 169, 179);
      --post-color: rgba(249, 247, 247, 0.44); /* #f9f7f7, or 249,247,247, old is triple 0 */
      --border-color: rgb(38, 38, 38);
@@ -76,6 +88,17 @@
      --tag-color: rgb(191, 191, 191);
      --blockquote-text-color: #808080;
      --blockquote-border-color: #424242;
+
+     /* Higher contrast colors for lighthouse */
+     --link-color: #74A4E2;
+
+     /* Code syntax highlighting increased color contrast */
+     --chr-cm-color: #00AD00; /* Multiline code comment */
+     --chr-c1-color: #00AD00; /* Single line code comment */
+     --chr-n-color: #f8f8f2; /* Normal text color */
+     --chr-nn-color: var(--chr-nc-color); /* Python package name */
+     --chr-lnt-color: #B3B3B3; /* Line numbers */
+     --chr-kn-color: #FA4C8C; /* Import color */
  }
 
 h1, h2, h3, h4, h5 {
@@ -104,4 +127,32 @@ h1, h2, h3, h4, h5 {
     object-fit: cover;
     border: 1px solid var(--border-color);
     border-bottom: 0px;
+}
+
+/* Lighthouse: Overrides tag and category sizes so it's more mobile friendly */
+.tag, .category {
+    display: inline-block;
+    font-size: 18px;
+    line-height: 1;
+    margin: 5px 8px 5px 5px;
+    padding: 0.5em;
+}
+
+/* higher text contrast to satisfy lighthouse's accessibility score */
+.post .post-content a {
+    text-decoration: none;
+    letter-spacing: 1px;
+    color: var(--link-color);
+}
+
+/* Sidebar and post overrides to keep the image ratio */
+.sidebar .logo-title .title img {
+    width: 127px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.post .post-content img {
+    max-width: 100%;
+    height: auto;
 }

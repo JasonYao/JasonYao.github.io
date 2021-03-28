@@ -18,8 +18,13 @@ Testing out syntax highlighting in this new platform
 ```java
 public class TestSolution {
 
+    /**
+     * This is a multiline
+     *   comment
+     */
     private final Blah blah;
 
+    // This is a single line comment
     private final Foo foo;
 
     @Inject
@@ -51,7 +56,7 @@ pugnantemque ille matrem nec duxerat *castos*, metu vocis parem, ingenti.
 Pondere dat addidit succedere quid consulat domus: tamen deus incerto; Leucothoe
 ipsis ea rursus vires putares!
 
-```python
+```python3
 from lorem.text import TextLorem
 
 # separate words by '-'

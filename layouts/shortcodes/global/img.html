@@ -10,10 +10,10 @@
 {{ else }}
 {{/* set image sizes, these are hardcoded for now */}}
 
-{{ $thumbnailw := default "200x jpg #ffffff" }}
-{{ $tinyw := default "500x jpg #ffffff" }}
-{{ $smallw := default "800x jpg #ffffff" }}
-{{ $mediumw := default "1200x jpg #ffffff" }}
+{{ $thumbnailw := default "200x jpg #ffffff q75" }}
+{{ $tinyw := default "500x jpg #ffffff q75" }}
+{{ $smallw := default "800x jpg #ffffff q75" }}
+{{ $mediumw := default "1200x jpg #ffffff q75" }}
 
 {{/* resize the src image to the given sizes */}}
 
@@ -48,11 +48,11 @@
     {{ with $medium.RelPermalink }}, {{.}} 1200w{{ end }}
   {{ end }}'
 
-  {{ if .Get (print $medium) }}
-    src="{{ $medium.RelPermalink }}"
-  {{ else }}
-    src="{{ $src.RelPermalink }}"
-  {{ end }}
-  {{ with .Get "alt" }}alt="{{.}}"{{ else }}alt=""{{ end }}>
+  src="{{ $src.RelPermalink }}"
+  {{ with .Get "alt" }}alt="{{.}}"{{ else }}alt=""{{ end }}
+
+  width="{{ $src.Width }}",
+  height="{{ $src.Height }}"
+  >
 {{ end }}
 {{ end }}

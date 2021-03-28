@@ -16,7 +16,7 @@
         <article class="post {{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}" itemscope itemtype="http://schema.org/BlogPosting">
 
             {{ if hasPrefix .Params.thumbnail "global" }}
-                {{ partial "global/thumbnail" (dict "linked_location" .RelPermalink "image_location" .Params.thumbnail "thumbnail_alt_text" .Params.thumbnail_alt_text "classes" "post-thumbnail") }}
+                {{ partial "global/image" (dict "linked_location" .RelPermalink "image_location" .Params.thumbnail "thumbnail_alt_text" .Params.thumbnail_alt_text "classes" "post-thumbnail") }}
             {{ end }}
 
             <div class="post-title" >

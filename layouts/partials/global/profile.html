@@ -1,0 +1,34 @@
+<!-- Opengraph optimized full-sized image. Usage: { { partial "global/profile" (dict "linked_location" .RelPermalink "image_location" .Params.thumbnail "thumbnail_alt_text" .Params.thumbnail_alt_text "classes" "post-thumbnail" || "post-hero") } } -->
+{{ $img := resources.Get (.image_location | safeURL) }}
+{{ $thumbnailTiny := $img.Resize "127x jpg #ffffff q75 Box" }}
+{{ $thumbnailSmall := $img.Resize "254x jpg #ffffff q75 Box" }}
+
+{{/* For a macbook 2020 with a devicePixelRatio = 2.4 */}}
+{{ $thumbnailMacbook := $img.Resize "305x jpg #ffffff q75 Box" }}
+
+{{ $thumbnailMedium := $img.Resize "381x jpg #ffffff q75 Box" }}
+{{ $thumbnailLarge := $img.Resize "762x jpg #ffffff q75 Box" }}
+<div class="{{ .classes }}" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+    <a href="{{ .linked_location }}">
+        <img
+        src="{{ $img.RelPermalink }}"
+        alt="{{ .thumbnail_alt_text }}"
+        loading="lazy"
+        itemprop="contentUrl"
+        srcset="
+        {{ with $thumbnailTiny.RelPermalink }}{{.}} 127w{{ end }},
+        {{ with $thumbnailSmall.RelPermalink }}{{.}} 254w{{ end }},
+        {{ with $thumbnailMacbook.RelPermalink }}{{.}} 305w{{ end }},
+        {{ with $thumbnailMedium.RelPermalink }}{{.}} 381w{{ end }},
+        {{ with $thumbnailLarge.RelPermalink }}{{.}} 762w{{ end }},
+        {{ with $img.RelPermalink }}{{.}}{{ end }} {{ $img.Width }}w
+        "
+        sizes="127px",
+        width="{{ $thumbnailTiny.Width }}",
+        height="{{ $thumbnailTiny.Height }}"
+        >
+    </a>
+    <meta itemprop="url" content="{{ .image_location }}">
+    <meta itemprop="width" content="{{ $img.Width }}">
+    <meta itemprop="height" content="{{ $img.Height }}">
+</div>
