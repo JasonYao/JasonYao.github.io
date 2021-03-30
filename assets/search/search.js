@@ -23,41 +23,55 @@ function createSearchResult(resultData) {
   const publishedDate = parseISOString(resultData.publish_date);
   const formattedDate = publishedDate.toLocaleDateString("en-US", dateFormatConfig);
 
-  article.innerHTML = `<div class="post-thumbnail">
-      <a href="${resultData.permalink}">
-          <img width="150" src="${resultData.thumbnail}" alt="${resultData.thumbnail_alt_text}" loading="lazy">
-      </a>
-  </div>
-
-  <div class="post-title">
-      <h3><a href="${resultData.permalink}">${resultData.title}</a>
-      </h3>
-  </div>
-
+  article.innerHTML = `<article class="post">
   <div class="post-content">
-      <div class="p_part"><p>${resultData.summary}</p></div>
+      <div class="post-thumbnail">
+          <a href="${resultData.permalink}">
+              <img width="150" src="${resultData.thumbnail}" alt="${resultData.thumbnail_alt_text}" loading="lazy">
+          </a>
+      </div>
+
+      <div class="post-title">
+          <a href="${resultData.permalink}">
+              <h3>${resultData.title}</h3>
+          </a>
+      </div>
+
+      <div class="post-content">
+          <div class="p_part"><p>${resultData.summary}</p></div>
+      </div>
   </div>
 
   <div class="post-footer">
-      <div class="meta">
+      <div>
           <div class="info">
               <!-- Displays the publish date instead of date when post was started -->
-              <em class="fas fa-calendar-day"></em>
+              <svg style="font-size: 1em;" class="svg-icon">
+                <use xlink:href="#icon-calendar"></use>
+              </svg>
+
               <time datetime="${resultData.publish_date}">
               ${formattedDate}
               </time>
 
-              <em class="fas fa-stopwatch"></em>
+              <svg style="font-size: 1em;" class="svg-icon">
+                <use xlink:href="#icon-stopwatch"></use>
+              </svg>
               <span class="reading-time">${resultData.reading_time}</span>
 
-              <em class="fas fa-list-alt"></em>
+              <svg style="font-size: 1em;" class="svg-icon">
+                <use xlink:href="#icon-list"></use>
+              </svg>
               <span class="separator category-wrapper"></span>
 
-              <em class="fas fa-tags"></em>
+              <svg style="font-size: 1em;" class="svg-icon">
+                <use xlink:href="#icon-tag"></use>
+              </svg>
               <span class="separator tag-wrapper"></span>
           </div>
       </div>
-  </div>`
+  </div>
+</article>`
 
   const categories = resultData.categories;
   const categoryWrapper = article.getElementsByClassName('category-wrapper')[0];
