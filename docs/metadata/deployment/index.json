@@ -1,13 +1,13 @@
 {
     "git_information": {
-        "short_hash": "b194323",
-        "commit_timestamp": "2021-03-30T17:03:54Z",
+        "short_hash": "c040c5f",
+        "commit_timestamp": "2021-03-30T17:10:50Z",
         "author": "Jason Yao <Hello@JasonYao.com>",
-        "full_hash": "b194323dfd190e6ef8825be970bb92435c7c2824",
-        "subject": "Adds in ability to have anchor links next to content titles",
-        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/b194323dfd190e6ef8825be970bb92435c7c2824"
+        "full_hash": "c040c5ff60a61ad2442d0c57fce67ff5f31baed3",
+        "subject": "Added in old friend",
+        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/c040c5ff60a61ad2442d0c57fce67ff5f31baed3"
     },
     "deployment_information": {
-        "build_time": "2021-03-30T17:03:54Z"
+        "build_time": "2021-03-30T17:10:50Z"
     }
 }
