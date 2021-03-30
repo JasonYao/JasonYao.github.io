@@ -94,8 +94,10 @@
     <!-- Open Graph -->
     {{ template "_internal/opengraph.html" . }}
 
-    <!-- Search library (TODO provide local fallback option) -->
-    <script defer src="https://unpkg.com/lunr/lunr.js"></script>
+    <!-- Search library, serving up vendored library that's fronted by a CDN -->
+    {{ $vendoredSearchJs := resources.Get "vendor/lunr@2.3.9/lunr.js" }}
+    {{ $minifiedVendoredSearchJs := $vendoredSearchJs |  resources.Minify | resources.Fingerprint "sha384" }}
+    <script defer type="text/javascript" src="{{ $minifiedVendoredSearchJs.Permalink }}" integrity='{{ $minifiedVendoredSearchJs.Data.Integrity }}' crossorigin='anonymous'></script>
 
     <!-- We don't want to index or fetch the raw metadata until after everything else is working, so we use defer here (See https://flaviocopes.com/javascript-async-defer/) -->
     {{ $searchJs := resources.Get "search/search.js" }}
