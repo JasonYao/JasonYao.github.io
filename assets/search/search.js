@@ -28,7 +28,7 @@ function createSearchResult(resultData) {
   <div class="post-content">
       <div class="post-thumbnail">
           <a href="${resultData.permalink}">
-              <img width="150" src="${resultData.thumbnail}" alt="${resultData.thumbnail_alt_text}" loading="lazy">
+              <img width="150" src="/${resultData.thumbnail}" alt="${resultData.thumbnail_alt_text}" loading="lazy">
           </a>
       </div>
 
