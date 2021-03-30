@@ -1,13 +1,13 @@
 {
     "git_information": {
-        "short_hash": "a2b8f7f",
-        "commit_timestamp": "2021-03-30T09:25:47Z",
+        "short_hash": "fd42848",
+        "commit_timestamp": "2021-03-30T15:38:29Z",
         "author": "Jason Yao <Hello@JasonYao.com>",
-        "full_hash": "a2b8f7fec5d58a4ead66bcf7fac4594e3cd1bb26",
-        "subject": "bugfix(firefox): Removes FOUC that displays alt text when on a slow internet connection loading images",
-        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/a2b8f7fec5d58a4ead66bcf7fac4594e3cd1bb26"
+        "full_hash": "fd42848d24faed8cdfbc95aa49a24a88db4dae60",
+        "subject": "Inlining critical path and adding in fonts (#34)",
+        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/fd42848d24faed8cdfbc95aa49a24a88db4dae60"
     },
     "deployment_information": {
-        "build_time": "2021-03-30T09:25:47Z"
+        "build_time": "2021-03-30T15:38:29Z"
     }
 }

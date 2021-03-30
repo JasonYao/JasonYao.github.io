@@ -1,34 +1,47 @@
-var idx,searchInput,searchResults=null,documents={};function parseISOString(b){var a=b.split(/\D+/);return new Date(Date.UTC(a[0],--a[1],a[2],a[3],a[4],a[5],a[6]))}function kebab(a){const b=a.replace(/\s+/g,'-').toLowerCase();return b}function createSearchResult(a){const b=document.createElement('article');b.classList.add('search-result');const c={weekday:'short',year:'numeric',month:'short',day:'numeric'},d=parseISOString(a.publish_date),e=d.toLocaleDateString("en-US",c);b.innerHTML=`<div class="post-thumbnail">
-      <a href="${a.permalink}">
-          <img width="150" src="${a.thumbnail}" alt="${a.thumbnail_alt_text}" loading="lazy">
-      </a>
-  </div>
-
-  <div class="post-title">
-      <h3><a href="${a.permalink}">${a.title}</a>
-      </h3>
-  </div>
-
+var idx,searchInput,searchResults=null,documents={};function parseISOString(b){var a=b.split(/\D+/);return new Date(Date.UTC(a[0],--a[1],a[2],a[3],a[4],a[5],a[6]))}function kebab(a){const b=a.replace(/\s+/g,'-').toLowerCase();return b}function createSearchResult(a){const b=document.createElement('article');b.classList.add('search-result'),b.classList.add('post');const c={weekday:'short',year:'numeric',month:'short',day:'numeric'},d=parseISOString(a.publish_date),e=d.toLocaleDateString("en-US",c);b.innerHTML=`
   <div class="post-content">
-      <div class="p_part"><p>${a.summary}</p></div>
+      <div class="post-thumbnail">
+          <a href="${a.permalink}">
+              <img width="150" src="/${a.thumbnail}" alt="${a.thumbnail_alt_text}" loading="lazy">
+          </a>
+      </div>
+
+      <div class="post-title">
+          <a href="${a.permalink}">
+              <h3>${a.title}</h3>
+          </a>
+      </div>
+
+      <div class="post-content">
+          <div class="p_part"><p>${a.summary}</p></div>
+      </div>
   </div>
 
   <div class="post-footer">
-      <div class="meta">
+      <div>
           <div class="info">
               <!-- Displays the publish date instead of date when post was started -->
-              <em class="fas fa-calendar-day"></em>
+              <svg style="font-size: 1em;" class="svg-icon">
+                <use xlink:href="#icon-calendar"></use>
+              </svg>
+
               <time datetime="${a.publish_date}">
               ${e}
               </time>
 
-              <em class="fas fa-stopwatch"></em>
+              <svg style="font-size: 1em;" class="svg-icon">
+                <use xlink:href="#icon-stopwatch"></use>
+              </svg>
               <span class="reading-time">${a.reading_time}</span>
 
-              <em class="fas fa-list-alt"></em>
+              <svg style="font-size: 1em;" class="svg-icon">
+                <use xlink:href="#icon-list"></use>
+              </svg>
               <span class="separator category-wrapper"></span>
 
-              <em class="fas fa-tags"></em>
+              <svg style="font-size: 1em;" class="svg-icon">
+                <use xlink:href="#icon-tag"></use>
+              </svg>
               <span class="separator tag-wrapper"></span>
           </div>
       </div>
