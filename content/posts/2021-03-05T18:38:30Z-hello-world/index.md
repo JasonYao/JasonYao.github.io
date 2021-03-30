@@ -106,3 +106,7 @@ partim** laticem vobis Thebae feror dixit *graminis*? Aliae rarescit
 
 ### Using a shortcode referencing from the local page's resource
 {{< img src="images/watermelon-hat.jpg" alt="For the days when you just want a watermelon hat" >}}
+
+## Linking example
+- Here's an example where we link to
+[another article]({{< ref "/posts/2017-05-22T00:00:00Z-a-canadian-existential-crisis-introduction" >}} "example link alt text")

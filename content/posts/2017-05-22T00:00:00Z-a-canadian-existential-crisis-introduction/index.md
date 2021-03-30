@@ -14,7 +14,7 @@ draft: false
 
 ## Editor's Note
 - The platform description below described my previous setup, for
-  an updated look at this current site's setup, see here.
+  an updated look at this current site's setup, see [here]({{< ref "/posts/2021-03-30T18:18:20Z-how-i-spend-8-dollars-a-year-on-all-site-expenses" >}} "2021 makeover relaunch").
 
 ## Intro
 Hey there! My name is Jason, and for some reason you've stumbled onto my site.
