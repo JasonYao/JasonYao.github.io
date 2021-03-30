@@ -36,8 +36,6 @@ favicon = "assets/favicons/"
 ##
 # Theme overrides
 ##
-customCss = ["global/override.css", "home/override.css"]
-
 mainSections = ["posts"]
 
 ################### DISABLED FOR NOW
@@ -72,21 +70,6 @@ googleSiteVerify = "bS_JqKuXEPzN-1VZ4w0kc-PhpPeTs-ng8VtsvpnwXCU"
     page = ["html", "json"]
     section = ["html", "rss", "json"]
     home = ["html", "rss", "json"]
-
-##
-# Social links
-##
-
-# use 'fab' when brand icons, use 'fas' when standard solid icons.
-[[params.socialIcons]]
-icon = "fab fa-linkedin"
-title = "Linkedin"
-url = "https://www.linkedin.com/in/jasonyaonyu/"
-
-[[params.socialIcons]]
-icon = "fab fa-github"
-title = "GitHub"
-url = "https://github.com/JasonYao"
 
 ##
 # Nav menu

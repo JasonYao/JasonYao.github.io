@@ -15,13 +15,13 @@
                 {{ if eq .Type "posts"}}
                     <div class="info">
                       <!-- Displays the publish date instead of date when post was started. Originally from https://discourse.gohugo.io/t/how-to-use-the-publishdate-if-both-publishdate-and-date-are-set-in-frontmatter/5142/3 -->
-                      <em class="fas fa-calendar-day"></em>
+                      {{ partial "global/icon" (dict "icon_name" "icon-calendar" "icon_size" "1em") }}
                       <time datetime="{{ dateFormat "2006-01-02T15:04:05-07:00" (default .Date (.PublishDate)) }}" itemprop="datePublished">
                       {{ dateFormat "2 Jan, 2006" (default .Date (.PublishDate)) }}
                       </time>
 
                       <!-- TODO: Try and get the reading time into schema data -->
-                      <em class="fas fa-stopwatch"></em>
+                      {{ partial "global/icon" (dict "icon_name" "icon-stopwatch" "icon_size" "1em") }}
                       <span class="reading-time">{{ i18n "reading_time" .ReadingTime }}</span>
                     </div>
                 {{ end }}

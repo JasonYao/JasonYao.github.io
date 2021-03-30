@@ -1,0 +1,7 @@
+/* Styling icons to avoid pulling in all icons from font awesome */
+.svg-icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    fill: currentColor
+}

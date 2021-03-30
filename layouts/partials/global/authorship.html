@@ -5,12 +5,10 @@
     <meta itemprop="name" content="{{ .Site.Data.biography.general.name }}">
     <meta itemprop="description" content="{{ .Site.Data.biography.general.description }}">
 
-    {{ range $item := .Site.Params.socialIcons }}
-    <meta itemprop="sameAs" content="{{ $item.url }}" rel="me" aria-label="{{ $item.title }}">
-    {{ end }}
-
-    <!-- Email handled explicitly since it uses different microdata -->
+    <!-- Social -->
     <meta itemprop="email" content="{{ .Site.Data.biography.general.email }}" rel="me" aria-label="e-mail">
+    <meta itemprop="sameAs" content="{{ .Site.Data.biography.general.github }}" rel="me" aria-label="Github">
+    <meta itemprop="sameAs" content="{{ .Site.Data.biography.general.linkedin }}" rel="me" aria-label="Linkedin">
 
     <!-- Current job -->
     {{ with .Site.Data.biography.work.current }}

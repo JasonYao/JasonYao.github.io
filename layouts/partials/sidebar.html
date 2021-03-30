@@ -7,20 +7,25 @@
     </div>
 
     <ul class="social-links">
-        {{ range $item := .Site.Params.socialIcons }}
-            <li>
-                <a href="{{ $item.url }}" rel="me" aria-label="{{ $item.title }}" itemprop=”sameAs”>
-                    <i class="{{ $item.icon }} fa-2x" aria-hidden="true"></i>
-                </a>
-            </li>
-        {{ end }}
 
-        <!-- Email handled explicitly since it uses different microdata -->
         <li>
-            <a href="{{ .Site.Data.biography.general.email }}" rel="me" aria-label="e-mail" itemprop="email">
-                <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+            <a href="{{ .Site.Data.biography.general.linkedin }}" rel="me" aria-label="Linkedin" itemprop=”sameAs”>
+                {{ partial "global/icon" (dict "icon_name" "icon-linkedin" "icon_size" "3em") }}
             </a>
         </li>
+
+        <li>
+            <a href="{{ .Site.Data.biography.general.github }}" rel="me" aria-label="Github" itemprop=”sameAs”>
+                {{ partial "global/icon" (dict "icon_name" "icon-github" "icon_size" "3em") }}
+            </a>
+        </li>
+
+        <li>
+            <a href="{{ .Site.Data.biography.general.email }}" rel="me" aria-label="Email" itemprop=”email”>
+                {{ partial "global/icon" (dict "icon_name" "icon-email" "icon_size" "3em") }}
+            </a>
+        </li>
+
     </ul>
 
     <div class="footer" itemprop="caption description">

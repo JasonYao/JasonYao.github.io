@@ -6,7 +6,9 @@
         "description": "Jason Yao is a Canadian software engineer in New York working on democratizing the internet at Squarespace on their Domains team. He is Canadian born, Hong Kong raised, and American educated, with an interest in internet privacy rights, and is an advocate for privacy-centric software engineering as a culture and mindset.",
         "images": [
             "global/profile-church.png"
-        ]
+        ],
+        "linkedin": "https://www.linkedin.com/in/jasonyaonyu",
+        "github": "https://github.com/JasonYao"
     },
     "education": [
         {

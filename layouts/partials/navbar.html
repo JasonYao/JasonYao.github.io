@@ -37,7 +37,7 @@
         {{ if not .Site.Params.disableThemeSwitcher }}
             <li class="theme-switch-item">
                 <a class="theme-switch" title="Switch Theme">
-                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                    {{ partial "global/icon" (dict "icon_name" "icon-theme-switcher" "icon_size" "1em") }}
                 </a>
             </li>
         {{ end }}
