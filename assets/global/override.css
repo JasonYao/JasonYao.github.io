@@ -162,3 +162,15 @@ h1, h2, h3, h4, h5 {
     max-width: 100%;
     height: auto;
 }
+
+/**
+ * Safari and Chrome don't do this, but in Firefox there's a
+ * bug where it'll display the alt text on slow connections,
+ * leading to a flash of unstylized content (FOUC).
+ *
+ * For more information, see https://stackoverflow.com/a/51399798
+ * and https://bugzilla.mozilla.org/show_bug.cgi?id=1472637
+ */
+img:-moz-loading {
+  visibility: hidden;
+}
