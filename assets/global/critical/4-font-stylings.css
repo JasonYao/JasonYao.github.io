@@ -7,7 +7,7 @@
   font-style: normal;
   font-weight: 400;
   src: url('/fonts/im-fell-great-primer-v12-latin/im-fell-great-primer-v12-latin-regular.eot'); /* IE9 Compat Modes */
-  src: local(''),
+  src: local('Georgia'),
        url('/fonts/im-fell-great-primer-v12-latin/im-fell-great-primer-v12-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
        url('/fonts/im-fell-great-primer-v12-latin/im-fell-great-primer-v12-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
        url('/fonts/im-fell-great-primer-v12-latin/im-fell-great-primer-v12-latin-regular.woff') format('woff'), /* Modern Browsers */
@@ -22,10 +22,18 @@
   font-style: normal;
   font-weight: 400;
   src: url('/fonts/anonymous-pro-v14-latin/anonymous-pro-v14-latin-regular.eot'); /* IE9 Compat Modes */
-  src: local(''),
+  src: local('Courier New'),
        url('/fonts/anonymous-pro-v14-latin/anonymous-pro-v14-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
        url('/fonts/anonymous-pro-v14-latin/anonymous-pro-v14-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
        url('/fonts/anonymous-pro-v14-latin/anonymous-pro-v14-latin-regular.woff') format('woff'), /* Modern Browsers */
        url('/fonts/anonymous-pro-v14-latin/anonymous-pro-v14-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
        url('/fonts/anonymous-pro-v14-latin/anonymous-pro-v14-latin-regular.svg#AnonymousPro') format('svg'); /* Legacy iOS */
+}
+
+body {
+    font-family: "IM Fell Great Primer", serif;
+}
+
+code {
+    font-family: "Anonymous Pro", sans-serif;
 }
