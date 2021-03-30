@@ -18,12 +18,13 @@ function createSearchResult(resultData) {
   // create result item
   const article = document.createElement('article')
   article.classList.add('search-result');
+  article.classList.add('post');
 
   const dateFormatConfig = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
   const publishedDate = parseISOString(resultData.publish_date);
   const formattedDate = publishedDate.toLocaleDateString("en-US", dateFormatConfig);
 
-  article.innerHTML = `<article class="post">
+  article.innerHTML = `
   <div class="post-content">
       <div class="post-thumbnail">
           <a href="${resultData.permalink}">
@@ -70,8 +71,7 @@ function createSearchResult(resultData) {
               <span class="separator tag-wrapper"></span>
           </div>
       </div>
-  </div>
-</article>`
+  </div>`
 
   const categories = resultData.categories;
   const categoryWrapper = article.getElementsByClassName('category-wrapper')[0];
