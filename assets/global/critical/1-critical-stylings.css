@@ -1,0 +1,138 @@
+/* Coloring override */
+:root {
+    --bg-color: #f9f7f7; /*  old #fff */
+    --secondary-bg-color: #eeeeee;
+    --heading-color: #a10f2b; /* old #5f5f5f */
+    --body-color: rgba(0, 0, 0, 0.7);
+    --post-color: rgba(43, 45, 47, 0.44); /* old  triple 0, can use either #2B2D2F (jet) 43,45,47 or #2a2a2a (jet) */
+    --border-color: rgba(0, 0, 0, 0.15);
+    --form-border-color: #9f9f9f;
+    --form-button-hover-border-color: #000;
+    --pre-bg-color: #f9f9fd;
+    --nav-text-color: #5a5a5a;
+    --tag-color: #424242;
+    --blockquote-text-color: #858585;
+    --blockquote-border-color: #dfe2e5;
+    --thumbnail-height: 15em;
+
+    /* Higher contrast colors for lighthouse */
+    --link-color: #205497;
+
+    /* Code syntax highlighting increased color contrast */
+    --chr-cm-color: #00AD00; /* Multiline code comment */
+    --chr-c1-color: #00AD00; /* Single line code comment */
+    --chr-n-color: #f8f8f2; /* Normal text color */
+    --chr-nn-color: var(--chr-nc-color); /* Python package name */
+    --chr-lnt-color: #B3B3B3; /* Line numbers */
+    --chr-kn-color: #FA4C8C; /* Import color */
+    --chr-def-bg-color: #272822; /* Makes sure to use the dark bg even in light theme */
+}
+
+html[data-theme='dark'] {
+    --bg-color: #141415;/* new #2B2D2F or #2a2a2a */
+    --secondary-bg-color: #2c2d32;
+    --heading-color: rgba(251, 4, 53, 1.0); /* old rgb(169, 169, 179), rgb new is #a10f2b, brighter is e0153d, 224,21,61 */
+    --body-color: rgb(169, 169, 179);
+    --post-color: rgba(249, 247, 247, 0.44); /* #f9f7f7, or 249,247,247, old is triple 0 */
+    --border-color: rgb(38, 38, 38);
+    --form-border-color: rgb(169, 169, 179);
+    --form-button-hover-border-color: #fff;
+    --pre-bg-color: rgb(33, 33, 45);
+    --nav-text-color: rgb(191, 191, 191);
+    --tag-color: rgb(191, 191, 191);
+    --blockquote-text-color: #808080;
+    --blockquote-border-color: #424242;
+
+    /* Higher contrast colors for lighthouse */
+    --link-color: #74A4E2;
+
+    /* Code syntax highlighting increased color contrast */
+    --chr-cm-color: #00AD00; /* Multiline code comment */
+    --chr-c1-color: #00AD00; /* Single line code comment */
+    --chr-n-color: #f8f8f2; /* Normal text color */
+    --chr-nn-color: var(--chr-nc-color); /* Python package name */
+    --chr-lnt-color: #B3B3B3; /* Line numbers */
+    --chr-kn-color: #FA4C8C; /* Import color */
+}
+
+h1, h2, h3, h4, h5 {
+    color: var(--heading-color);
+}
+
+.list-with-title .listing-title {
+    color: var(--heading-color);
+}
+
+/* Used for hiding schema.org microdata */
+.meta {
+   display: none;
+}
+
+/* Used in the full-sized image for an article */
+.post-hero {
+   width: 100%;
+
+   padding-bottom: 1em;
+   box-shadow: black;
+   border-radius: 0.5em;
+   overflow: hidden;
+   transition: box-shadow .3s ease;
+
+   object-fit: cover;
+   border: 1px solid var(--border-color);
+   border-bottom: 0px;
+}
+
+/* Lighthouse: Overrides tag and category sizes so it's more mobile friendly */
+.tag, .category {
+   display: inline-block;
+   font-size: 18px;
+   line-height: 1;
+   margin: 5px 8px 5px 5px;
+   padding: 0.5em;
+}
+
+/* Pushes the starting post down a bit more to avoid clipping on ipad */
+.post {
+   background-color: var(--bg-color);
+   margin: 80px;
+}
+
+/* higher text contrast to satisfy lighthouse's accessibility score */
+.post .post-content a {
+   text-decoration: none;
+   letter-spacing: 1px;
+   color: var(--link-color);
+}
+
+/* Sidebar and post overrides to keep the image ratio */
+.sidebar .logo-title .title img {
+   width: 127px;
+   height: auto;
+   border-radius: 50%;
+}
+
+.post .post-content img {
+   max-width: 100%;
+   height: auto;
+}
+
+/*
+ * Moves the left-side up since it was pushed down too
+ * far by default when a profile picture was added
+ */
+.sidebar .logo-title {
+    padding-top: 120px;
+}
+
+/**
+* Safari and Chrome don't do this, but in Firefox there's a
+* bug where it'll display the alt text on slow connections,
+* leading to a flash of unstylized content (FOUC).
+*
+* For more information, see https://stackoverflow.com/a/51399798
+* and https://bugzilla.mozilla.org/show_bug.cgi?id=1472637
+*/
+img:-moz-loading {
+ visibility: hidden;
+}

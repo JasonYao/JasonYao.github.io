@@ -36,8 +36,6 @@ favicon = "assets/favicons/"
 ##
 # Theme overrides
 ##
-customCss = ["global/override.css", "home/override.css"]
-
 mainSections = ["posts"]
 
 ################### DISABLED FOR NOW

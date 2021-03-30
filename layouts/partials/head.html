@@ -11,32 +11,29 @@
     <meta name="google-site-verification" content="{{ .Site.Params.googleSiteVerify }}">
     {{- end -}}
 
-    <!-- CSS -->
-    {{ $style := resources.Get "css/style.css" }}
-    {{ $secureStyle := $style | resources.Minify | resources.Fingerprint "sha384" }}
-    <link rel="stylesheet"
-          href="{{ $secureStyle.Permalink }}"
-          integrity="{{ $secureStyle.Data.Integrity }}"
-          crossorigin="anonymous"
-          type="text/css">
+    <!-- Critical path inline stylings -->
+    {{ $inlinedCriticalCss := "" }}
 
-    {{ $markupHighlightStyle := resources.Get "css/markupHighlight.css" }}
-    {{ $secureMarkupHighlightStyle := $markupHighlightStyle | resources.Minify | resources.Fingerprint "sha384" }}
-    <link rel="stylesheet"
-        href="{{ $secureMarkupHighlightStyle.Permalink }}"
-        integrity="{{ $secureMarkupHighlightStyle.Data.Integrity }}"
-        crossorigin="anonymous"
-        type="text/css">
-
-    {{ range .Site.Params.customCss }}
-        {{ $minstyles := resources.Get . }}
-        {{ $secureMinstyles := $minstyles | resources.Minify | resources.Fingerprint "sha384" }}
-        <link rel="stylesheet"
-        href="{{ $secureMinstyles.Permalink }}"
-        integrity="{{ $secureMinstyles.Data.Integrity }}"
-        crossorigin="anonymous"
-        media="screen" />
+    <!-- Concats the base theme's stylings (NOTE: This isn't fully tree-shaken to remove unused stuff) -->
+    {{ range (slice "css/style.css" "css/markupHighlight.css") }}
+        {{ with resources.Get . }}
+            {{ $inlinedCriticalCss = printf "%s\n%s" $inlinedCriticalCss .Content }}
+        {{ end }}
     {{ end }}
+
+    <!-- Concats our style overrides -->
+    {{ range resources.Match "global/critical/*" }}
+        {{ with resources.Get . }}
+            {{ $inlinedCriticalCss = printf "%s\n%s" $inlinedCriticalCss .Content }}
+        {{ end }}
+    {{ end }}
+
+    {{ $minifiedInlinedCriticalCss := print $inlinedCriticalCss | resources.FromString "global/critical/bundled.css" | minify }}
+    <style type="text/CSS">
+        {{ $minifiedInlinedCriticalCss.Content | safeCSS }}
+    </style>
+
+    <!-- Deferred non-critical stylings -->
 
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
@@ -104,15 +101,7 @@
     <!-- Open Graph -->
     {{ template "_internal/opengraph.html" . }}
 
-    <!-- Search libraries and styling -->
-    {{ $searchStyle := resources.Get "search/search-bar.css" }}
-    {{ $secureSearchStyle := $searchStyle | resources.Minify | resources.Fingerprint "sha384" }}
-    <link rel="stylesheet"
-        href="{{ $secureSearchStyle.Permalink }}"
-        integrity="{{ $secureSearchStyle.Data.Integrity }}"
-        crossorigin="anonymous"
-        type="text/css">
-
+    <!-- Search library (TODO provide local fallback option) -->
     <script defer src="https://unpkg.com/lunr/lunr.js"></script>
 
     <!-- We don't want to index or fetch the raw metadata until after everything else is working, so we use defer here (See https://flaviocopes.com/javascript-async-defer/) -->
