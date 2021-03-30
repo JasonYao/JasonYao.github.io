@@ -1,13 +1,13 @@
 {
     "git_information": {
-        "short_hash": "bded4fb",
-        "commit_timestamp": "2021-03-23T16:00:04Z",
+        "short_hash": "92b57a2",
+        "commit_timestamp": "2021-03-30T09:10:45Z",
         "author": "Jason Yao <Hello@JasonYao.com>",
-        "full_hash": "bded4fb3963be439409bb2f301fabae5842a1ec6",
-        "subject": "Adding opengraph support, semantic markup via schema.org, and semantic HTML (#28)",
-        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/bded4fb3963be439409bb2f301fabae5842a1ec6"
+        "full_hash": "92b57a25cc403367dd69a2cb35a1acb8be1b7bbd",
+        "subject": "Add image support (#30)",
+        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/92b57a25cc403367dd69a2cb35a1acb8be1b7bbd"
     },
     "deployment_information": {
-        "build_time": "2021-03-23T16:00:04Z"
+        "build_time": "2021-03-30T09:10:45Z"
     }
 }
