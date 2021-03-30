@@ -1,13 +1,13 @@
 {
     "git_information": {
-        "short_hash": "fd42848",
-        "commit_timestamp": "2021-03-30T15:38:29Z",
+        "short_hash": "ef0d6cd",
+        "commit_timestamp": "2021-03-30T16:30:59Z",
         "author": "Jason Yao <Hello@JasonYao.com>",
-        "full_hash": "fd42848d24faed8cdfbc95aa49a24a88db4dae60",
-        "subject": "Inlining critical path and adding in fonts (#34)",
-        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/fd42848d24faed8cdfbc95aa49a24a88db4dae60"
+        "full_hash": "ef0d6cd52ba133da0b60bfeb38d88b774ba35719",
+        "subject": "vendored search library",
+        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/ef0d6cd52ba133da0b60bfeb38d88b774ba35719"
     },
     "deployment_information": {
-        "build_time": "2021-03-30T15:38:29Z"
+        "build_time": "2021-03-30T16:30:59Z"
     }
 }
