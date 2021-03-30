@@ -138,6 +138,12 @@ h1, h2, h3, h4, h5 {
     padding: 0.5em;
 }
 
+/* Pushes the starting post down a bit more to avoid clipping on ipad */
+.post {
+    background-color: var(--bg-color);
+    margin: 80px;
+}
+
 /* higher text contrast to satisfy lighthouse's accessibility score */
 .post .post-content a {
     text-decoration: none;

@@ -8,8 +8,9 @@
 
 {{ $thumbnailMedium := $img.Resize "381x jpg #ffffff q75 Box" }}
 {{ $thumbnailLarge := $img.Resize "762x jpg #ffffff q75 Box" }}
+
 <div class="{{ .classes }}" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-    <a href="{{ .linked_location }}">
+    <a href="{{ .linked_location }}" itemprop="url">
         <img
         src="{{ $img.RelPermalink }}"
         alt="{{ .thumbnail_alt_text }}"
@@ -23,12 +24,17 @@
         {{ with $thumbnailLarge.RelPermalink }}{{.}} 762w{{ end }},
         {{ with $img.RelPermalink }}{{.}}{{ end }} {{ $img.Width }}w
         "
-        sizes="127px",
-        width="{{ $thumbnailTiny.Width }}",
+        sizes="127px"
+        width="{{ $thumbnailTiny.Width }}"
         height="{{ $thumbnailTiny.Height }}"
         >
     </a>
     <meta itemprop="url" content="{{ .image_location }}">
     <meta itemprop="width" content="{{ $img.Width }}">
     <meta itemprop="height" content="{{ $img.Height }}">
+
+    <a href="{{ .global.Site.BaseURL | safeHTML }}" itemprop="url"><h3 itemprop="name">{{ .global.Site.Data.biography.general.name }}</h3></a>
+    <div class="description"><p>{{ .global.Site.Params.description }}</p></div>
+    <meta itemprop="description" content="{{ .global.Site.Data.biography.general.description }}">
+
 </div>
