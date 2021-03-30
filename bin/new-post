@@ -23,7 +23,8 @@ TIMESTAMP=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
 POST_FILENAME="${TIMESTAMP}-${POST_SLUG}.md"
 SLUG_PREFIX=`date -u +"%Y/%m/%d"`
 
-hugo new "posts/${POST_FILENAME}"
+hugo new "posts/${TIMESTAMP}-${POST_SLUG}/index.md"
+mkdir -p content/posts/${TIMESTAMP}-${POST_SLUG}/images
 (
   sleep 0.2 &&
   echo "Opening localhost:1313/posts/${SLUG_PREFIX}/${POST_SLUG}/" &&

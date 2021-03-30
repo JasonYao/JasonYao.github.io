@@ -1,0 +1,58 @@
+<!-- Original from https://alexlakatos.com/web/2020/07/17/hugo-image-processing/ -->
+{{/* get file that matches the filename as specified as src="" in shortcode */}}
+{{ $src := .Page.Resources.GetMatch (.Get "src") }}
+
+{{ if in (.Get "src") "http" }}
+<img src="{{$src}}" {{ with .Get "alt" }}alt="{{.}}"{{ else }}alt=""{{ end }}>
+{{ else }}
+{{ if in (.Get "src") ".gif" }}
+<img src="{{$src.RelPermalink}}" {{ with .Get "alt" }}alt="{{.}}"{{ else }}alt=""{{ end }}>
+{{ else }}
+{{/* set image sizes, these are hardcoded for now */}}
+
+{{ $thumbnailw := default "200x jpg #ffffff q75" }}
+{{ $tinyw := default "500x jpg #ffffff q75" }}
+{{ $smallw := default "800x jpg #ffffff q75" }}
+{{ $mediumw := default "1200x jpg #ffffff q75" }}
+
+{{/* resize the src image to the given sizes */}}
+
+{{ .Scratch.Set "thumbnail" ($src.Resize $thumbnailw) }}
+{{ .Scratch.Set "tiny" ($src.Resize $tinyw) }}
+{{ .Scratch.Set "small" ($src.Resize $smallw) }}
+{{ .Scratch.Set "medium" ($src.Resize $mediumw) }}
+
+{{/* add the processed images to the scratch */}}
+
+{{ $thumbnail := .Scratch.Get "thumbnail" }}
+{{ $tiny := .Scratch.Get "tiny" }}
+{{ $small := .Scratch.Get "small" }}
+{{ $medium := .Scratch.Get "medium" }}
+
+{{/* only use images smaller than or equal to the src (original) image size */}}
+<img
+  {{ with .Get "sizes" }}sizes='{{.}}'
+  {{ else }}
+  sizes="100vw"{{ end }}
+  srcset='
+  {{ if ge $src.Width "200" }}
+    {{ with $thumbnail.RelPermalink }}{{.}} 200w{{ end }}
+  {{ end }}
+  {{ if ge $src.Width "500" }}
+    {{ with $tiny.RelPermalink }}, {{.}} 500w{{ end }}
+  {{ end }}
+  {{ if ge $src.Width "800" }}
+    {{ with $small.RelPermalink }}, {{.}} 800w{{ end }}
+  {{ end }}
+  {{ if ge $src.Width "1200" }}
+    {{ with $medium.RelPermalink }}, {{.}} 1200w{{ end }}
+  {{ end }}'
+
+  src="{{ $src.RelPermalink }}"
+  {{ with .Get "alt" }}alt="{{.}}"{{ else }}alt=""{{ end }}
+
+  width="{{ $src.Width }}"
+  height="{{ $src.Height }}"
+  >
+{{ end }}
+{{ end }}
