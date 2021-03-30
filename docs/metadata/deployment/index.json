@@ -1,13 +1,13 @@
 {
     "git_information": {
-        "short_hash": "ef0d6cd",
-        "commit_timestamp": "2021-03-30T16:30:59Z",
+        "short_hash": "a8ed5a2",
+        "commit_timestamp": "2021-03-30T16:52:14Z",
         "author": "Jason Yao <Hello@JasonYao.com>",
-        "full_hash": "ef0d6cd52ba133da0b60bfeb38d88b774ba35719",
-        "subject": "vendored search library",
-        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/ef0d6cd52ba133da0b60bfeb38d88b774ba35719"
+        "full_hash": "a8ed5a2485b241a6a34798cd14391252ff45ad06",
+        "subject": "Adds in ability to have anchor links next to content titles",
+        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/a8ed5a2485b241a6a34798cd14391252ff45ad06"
     },
     "deployment_information": {
-        "build_time": "2021-03-30T16:30:59Z"
+        "build_time": "2021-03-30T16:52:14Z"
     }
 }
