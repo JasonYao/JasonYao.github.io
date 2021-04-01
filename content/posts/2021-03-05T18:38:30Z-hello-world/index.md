@@ -11,10 +11,8 @@ thumbnail: "global/default-hamilton.png"
 thumbnail_alt_text: "If you're reading this you probably need a hobby- have you considered DnD?"
 draft: true
 ---
-# My first post
-Hello world!
 
-Testing out syntax highlighting in this new platform
+## Testing out syntax highlighting in this new platform
 ```java
 public class TestSolution {
 
