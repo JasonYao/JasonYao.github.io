@@ -4,8 +4,8 @@ slug: a-canadian-existential-crisis-introduction
 date: 2017-05-22T00:00:00+08:00
 summary: An introduction to the site with an explanation of the stack and why they were chosen
 publishdate: 2017-05-22T00:00:00+08:00
-categories: ["featured"]
-tags: ["introduction", "existential dread"]
+categories: ["overview"]
+tags: ["meta"]
 #thumbnail: "assets/posts/2021-03-06T01:37:47Z-a-canadian-existential-crisis-introduction/hero.jpg"
 thumbnail: "global/default-hamilton.png"
 thumbnail_alt_text: "If you're reading this you probably need a hobby- have you considered DnD?"
