@@ -1,7 +1,0 @@
-title General developer content update overview (2016)
-
-Me (developer)->Github (source control):Writes content in a markdown\nfile and push to Github on the\nsource branch
-Github (source control)->TraviCI (CI):Push triggers a build in the CI\nenvironment, and runs the build\ncommand
-TraviCI (CI)->TraviCI (CI): Runs a jekyll static site\nbuild command
-TraviCI (CI)->Github (source control):Travis runner has a Github access\ntoken too enable it to push the built\nsite to the publish branch of the repo
-Github (source control)->Github Action (CI):Push triggers a build in the CI environment, and deploys everything in the\n publish branch so it's publicly available from Github Pages
