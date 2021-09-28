@@ -16,7 +16,7 @@ draft: false
 - The platform description below described my previous setup between 2017 and
   2021- check out the [expanded explanation]({{< ref "/posts/2017-05-23T07:22:18Z-maximizing-laziness-in-the-online-world" >}} "Expanded details for this build")
   post for a more in-depth explanation and setup guide, or checkout the
-  [retrospective and updated tech stack in 2021]({{< ref "/posts/2021-03-30T18:18:20Z-how-i-spend-8-dollars-a-year-on-all-site-expenses" >}} "2021 makeover relaunch").
+  [retrospective and updated tech stack in 2021]({{< ref "/posts/2021-03-30T18:18:20Z-tech-stack-retro-2021" >}} "2021 makeover relaunch").
 
 ## Intro
 Hey there! My name is Jason, and for some reason you've stumbled onto my site.
