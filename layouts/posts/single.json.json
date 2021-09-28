@@ -33,7 +33,7 @@
     "thumbnail": "{{ .Params.thumbnail }}",
     "thumbnail_alt_text": "{{ .Params.thumbnail_alt_text }}",
     "permalink": "{{ .Permalink }}",
-    "summary": "{{ .Summary }}",
+    "summary": {{ .Summary | jsonify }},
     "reading_time": "{{ i18n "reading_time" .ReadingTime }}"
   },
   "data": {
