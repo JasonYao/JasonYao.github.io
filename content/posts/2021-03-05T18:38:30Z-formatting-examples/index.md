@@ -111,3 +111,12 @@ partim** laticem vobis Thebae feror dixit *graminis*? Aliae rarescit
 
 ## Text emphasis with color
 - Here we have normal text with a {{< strong text="subsection in color" >}} in the middle
+
+## Formatting a table
+- Remember that markdown tables require 3 hyphens in each column between the header and data rows
+
+| Option | Description |
+|---|---|
+| data   | path to data files to supply the data that will be passed into templates. |
+| engine | engine to be used for processing templates. Handlebars is the default. |
+| ext    | extension to be used for dest files. |
