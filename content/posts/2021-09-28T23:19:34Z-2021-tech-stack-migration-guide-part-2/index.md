@@ -1,12 +1,12 @@
 ---
-title: "2021 Tech Stack Migration Guide"
-slug: 2021-tech-stack-migration-guide
-date: 2021-09-28T18:06:15-04:00
+title: "2021 Tech Stack Migration Guide Part 2"
+slug: 2021-tech-stack-migration-guide-part-2
+date: 2021-09-28T19:19:34-04:00
 #summary: REPLACEME (if left commented, it'll default to the first bit of the content itself)
-publishdate: 2021-09-28T18:06:15-04:00
+publishdate: 2021-09-28T19:19:34-04:00
 categories: ["development practices", "tutorial", "tips & tricks", "portfolio"]
 tags: ["replaceme", "todo"]
-#thumbnail: "assets/posts/2021-09-28T22:06:15Z-2021-tech-stack-migration-guide/hero.jpg"
+#thumbnail: "assets/posts/2021-09-28T23:19:34Z-2021-tech-stack-migration-guide-part-2/hero.jpg"
 thumbnail: "global/default-hamilton.png"
 thumbnail_alt_text: "If you're reading this you probably need a hobby- have you considered DnD?"
 draft: true
@@ -117,91 +117,15 @@ partim** laticem vobis Thebae feror dixit *graminis*? Aliae rarescit
 
 
 
-### Swapping from Namecheap to Cloudflare Registrar
-Even though I currently work on the Domains team at Squarespace, I still
-have a lot of love in my heart for Namecheap as a registrar, since they really
-did provide a ton of value to me when I was a student, for [more than a fair price](https://www.namecheap.com/blog/launch-an-xyz-and-a-drone/).
 
-Now, when I first looked around the domain registrar space back a couple years
-ago, I found a lot of shady sites, anti-consumer pricing mechanisms ([I'm
-looking at you GoDaddy](https://news.ycombinator.com/item?id=18655630)), and
-just general wonkiness when trying to use their services to, for example, point
-over to [Digital Ocean](https://www.digitalocean.com/), a cheap VPS host that
-I used at the time.
 
-Namecheap was like a breath of fresh air though- there wasn't any pricing
-gimmicks, pointing nameservers at somewhere else didn't take 2-3 working days,
-and their support team was top notch if anything ever did come up. Plus, they
-were cheaper than the other registrars that were at least semi reputable.
 
-In total, it costs $9.06 USD per year for a .com domain at Namecheap. For
-reference, their margin per domain per year is about $1.03 USD, whereas other
-domain registrars were egging each other on to breaking the $10.00 USD per year
-mark.
 
-> And then you had the other side of the spectrum, where some companies took
-one look at what everybody else was pricing a commodity at, and thought to
-themselves: "y'know what, I don't think people are paying enough, let's make
-'em pay double the price, or even more!'"... not that I'd know who any of
-those companies are, of course.
 
-However, to remain true to the spirit of our goals, when [Cloudflare shocked
-the whole domain industry](https://blog.cloudflare.com/cloudflare-registrar/)
-back in 2018 by announcing that they were going to charge *at wholesale prices*,
-that was a real game changer. They were offering .com domains at $8.03. Their
-margin per domain? An astounding **$0.00 USD**.
 
-Here's what the breakdown looks like in table form because I like tables:
 
-|Price per .com domain per annum|Registrar|Does this make me happy|
-|--|--|--|
-|$9.06 USD|Namecheap|😕|
-|$8.03 USD|Cloudflare|😀|
-|$20.00 USD|S**********|😐|
 
-For those of you that know me, you'll know one of my favorite phrases is
-
-> But it's the principle of the matter
-
-And so it was. That $1.03 USD per year in cost saving now meant something to me,
-as stupid as it is to write it out. At the end of the day, domains are
-essentially commodities past a certain level of expected service, which meant
-that it didn't matter too much at the end of the day who was the domain
-registrar for us, as long as they were reasonably reputable, and had the
-lowest prices.
-
-For the sake of the principle of the matter, I jumped ship from Namecheap for
-my .com domains and migrated them all over to Cloudflare, pretty much on the
-day that Cloudflare's registrar became GA. It kinda helped that I was already
-using Cloudflare anyways for their CDN and DNS offerings, so I knew that they
-had a high bar for quality and wouldn't be likely to have any issues.
-
-The only fear I have is that I haven't ever had to call into Cloudflare's
-customer support before, so I have no idea if that experience would be a
-positive one like at Namecheap, or if I'd be bounced around in an AI chatbot
-for 30 minutes before getting to talk to an overworked human.
-
-That uncertainty is definitely now a [known unknown](https://en.wikipedia.org/wiki/There_are_known_knowns), all for the known known benefit of having $1.03 USD
-more each year to spend on dubiously clean ethnic food. That's like 1/4 of
-a [cha-siu roasted pork meal at Wah Fung](https://goo.gl/maps/bMN2wKHR2GNCYVc96),
-or 1/5 of a [halal meal](https://en.wikipedia.org/wiki/Halal_cart) if you swing that way.
-
-#### An example of known knowns
-||What I know|What I don't know|
-|--|--|--|
-|What everybody else knows|Wah Fung is the most cost effective and delicious solution to solving the food insecurity issue in America|Where the last 4 years went|
-|What everybody else doesn't know|Montreal bagels are better than New York bagels|Whether it's possible to arbitrage fluctuating Wah Fung/Halal cart exchange rates|
-
-#### So what's the verdict on Cloudflare Registrar?
-- 100% worth it, though do keep in mind that sometimes it's cheaper at other
-  registrars, since they'll perpetually keep a TLD's price low as a continual
-  loss leader.
-  - E.g. it's cheaper for me to keep .io domains at Namecheap than at Cloudflare,
-    since even though Cloudflare is at the wholesale price, Namecheap just has
-    a constant discount for .io domains by a few bucks that puts it down below
-    the wholesale cost.
-
-### Swapping from TravisCI to Github Actions
+## Swapping from TravisCI to Github Actions
 Originally, I spent a lot of years using [Travis-CI](#TODO)'s CI platform,
 since it was free and pretty well supported by Github and the community on
 StackOverflow. Generally speaking, their stuff worked, documentation was good,
@@ -423,3 +347,18 @@ All in all, I think we've hit something like 2.8/3 out of our original 3 goals,
 which is not too shabby all things considered. Hopefully this post helps out
 any people interested in getting a website and email setup on a shoestring
 budget, by pointing them to some of the freely available tech that's out there!
+
+
+
+
+
+
+
+
+### Using a shortcode from the global assets directory (direct .Resources via /assets)
+- NOTE: This image is rooted in the `/assets` directory, NOT `/static/assets`
+- Useful for globally useful images like profile pic/default hero image
+{{< global/img src="global/default-hamilton.png" alt="global image example" >}}
+
+### Using a shortcode referencing from the local page's resource
+{ {< img src="images/watermelon-hat.jpg" alt="For the days when you just want a watermelon hat" >} }

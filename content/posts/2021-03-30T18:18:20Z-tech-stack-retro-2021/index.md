@@ -124,7 +124,7 @@ the annual domain cost.
 ## Going more in depth on swapping out tech stacks
 If anybody reading this would like more details on what the process of
 migrating my tech stack over looked like, I go into more depth over
-in my [2021 tech stack migration guide]({{< ref "/posts/2021-09-28T22:06:15Z-2021-tech-stack-migration-guide" >}} "example link alt text").
+in my [2021 tech stack migration guide]({{<ref "/posts/2021-09-28T22:06:15Z-2021-tech-stack-migration-guide-part-1">}} "TODO example link alt text").
 
 ## Conclusion
 * With this setup, I'm now primed for being able to write a lot more frequently
