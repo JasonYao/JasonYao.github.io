@@ -14,9 +14,9 @@ draft: false
 
 ## Editor's Note
 - The platform description below described my previous setup between 2017 and
-  2021- check out the [expanded explanation]({{< ref "/posts/2017-05-23T07:22:18Z-maximizing-laziness-in-the-online-world" >}} "Expanded details for this build")
-  post for a more in-depth explanation and setup guide, or checkout the
-  [retrospective and updated tech stack in 2021]({{< ref "/posts/2021-03-30T18:18:20Z-tech-stack-retro-2021" >}} "2021 makeover relaunch").
+  2021- check out the [original 2017 guide]({{<ref "/posts/2017-05-23T07:22:18Z-how-i-got-a-customized-web-presence-for-8-dollars-a-year">}} "Expanded details for this build") for more
+  in-depth details on this tech stack, or checkout the
+  [4-year 2021 tech stack retro]({{< ref "/posts/2021-03-30T18:18:20Z-tech-stack-retro-2021" >}} "2021 makeover relaunch").
 
 ## Intro
 Hey there! My name is Jason, and for some reason you've stumbled onto my site.

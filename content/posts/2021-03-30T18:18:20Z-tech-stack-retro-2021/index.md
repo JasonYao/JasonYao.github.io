@@ -1,5 +1,5 @@
 ---
-title: "How I got customized personal emails, a domain, and a website for 8 dollars a year"
+title: "Tech Stack Retro (2021)"
 slug: tech-stack-retro-2021
 date: 2021-03-31T02:18:20+08:00
 #summary: REPLACEME (if left commented, it'll default to the first bit of the content itself)

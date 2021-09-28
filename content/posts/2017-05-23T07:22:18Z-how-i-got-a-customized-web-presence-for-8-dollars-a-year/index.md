@@ -1,6 +1,6 @@
 ---
-title: "Maximizing Laziness in the Online World"
-slug: maximizing-laziness-in-the-online-world
+title: "How I got customized personal emails, a domain, and a website for 8 dollars a year"
+slug: how-i-got-a-customized-online-presence-for-8-dollars-a-year
 date: 2017-05-23T07:22:18Z
 #summary: REPLACEME (if left commented, it'll default to the first bit of the content itself)
 publishdate: 2017-05-23T07:22:18Z
