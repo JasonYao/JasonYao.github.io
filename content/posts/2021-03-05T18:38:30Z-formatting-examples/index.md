@@ -108,3 +108,6 @@ partim** laticem vobis Thebae feror dixit *graminis*? Aliae rarescit
 ## Linking example
 - Here's an example where we link to
 [another article]({{< ref "/posts/2017-05-22T00:00:00Z-a-canadian-existential-crisis-introduction" >}} "example link alt text")
+
+## Text emphasis with color
+- Here we have normal text with a {{< strong text="subsection in color" >}} in the middle
