@@ -1,0 +1,7 @@
+title General developer content update overview (2021)
+
+Me (developer)->GitHub (source control):Writes content in a markdown\nfile and push to GitHub on the\nsource branch
+GitHub (source control)->GitHub Actions (CI):Push triggers a build in the CI\nenvironment, and runs the build\ncommand
+GitHub Actions (CI)->GitHub Actions (CI): Runs a Hugo static site\nbuild command
+GitHub Actions (CI)->GitHub (source control):GitHub Actions runner has a GitHub access\ntoken too enable it to push the built\nsite to the publish branch of the repo
+GitHub (source control)->GitHub Action (CI):Push triggers a build in the CI environment, and deploys everything in the\n publish branch so it's publicly available from GitHub Pages

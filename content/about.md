@@ -1,6 +1,6 @@
 ---
 title: "About Me"
-description: "Overselling myself since 2013. Young | Scrappy | Hungry- where are my fellow Hamilton fans at?"
+description: "Overselling myself since 2013. Young, Scrappy, Hungry, and musical-obsessed"
 date: "2021-03-04T02:38:30+08:00"
 aliases: ["about-me", "about-us", "contact"]
 ---
@@ -9,8 +9,9 @@ for stuff to poke fun at me with, or a recruiter trying to figure
 out if I'm:
 1. Competent
 1. Looking for opportunities
+1. Am not a lizard person in a skin suit
 
-I assure you that even I don't know the answer to those questions.
+I can assure you that even I don't know the answer to those questions.
 
 Either way, welcome!
 
@@ -18,8 +19,8 @@ Either way, welcome!
 
 ## General info
 I am:
-- A New York based software engineer, currently working at **Squarespace**
-  on their **Domains team** since March 2018
+- A New York based software engineer, currently working at **Google**
+  on their **Google Search Engineering Productivity Team** since September 2021
 - A nerd that can talk your ear off about everything from public transportation
   to fire codes, and be able to tie it back somehow to software engineering
 - Somebody who once made [spicy rice cakes](https://www.google.com/search?q=Tteokbokki)
@@ -30,8 +31,9 @@ I am:
   is just crazy).
 
 ### Education
-Like all NYU alumni, I too chose that great school to learn in
-after getting rejected from Columbia for the 7th time.
+Like all other people who chose to go to NYU, I too chose this great
+school to learn in after getting rejected from Columbia for the 7th
+time.
 
 There may or may not be a video of me singing "Hey there Columbia" to
 the tune of "Hey there Delilah" floating around somewhere.
@@ -48,13 +50,15 @@ For those in the latter group, my [Linkedin](https://www.linkedin.com/in/jasonya
 should be up to date with my work history, what I've worked on,
 things I've lead or done, etc.
 
-I'll be up-front on one aspect, in that in general
-**I don't work with third party recruiters**, so if you are
-one please save both of us some time and send me your favorite
-food recipe instead, with no expectations that I'll respond to
-inquiries.
+I'll be up-front on one aspect- in general,
 
-I'm also not open to relocating from New York city, mostly
+> **I don't work with third party recruiters**
+
+So if you are one please save both of us some time and send me your
+favorite food recipe instead, with no expectations that I'll respond
+to inquiries.
+
+I'm also **not** open to relocating from New York city, mostly
 because NYC and Montreal are the only places to get an
 actually good bagel.
 

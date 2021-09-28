@@ -5,7 +5,7 @@ date: 2017-05-23T07:22:18Z
 #summary: REPLACEME (if left commented, it'll default to the first bit of the content itself)
 publishdate: 2017-05-23T07:22:18Z
 categories: ["guides"]
-tags: ["meta", "tech stack"]
+tags: ["meta", "personal site"]
 #thumbnail: "assets/posts/2021-04-01T07:22:18Z-maximizing-laziness-in-the-online-world/hero.jpg"
 thumbnail: "images/namecheap/namecheap-domain-2016-price.png"
 thumbnail_alt_text: "Having an online presence for the cost of 2 halal meals a year just makes me happy"
