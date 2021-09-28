@@ -6,3 +6,7 @@ public/
 
 # Platform ignores
 .DS_Store
+
+# IDE ignores
+.idea/
+
