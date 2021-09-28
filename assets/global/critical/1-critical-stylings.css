@@ -33,7 +33,7 @@ html[data-theme='dark'] {
     --secondary-bg-color: #2c2d32;
     --heading-color: #e0153d;
     --body-color: rgb(227, 227, 244);
-    --post-color: rgba(249, 247, 247, 0.80); /* #f9f7f7, or 249,247,247, old is triple 0 */
+    --post-color: rgba(249, 247, 247, 0.80);
     --border-color: rgb(38, 38, 38);
     --form-border-color: rgb(169, 169, 179);
     --form-button-hover-border-color: #fff;
@@ -80,6 +80,26 @@ html[data-theme='high-contrast'] {
     --chr-nn-color: var(--chr-nc-color); /* Python package name */
     --chr-lnt-color: #B3B3B3; /* Line numbers */
     --chr-kn-color: #FA4C8C; /* Import color */
+}
+
+/*
+ * Table configs
+ */
+table, th, td {
+  border: 1px solid var(--body-color);
+}
+
+table {
+    width: 100%;
+
+    /* Since both the table itself and the th/td elements both have borders,
+     * this directive will collapse the two table borders into a single one
+     */
+    border-collapse: collapse;
+}
+
+td {
+    padding: 1em;
 }
 
 h1, h2, h3, h4, h5 {
