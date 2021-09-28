@@ -112,6 +112,9 @@ partim** laticem vobis Thebae feror dixit *graminis*? Aliae rarescit
 ## Text emphasis with color
 - Here we have normal text with a {{< strong text="subsection in color" >}} in the middle
 
+## Adding in a figure (image with some text underneath it)
+{{<figure src="images/watermelon-hat.jpg" title="For the days when you just want a watermelon hat">}}
+
 ## Formatting a table
 - Remember that markdown tables require 3 hyphens in each column between the header and data rows
 

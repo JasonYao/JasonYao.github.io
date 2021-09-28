@@ -58,7 +58,7 @@ what you're _not_ solving for, as much as it is the problem itself.
 **Current Time Spent on Maintenance: 0 hours**
 
 Here's what the network request looks like from a user
-{{< figure src="images/overview/general-web-request-overview.svg" title="Your standard CDN-fronted, static site solution" >}}
+{{<figure src="images/overview/general-web-request-overview.svg" title="Your standard CDN-fronted, static site solution">}}
 
 The thing to note here is that there's nothing backing the webhost here-
 there's no database or microservice backing it up, since the entire website
