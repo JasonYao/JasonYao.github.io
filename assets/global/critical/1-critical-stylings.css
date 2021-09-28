@@ -9,7 +9,7 @@
     --form-border-color: #9f9f9f;
     --form-button-hover-border-color: #000;
     --pre-bg-color: #f9f9fd;
-    --nav-text-color: #5a5a5a;
+    --nav-text-color: var(--heading-color); /* Original is #5a5a5a */
     --tag-color: #424242;
     --blockquote-text-color: #858585;
     --blockquote-border-color: #dfe2e5;
@@ -34,11 +34,11 @@ html[data-theme='dark'] {
     --heading-color: #e0153d;
     --body-color: rgb(227, 227, 244);
     --post-color: rgba(249, 247, 247, 0.80);
-    --border-color: rgb(38, 38, 38);
+    --border-color: rgba(251, 251, 251, 0.3);
     --form-border-color: rgb(169, 169, 179);
     --form-button-hover-border-color: #fff;
     --pre-bg-color: rgb(33, 33, 45);
-    --nav-text-color: rgb(191, 191, 191);
+    --nav-text-color: var(--heading-color);
     --tag-color: rgb(191, 191, 191);
     --blockquote-text-color: #808080;
     --blockquote-border-color: #424242;
@@ -61,11 +61,11 @@ html[data-theme='high-contrast'] {
     --heading-color: rgba(251, 4, 53, 1.0); /* old rgb(169, 169, 179), rgb new is #a10f2b, brighter is e0153d, 224,21,61 */
     --body-color: rgb(251, 251, 251);
     --post-color: rgba(249, 247, 247, 0.44); /* #f9f7f7, or 249,247,247, old is triple 0 */
-    --border-color: rgb(38, 38, 38);
+    --border-color: rgba(251, 251, 251, 0.7);
     --form-border-color: rgb(169, 169, 179);
     --form-button-hover-border-color: #fff;
     --pre-bg-color: rgb(33, 33, 45);
-    --nav-text-color: rgb(191, 191, 191);
+    --nav-text-color: var(--heading-color); /* Original value is rgb(191, 191, 191) */
     --tag-color: rgb(191, 191, 191);
     --blockquote-text-color: #808080;
     --blockquote-border-color: #424242;
@@ -102,6 +102,24 @@ td {
     padding: 1em;
 }
 
+/* Nav stylings */
+.page-top .nav a {
+    color: var(--nav-text-color);
+    /* font-weight: bold; */
+    font-size: 1.5em;
+}
+
+.page-top .nav a.current {
+    padding-bottom: 1px; /* Required to override the default theme bottom padding */
+    border-bottom: 1px solid var(--nav-text-color);
+}
+
+/* Sidebar styling */
+.sidebar .logo-title .title h3 {
+    font-size: 3rem;
+}
+
+/* General stylings */
 h1, h2, h3, h4, h5 {
     color: var(--heading-color);
 }
