@@ -129,4 +129,4 @@ in my [2021 tech stack migration guide]({{<ref "/posts/2021-09-28T22:06:15Z-2021
 ## Conclusion
 * With this setup, I'm now primed for being able to write a lot more frequently
   than before. Or fall into the trap of never writing a blog post again until
-  I feel guilty enough 4 years down the line, either one.
+  I feel guilty enough 4 years down the line, only time will tell.

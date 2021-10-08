@@ -126,3 +126,6 @@ partim** laticem vobis Thebae feror dixit *graminis*? Aliae rarescit
 
 ## Coloring example
 * blah blah {{<colored text="foo" bg-color="green" text-color="white">}} something
+
+## Adding in a basic small image (useful for set-sized emojis/gifs)
+{{<basic-image src="images/watermelon-hat.jpg" height="50px" width="50px">}}
