@@ -8,14 +8,19 @@ categories: ["guides"]
 tags: ["domains", "migration", "cloudflare", "namecheap", "domain registrar"]
 thumbnail: "images/looking-back-meme.jpg"
 thumbnail_alt_text: "If you're reading this you probably need a hobby- have you considered DnD?"
-draft: true
+draft: false
 ---
 The following is a more in-depth guide on why and how I swapped out
 parts of my site's tech stack over time.
 
-This first post in this small mini-series about tech stack migrations will
-be about swapping out my [domain name registrar](https://en.wikipedia.org/wiki/Domain_name_registrar),
-with the next post about swapping my [CI provider from Travis to GitHub](#TODO)
+This post is the first in a small mini-series about tech stack migrations,
+and includes:
+1. **A migration guide for swapping my Domain Name Registrar from Namecheap
+   to Cloudflare (this article)**
+1. A migration guide for swapping my Continuous Integration provider [from
+   TravisCI to GitHub Actions]({{<ref "/posts/2021-09-28T23:19:34Z-2021-tech-stack-migration-guide-part-2">}} "link to part 2")
+1. A migration guide for swapping my static site generator [from Jekyll
+   to Hugo]({{<ref "/posts/2021-10-08T08:31:16Z-2021-tech-stack-migration-guide-part-3">}} "link to part 3")
 
 ## What's a Domain Name Registrar and how does it relate to my domain?
 So, what is a `Domain Name Registrar` in the first place? In essence,

@@ -1,6 +1,6 @@
 ---
-title: "2021 Tech Stack Migration Guide Part 2"
-slug: 2021-tech-stack-migration-guide-part-2
+title: "2021 Tech Stack Migration Guide (Part 2: Continuous Integration)"
+slug: 2021-tech-stack-migration-guide-part-2-continuous-integration
 date: 2021-09-28T19:19:34-04:00
 #summary: REPLACEME (if left commented, it'll default to the first bit of the content itself)
 publishdate: 2021-09-28T19:19:34-04:00
@@ -11,6 +11,18 @@ thumbnail: "global/default-hamilton.png"
 thumbnail_alt_text: "If you're reading this you probably need a hobby- have you considered DnD?"
 draft: true
 ---
+The following is a more in-depth guide on why and how I swapped out
+parts of my site's tech stack over time.
+
+This post is the first in a small mini-series about tech stack migrations,
+and includes:
+1. A migration guide for swapping my Domain Name Registrar [from Namecheap
+   to Cloudflare]({{<ref "/posts/2021-09-28T22:06:15Z-2021-tech-stack-migration-guide-part-1">}} "link to part 2")
+1. **A migration guide for swapping my Continuous Integration provider from
+   TravisCI to GitHub Actions (this article)**
+1. A migration guide for swapping my static site generator [from Jekyll
+   to Hugo]({{<ref "/posts/2021-10-08T08:31:16Z-2021-tech-stack-migration-guide-part-3">}} "link to part 3")
+
 # My first post
 Hello world!
 
