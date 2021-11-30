@@ -1,6 +1,6 @@
 ---
-title: "How I got customized personal emails, a domain, and a website for 8 dollars a year"
-slug: how-i-got-a-customized-online-presence-for-8-dollars-a-year
+title: "How I got customized personal emails, a domain, and a website for 11 dollars a year"
+slug: how-i-got-a-customized-online-presence-for-11-dollars-a-year
 date: 2017-05-23T07:22:18Z
 #summary: REPLACEME (if left commented, it'll default to the first bit of the content itself)
 publishdate: 2017-05-23T07:22:18Z
@@ -191,7 +191,7 @@ as a company.
    by pointing its nameservers to Cloudflare. This page shows what
    you need to do, but I've included a step-by-step just in case here.
 ![](images/cloudflare-setup/5-dns-confirmation-informational-page.png)
-7. Head on over to Namecheap to https://ap.www.namecheap.com/domains/domaincontrolpanel/<YOUR_DOMAIN_NAME_HERE>/domain,
+7. Head on over to Namecheap by going to `https://ap.www.namecheap.com/domains/domaincontrolpanel/<YOUR_DOMAIN_NAME_HERE>/domain`,
    and scroll down a bit to the `Nameserver` section for your domain
 ![](images/cloudflare-setup/6-namecheap-where-to-change-nameservers.png)
 8. Change your nameservers to point to Cloudflare's nameservers
