@@ -1,0 +1,4 @@
+title General web request overview
+
+User browser client->Cloudflare (CDN):User requests a static webpage
+Cloudflare (CDN)->Github (webhost): Cloudflare reaches out to the origin\nwebserver if it doesn't have the page\navailable at their edge

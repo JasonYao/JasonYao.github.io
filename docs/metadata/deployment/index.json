@@ -1,13 +1,13 @@
 {
     "git_information": {
-        "short_hash": "c040c5f",
-        "commit_timestamp": "2021-03-30T17:10:50Z",
+        "short_hash": "008df4d",
+        "commit_timestamp": "2021-11-30T07:56:42Z",
         "author": "Jason Yao <Hello@JasonYao.com>",
-        "full_hash": "c040c5ff60a61ad2442d0c57fce67ff5f31baed3",
-        "subject": "Added in old friend",
-        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/c040c5ff60a61ad2442d0c57fce67ff5f31baed3"
+        "full_hash": "008df4dab6b58959c47cd8643a357c6feec2c9f7",
+        "subject": "jyao/relaunch announcement (#36)",
+        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/008df4dab6b58959c47cd8643a357c6feec2c9f7"
     },
     "deployment_information": {
-        "build_time": "2021-03-30T17:10:50Z"
+        "build_time": "2021-11-30T07:56:42Z"
     }
 }
