@@ -1,26 +1,17 @@
 ---
-title: "2021 Tech Stack Migration Guide (Part 1: Domains)"
-slug: 2021-tech-stack-migration-guide-part-1-domains
+title: "2021 Tech Stack Migration Guide (Domains)"
+slug: 2021-tech-stack-migration-guide-domains
 date: 2021-09-28T18:06:15-04:00
 #summary: REPLACEME (if left commented, it'll default to the first bit of the content itself)
 publishdate: 2021-09-28T18:06:15-04:00
 categories: ["guides"]
 tags: ["domains", "migration", "cloudflare", "namecheap", "domain registrar"]
 thumbnail: "images/looking-back-meme.jpg"
-thumbnail_alt_text: "If you're reading this you probably need a hobby- have you considered DnD?"
+thumbnail_alt_text: "Doing a bunch of work 'for the principle of the matter' should be on my tombstone"
 draft: false
 ---
 The following is a more in-depth guide on why and how I swapped out
-parts of my site's tech stack over time.
-
-This post is the first in a small mini-series about tech stack migrations,
-and includes:
-1. **A migration guide for swapping my Domain Name Registrar from Namecheap
-   to Cloudflare (this article)**
-1. A migration guide for swapping my Continuous Integration provider [from
-   TravisCI to GitHub Actions]({{<ref "/posts/2021-09-28T23:19:34Z-2021-tech-stack-migration-guide-part-2">}} "link to part 2")
-1. A migration guide for swapping my static site generator [from Jekyll
-   to Hugo]({{<ref "/posts/2021-10-08T08:31:16Z-2021-tech-stack-migration-guide-part-3">}} "link to part 3")
+the domain registrar portion of my site's tech stack over time.
 
 ## What's a Domain Name Registrar and how does it relate to my domain?
 So, what is a `Domain Name Registrar` in the first place? In essence,
@@ -85,7 +76,7 @@ Now, before we continue, it's important that we keep the following in mind:
 
 > **{{<colored text="Domain names are commodities, and domain registrars are fungible" bg-color="var(--background-color)" text-color="red">}}**
 
-This fact may get lost due to some companies (cough cough Spacesquare)
+This fact may get lost due to some companies (cough cough)
 attempting to imply a higher "quality of service" or "premium"-ness to their
 domain offerings from their brand, but as far as you-as-a-customer are
 concerned, just because some providers charge a lot more, it doesn't mean
@@ -99,7 +90,7 @@ register the domain [HelloThereGeneralKenobi.com](https://www.youtube.com/watch?
 
 |Registrar|Price per .com domain per annum|How I feel|
 |--|--|--|
-|Namecheap|$9.06 USD|{{<basic-image src="images/emojis/meow-heart.png" width="40px" height="40px">}}|
+|Namecheap|$10.87 USD|{{<basic-image src="images/emojis/meow-heart.png" width="40px" height="40px">}}|
 |Cloudflare|$8.03 USD|{{<basic-image src="images/emojis/cat-jam.gif" width="40px" height="40px">}}|
 |Wix|$12.95 USD|{{<basic-image src="images/emojis/not-like-this.png" width="40px" height="40px">}}|
 |GoDaddy|$18.99 USD|{{<basic-image src="images/emojis/dumpster-fire.gif" width="40px" height="40px">}}|
@@ -109,7 +100,7 @@ For those of you that know me, you'll know one of my favorite phrases is
 
 > **{{<colored text="But it's the principle of the matter" bg-color="var(--background-color)" text-color="red">}}**
 
-And so it was. That `$1.03 USD per year` in cost saving now meant something
+And so it was. That `$2.84 USD per year` in cost saving now meant something
 to me, as stupid as it is to write it out. At the end of the day, domains
 are essentially commodities past a certain level of expected service, which
 meant that it didn't matter too much at the end of the day who was the domain

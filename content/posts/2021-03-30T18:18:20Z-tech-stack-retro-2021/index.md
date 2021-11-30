@@ -74,7 +74,7 @@ Now in 2021, it's been consolidated a bit but the general approach is still the 
 ## Tech Stack Comparison
 |Service|Service Provider (2017)|Service Provider (2021)|Cost Per Annum (2017)|Cost Per Annum (2021)|
 |--|--|--|--|--|
-|Custom domain|~~[{{<colored text="Namecheap" bg-color="red" text-color="white">}}](https://www.namecheap.com/)~~|[{{<colored text="Cloudflare Registrar" bg-color="green" text-color="white">}}](https://www.cloudflare.com/products/registrar/)|$9.06 USD|{{<colored text="$8.03 USD" bg-color="green" text-color="white">}}|
+|Custom domain|~~[{{<colored text="Namecheap" bg-color="red" text-color="white">}}](https://www.namecheap.com/)~~|[{{<colored text="Cloudflare Registrar" bg-color="green" text-color="white">}}](https://www.cloudflare.com/products/registrar/)|$10.87 USD|{{<colored text="$8.03 USD" bg-color="green" text-color="white">}}|
 |Custom domain email|[Mailgun](https://www.mailgun.com/)|-|$0.00 USD|$0.00 USD|
 |Website hosting & Continuous Deployment (CD)|[Github Pages](https://pages.github.com/)|-|$0.00 USD|$0.00 USD|
 |Continuous Integration (CI)|~~[{{<colored text="TravisCI" bg-color="red" text-color="white">}}](https://www.travis-ci.com/)~~|[{{< colored text="Github Actions" bg-color="green" text-color="white">}}](https://github.com/features/actions)|$0.00 USD|$0.00 USD|
@@ -83,7 +83,7 @@ Now in 2021, it's been consolidated a bit but the general approach is still the 
 
 |Tech Stack|Total Cost Per Annum|
 |--|--|
-|2017 Tech Stack|$9.06 USD|
+|2017 Tech Stack|$10.87 USD|
 |2021 Tech Stack|$8.03 USD|
 
 * In both the 2017 and the new 2021 system, the general format is still the
@@ -124,7 +124,7 @@ the annual domain cost.
 ## Going more in depth on swapping out tech stacks
 If anybody reading this would like more details on what the process of
 migrating my tech stack over looked like, I go into more depth over
-in my [2021 tech stack migration guide]({{<ref "/posts/2021-09-28T22:06:15Z-2021-tech-stack-migration-guide-part-1">}} "TODO example link alt text").
+in my [2021 tech stack migration guide]({{<ref "/posts/2021-09-28T22:06:15Z-2021-tech-stack-migration-guide-part-1">}} "A deeper look at swapping domain name registrars").
 
 ## Conclusion
 * With this setup, I'm now primed for being able to write a lot more frequently
