@@ -1,5 +1,5 @@
 ---
-title: "Hello World"
+title: "Draft Post With Formatting Examples"
 slug: 2021-03-05T18:38:30Z-hello-world
 date: 2021-03-04T02:38:30+08:00
 summary: An example post for metadata purposes to see how things render
@@ -11,10 +11,8 @@ thumbnail: "global/default-hamilton.png"
 thumbnail_alt_text: "If you're reading this you probably need a hobby- have you considered DnD?"
 draft: true
 ---
-# My first post
-Hello world!
 
-Testing out syntax highlighting in this new platform
+## Testing out syntax highlighting in this new platform
 ```java
 public class TestSolution {
 
@@ -106,3 +104,28 @@ partim** laticem vobis Thebae feror dixit *graminis*? Aliae rarescit
 
 ### Using a shortcode referencing from the local page's resource
 {{< img src="images/watermelon-hat.jpg" alt="For the days when you just want a watermelon hat" >}}
+
+## Linking example
+- Here's an example where we link to
+[another article]({{< ref "/posts/2017-05-22T00:00:00Z-a-canadian-existential-crisis-introduction" >}} "example link alt text")
+
+## Text emphasis with color
+- Here we have normal text with a {{< strong text="subsection in color" >}} in the middle
+
+## Adding in a figure (image with some text underneath it)
+{{<figure src="images/watermelon-hat.jpg" title="For the days when you just want a watermelon hat">}}
+
+## Formatting a table
+- Remember that markdown tables require 3 hyphens in each column between the header and data rows
+
+| Option | Description |
+|---|---|
+| data   | path to data files to supply the data that will be passed into templates. |
+| engine | engine to be used for processing templates. Handlebars is the default. |
+| ext    | extension to be used for dest files. |
+
+## Coloring example
+* blah blah {{<colored text="foo" bg-color="green" text-color="white">}} something
+
+## Adding in a basic small image (useful for set-sized emojis/gifs)
+{{<basic-image src="images/watermelon-hat.jpg" height="50px" width="50px">}}

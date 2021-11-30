@@ -4,8 +4,8 @@ slug: a-canadian-existential-crisis-introduction
 date: 2017-05-22T00:00:00+08:00
 summary: An introduction to the site with an explanation of the stack and why they were chosen
 publishdate: 2017-05-22T00:00:00+08:00
-categories: ["featured"]
-tags: ["introduction", "existential dread"]
+categories: ["updates"]
+tags: ["meta", "personal site"]
 #thumbnail: "assets/posts/2021-03-06T01:37:47Z-a-canadian-existential-crisis-introduction/hero.jpg"
 thumbnail: "global/default-hamilton.png"
 thumbnail_alt_text: "If you're reading this you probably need a hobby- have you considered DnD?"
@@ -13,8 +13,10 @@ draft: false
 ---
 
 ## Editor's Note
-- The platform description below described my previous setup, for
-  an updated look at this current site's setup, see here.
+- The platform description below described my previous setup between 2017 and
+  2021- check out the [original 2017 guide]({{<ref "/posts/2017-05-23T07:22:18Z-how-i-got-a-customized-web-presence-for-8-dollars-a-year">}} "Expanded details for this build") for more
+  in-depth details on this tech stack, or checkout the
+  [4-year 2021 tech stack retro]({{< ref "/posts/2021-03-30T18:18:20Z-tech-stack-retro-2021" >}} "2021 makeover relaunch").
 
 ## Intro
 Hey there! My name is Jason, and for some reason you've stumbled onto my site.

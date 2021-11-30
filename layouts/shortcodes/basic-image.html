@@ -1,0 +1,20 @@
+<!-- Original from https://alexlakatos.com/web/2020/07/17/hugo-image-processing/ -->
+{{/* get file that matches the filename as specified as src="" in shortcode and that is a set width/height */}}
+{{ $src := .Page.Resources.GetMatch (.Get "src") }}
+
+{{ if in (.Get "src") "http" }}
+<img src="{{$src}}" {{ with .Get "alt" }}alt="{{.}}"{{ else }}alt=""{{ end }} {{ with .Get "width" }}width="{{.}}"{{ else }}{{ end }} {{ with .Get "height" }}height="{{.}}"{{ else }}{{ end }}>
+{{ else }}
+{{ if in (.Get "src") ".gif" }}
+<img src="{{$src.RelPermalink}}" {{ with .Get "alt" }}alt="{{.}}"{{ else }}alt=""{{ end }} {{ with .Get "width" }}width="{{.}}"{{ else }}{{ end }} {{ with .Get "height" }}height="{{.}}"{{ else }}{{ end }}>
+{{ else }}
+
+{{/* only use images smaller than or equal to the src (original) image size */}}
+<img
+    src="{{ $src.RelPermalink }}"
+    {{ with .Get "alt" }}alt="{{.}}"{{ else }}alt=""{{ end }}
+    {{ with .Get "width" }}width="{{.}}"{{ else }}{{ end }}
+    {{ with .Get "height" }}height="{{.}}"{{ else }}{{ end }}
+>
+{{ end }}
+{{ end }}

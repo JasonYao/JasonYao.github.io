@@ -2,7 +2,7 @@
  * Search bar styling
  */
 
- @media only screen and (min-width: 961px) {
+@media only screen and (min-width: 961px) {
    .search-wrapper {
      position: relative;
      max-width: 250px;
@@ -17,10 +17,21 @@
     margin: auto;
     position: relative;
   }
+
+  .content {
+      margin-top: 33em;
+  }
+
+  .description {
+      margin-left: 1em;
+      margin-right: 1em;
+  }
+
 }
 
-.page-top .nav a.current {
-  padding-bottom: 15px;
+.post {
+    margin-left: 1.5em;
+    margin-right: 1.5em;
 }
 
 .search {
