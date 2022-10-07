@@ -1,0 +1,1 @@
+function addAnchor(e){e.insertAdjacentHTML("beforeend",`<a href="#${e.id}" class="hanchor" ariaLabel="Anchor">🔗&#xFE0E;</a>`)}document.addEventListener("DOMContentLoaded",function(){var e=document.querySelectorAll("article h1[id], article h2[id], article h3[id], article h4[id]");e&&e.forEach(addAnchor)})

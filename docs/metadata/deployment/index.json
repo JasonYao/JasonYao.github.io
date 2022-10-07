@@ -1,13 +1,13 @@
 {
     "git_information": {
-        "short_hash": "008df4d",
-        "commit_timestamp": "2021-11-30T07:56:42Z",
+        "short_hash": "f6ddcfb",
+        "commit_timestamp": "2022-10-07T08:26:54Z",
         "author": "Jason Yao <Hello@JasonYao.com>",
-        "full_hash": "008df4dab6b58959c47cd8643a357c6feec2c9f7",
-        "subject": "jyao/relaunch announcement (#36)",
-        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/008df4dab6b58959c47cd8643a357c6feec2c9f7"
+        "full_hash": "f6ddcfbea7c723751d0a8bf704ad050b68fc3d86",
+        "subject": "Removed site upload of resume webpage",
+        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/f6ddcfbea7c723751d0a8bf704ad050b68fc3d86"
     },
     "deployment_information": {
-        "build_time": "2021-11-30T07:56:42Z"
+        "build_time": "2022-10-07T08:26:54Z"
     }
 }
