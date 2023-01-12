@@ -43,7 +43,35 @@ bin/new-post
 hugo new posts/my-post-title.md
 ```
 
-OR just use the admin CMS from netlify on `/admin/`
+### Viewing metadata
+To view the metadata of the deployment (e.g. what's the current version of the site)
+
+```sh
+# In prod
+curl https://www.jasonyao.com/metadata/deployment/index.json | jq '.'
+
+# On local
+curl localhost:1313/metadata/deployment/index.json | jq '.'
+```
+
+To view the metadata for all posts:
+
+```sh
+# In prod
+curl https://www.jasonyao.com/posts/index.json | jq '.'
+
+# On local
+curl localhost:1313/posts/index.json | jq '.'
+```
+
+To view the metadata for a single post:
+```sh
+# Just add in a /index.json to the end of the post url, e.g. for prod
+curl https://www.jasonyao.com/posts/2021/09/28/2021-tech-stack-migration-guide-domains/index.json | jq '.'
+
+# On local
+curl localhost:1313/posts/2021/09/28/2021-tech-stack-migration-guide-domains/index.json | jq '.'
+```
 
 ## Notes
 ### Commenting
