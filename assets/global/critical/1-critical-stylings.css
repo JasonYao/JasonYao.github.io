@@ -199,5 +199,9 @@ h1, h2, h3, h4, h5 {
 * and https://bugzilla.mozilla.org/show_bug.cgi?id=1472637
 */
 img:-moz-loading {
- visibility: hidden;
+    visibility: hidden;
+}
+
+li {
+    line-height: 1.9em;
 }
