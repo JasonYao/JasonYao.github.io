@@ -1,13 +1,13 @@
 {
     "git_information": {
-        "short_hash": "40cccab",
-        "commit_timestamp": "2023-01-13T07:50:36Z",
+        "short_hash": "3f8925f",
+        "commit_timestamp": "2023-01-13T09:06:34Z",
         "author": "Jason Yao <Hello@JasonYao.com>",
-        "full_hash": "40cccabf904480ad794dcadda6be10ed8bd187a8",
-        "subject": "Added in google tracking and search console",
-        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/40cccabf904480ad794dcadda6be10ed8bd187a8"
+        "full_hash": "3f8925f9dd0690b3352e45a4c20d16d22872739d",
+        "subject": "Cleaned up sitemap to no longer include terms",
+        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/3f8925f9dd0690b3352e45a4c20d16d22872739d"
     },
     "deployment_information": {
-        "build_time": "2023-01-13T07:50:36Z"
+        "build_time": "2023-01-13T09:06:34Z"
     }
 }
