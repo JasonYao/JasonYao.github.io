@@ -1,13 +1,13 @@
 {
     "git_information": {
-        "short_hash": "5206c46",
-        "commit_timestamp": "2023-01-13T05:40:39Z",
+        "short_hash": "40cccab",
+        "commit_timestamp": "2023-01-13T07:50:36Z",
         "author": "Jason Yao <Hello@JasonYao.com>",
-        "full_hash": "5206c4634f1ba1ccbffe18852748c4f5420f6cd6",
-        "subject": "Typo fix: Updated not working example jdbc url",
-        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/5206c4634f1ba1ccbffe18852748c4f5420f6cd6"
+        "full_hash": "40cccabf904480ad794dcadda6be10ed8bd187a8",
+        "subject": "Added in google tracking and search console",
+        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/40cccabf904480ad794dcadda6be10ed8bd187a8"
     },
     "deployment_information": {
-        "build_time": "2023-01-13T05:40:39Z"
+        "build_time": "2023-01-13T07:50:36Z"
     }
 }
