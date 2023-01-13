@@ -1,13 +1,13 @@
 {
     "git_information": {
-        "short_hash": "75ce70b",
-        "commit_timestamp": "2023-01-12T11:11:48Z",
+        "short_hash": "5206c46",
+        "commit_timestamp": "2023-01-13T05:40:39Z",
         "author": "Jason Yao <Hello@JasonYao.com>",
-        "full_hash": "75ce70bd82179c5e5c59dc4995f17a13b9caf3e1",
-        "subject": "chore: Updates the github workflow to use the latest gh actions",
-        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/75ce70bd82179c5e5c59dc4995f17a13b9caf3e1"
+        "full_hash": "5206c4634f1ba1ccbffe18852748c4f5420f6cd6",
+        "subject": "Typo fix: Updated not working example jdbc url",
+        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/5206c4634f1ba1ccbffe18852748c4f5420f6cd6"
     },
     "deployment_information": {
-        "build_time": "2023-01-12T11:11:48Z"
+        "build_time": "2023-01-13T05:40:39Z"
     }
 }
