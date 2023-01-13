@@ -73,6 +73,20 @@ curl https://www.jasonyao.com/posts/2021/09/28/2021-tech-stack-migration-guide-d
 curl localhost:1313/posts/2021/09/28/2021-tech-stack-migration-guide-domains/index.json | jq '.'
 ```
 
+To view the sitemap metadata:
+```sh
+# On prod
+https://www.jasonyao.com/sitemap.xml
+
+# On local
+curl localhost:1313/sitemap.xml
+```
+
+## Analytics
+We use Google analytics here, which is spread out over 2 main consoles:
+- [Google Search Console](https://search.google.com/search-console?utm_source=about-page&resource_id=https://www.jasonyao.com/)
+- [Google Analytics Console](https://analytics.google.com/analytics/web/#/a99838993w146543783p151312757/admin/property/settings)
+
 ## Notes
 ### Commenting
 To disable commenting on a specific post,
