@@ -202,6 +202,13 @@ img:-moz-loading {
     visibility: hidden;
 }
 
-li {
+/**
+ * This is a bit of a hack- previous behavior showed bullet points as too close
+ * together, so we add some vertical space in between. However, since code
+ * snippets use tables/lists, that made them malformed. Since code snippets
+ * are always of the form ol > li though, we can do this hack and fix the spacing
+ * for both code and un-numbered bullet points
+ */
+ul > li {
     line-height: 1.9em;
 }
