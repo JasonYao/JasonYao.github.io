@@ -106,3 +106,10 @@ partim** laticem vobis Thebae feror dixit *graminis*? Aliae rarescit
 
 ### Using a shortcode referencing from the local page's resource
 { {< img src="images/watermelon-hat.jpg" alt="For the days when you just want a watermelon hat" >} }
+
+### Using a shortcode to display a list of cards
+{ {< global/CardList >} }
+{ {< global/CardListItem title="B" description="some description B" img="http://localhost:1313/about/images/recruiter-flowchart.drawio.png" >} }
+{ {< global/CardListItem title="C" description="some description C" img="http://localhost:1313/about/images/recruiter-flowchart.drawio.png" >} }
+{ {< global/CardListItem title="D" description="some description D" img="http://localhost:1313/about/images/recruiter-flowchart.drawio.png" >} }
+{ {< /global/CardList >}}

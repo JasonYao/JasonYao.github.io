@@ -1,0 +1,55 @@
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    grid-gap: 1em;
+    justify-content: center;
+}
+
+.card {
+    display: grid;
+    grid-template-rows: max-content minmax(200px, 1fr);
+    /* Uncomment this to view the border of cards */
+    /*border: dashed red;*/
+}
+
+.card img {
+    object-fit: cover;
+    width: 90%;
+    height: 50%;
+}
+
+.card .card-details {
+    /* Uncomment if we want to add in hidden display + display on hover functionality */
+    /*opacity: 0;*/
+    transition: 0.4s ease-in-out all;
+}
+
+.card:hover .card-details {
+    /*opacity: 1;*/
+    bottom: 10px;
+    margin: 1em;
+    /*background: red;*/
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+.card-subtitle {
+    display: block;
+    font-size: 75%;
+    opacity: 0.75;
+}
+
+@media(max-width:650px) {
+    .card .card-details {
+        opacity: 1;
+        bottom: 10px;
+        margin: 1em;
+        /*background: red;*/
+    }
+
+    .card img {
+        transform: scale(1.05);
+    }
+}

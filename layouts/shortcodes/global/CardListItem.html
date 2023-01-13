@@ -1,0 +1,10 @@
+<article class="card">
+    <img src="{{ (.Get "img") }}">
+    <div class="card-details">
+        <header>
+            <h2>{{ (.Get "title") }}
+                <span class="card-subtitle">{{ (.Get "subtitle") }}</span></h2>
+        </header>
+        <p>{{ (.Get "description") }}</p>
+    </div>
+</article>
