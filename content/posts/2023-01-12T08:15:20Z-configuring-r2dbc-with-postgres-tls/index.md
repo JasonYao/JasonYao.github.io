@@ -52,7 +52,7 @@ spring:
     #
     # So:
     # - This doesn't work:
-    #   jdbc:postgresql://managed-db-at.digital-ocean.com:25060/home?ssl=true;sslmode=verify-full;sslrootcert=db/certs/digital-ocean-2023-q1-db-cert.crt
+    #   jdbc:postgresql://managed-db-at.digital-ocean.com:25060/home?ssl=true&sslmode=verify-full&sslrootcert=db/certs/digital-ocean-2023-q1-db-cert.crt
     # - But this does (note we just replaced the '&' characters with ';'):
     #   jdbc:postgresql://managed-db-at.digital-ocean.com:25060/home?ssl=true;sslmode=verify-full;sslrootcert=db/certs/digital-ocean-2023-q1-db-cert.crt
     url: jdbc:postgresql://managed-db-at.digital-ocean.com:25060/home?ssl=true;sslmode=verify-full;sslrootcert=db/certs/digital-ocean-2023-q1-db-cert.crt
