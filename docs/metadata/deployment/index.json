@@ -1,13 +1,13 @@
 {
     "git_information": {
-        "short_hash": "a2790ee",
-        "commit_timestamp": "2023-01-14T11:41:16Z",
+        "short_hash": "fd96e8a",
+        "commit_timestamp": "2023-01-14T11:54:42Z",
         "author": "Jason Yao <Hello@JasonYao.com>",
-        "full_hash": "a2790eea7cc39418649dcb44d44389f65497779d",
-        "subject": "Fixed search bar stylings to be consistent",
-        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/a2790eea7cc39418649dcb44d44389f65497779d"
+        "full_hash": "fd96e8afd445f2ee95230e0199421b6b45f6fdca",
+        "subject": "Actually fixed the image url issue when searching",
+        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/fd96e8afd445f2ee95230e0199421b6b45f6fdca"
     },
     "deployment_information": {
-        "build_time": "2023-01-14T11:41:16Z"
+        "build_time": "2023-01-14T11:54:42Z"
     }
 }
