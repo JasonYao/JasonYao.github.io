@@ -28,7 +28,7 @@ function createSearchResult(resultData) {
   <div class="post-content">
       <div class="post-thumbnail">
           <a href="${resultData.permalink}">
-              <img width="150" src="${resultData.permalink}/${resultData.thumbnail}" alt="${resultData.thumbnail_alt_text}" loading="lazy">
+              <img width="150" src="${resultData.thumbnail}" alt="${resultData.thumbnail_alt_text}" loading="lazy">
           </a>
       </div>
 
@@ -174,13 +174,14 @@ window.onload = function() {
         ({ posts } = response);
 
         posts.forEach(function(doc) {
+            const thumbnailUrl = doc.metadata.thumbnail.startsWith('global/') ? doc.metadata.thumbnail : doc.metadata.permalink + doc.metadata.thumbnail;
           this.add({
             'permalink': doc.metadata.permalink,
             'title': doc.metadata.title,
             'categories': doc.metadata.categories,
             'tags': doc.metadata.tags,
             'content': doc.data.content,
-            'thumbnail': doc.metadata.thumbnail,
+            'thumbnail': thumbnailUrl,
             'summary': doc.metadata.summary,
           });
           documents[doc.metadata.permalink] = {
@@ -189,7 +190,7 @@ window.onload = function() {
             'categories': doc.metadata.categories,
             'tags': doc.metadata.tags,
             'content': doc.data.content,
-            'thumbnail': doc.metadata.thumbnail,
+            'thumbnail': thumbnailUrl,
             'thumbnail_alt_text': doc.metadata.thumbnail_alt_text,
             'summary': doc.metadata.summary,
             'publish_date': doc.metadata.published_on,
