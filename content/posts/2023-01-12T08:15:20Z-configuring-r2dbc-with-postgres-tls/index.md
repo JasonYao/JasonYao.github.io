@@ -1,10 +1,10 @@
 ---
-title: "Snippet: Configuring r2dbc + Flyway in Spring Boot to Postgres with enforced TLS/SSL"
+title: "Guide: Configuring r2dbc + Flyway in Spring Boot to Postgres with enforced TLS/SSL"
 slug: configuring-r2dbc-with-postgres-tls
 date: 2023-01-12T03:15:21-05:00
 summary: A reference and a how-to guide on configuring r2dbc + Flyway to enforce TLS when talking to Postgres from a Spring Boot application.
 publishdate: 2023-01-12T03:15:21-05:00
-categories: ["snippet", "how-to"]
+categories: ["guides"]
 tags: ["spring boot", "java", "r2dbc", "postgres", "tls", "ssl", "digital ocean"]
 thumbnail: "images/locked-db.png"
 thumbnail_alt_text: "Also known as 'the result of 2+ hours of googling and tearing my hair out'"
