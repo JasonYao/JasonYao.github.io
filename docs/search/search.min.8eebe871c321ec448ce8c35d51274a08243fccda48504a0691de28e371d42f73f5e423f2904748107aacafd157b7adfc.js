@@ -2,7 +2,7 @@ var idx,searchInput,searchResults=null,documents={};function parseISOString(e){v
   <div class="post-content">
       <div class="post-thumbnail">
           <a href="${e.permalink}">
-              <img width="150" src="/${e.thumbnail}" alt="${e.thumbnail_alt_text}" loading="lazy">
+              <img width="150" src="${e.permalink}/${e.thumbnail}" alt="${e.thumbnail_alt_text}" loading="lazy">
           </a>
       </div>
 

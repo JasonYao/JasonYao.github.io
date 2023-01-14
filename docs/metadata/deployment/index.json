@@ -1,13 +1,13 @@
 {
     "git_information": {
-        "short_hash": "f2d69bf",
-        "commit_timestamp": "2023-01-14T10:25:01Z",
+        "short_hash": "a2790ee",
+        "commit_timestamp": "2023-01-14T11:41:16Z",
         "author": "Jason Yao <Hello@JasonYao.com>",
-        "full_hash": "f2d69bf8797f942ef0684e190f9c353ac0694666",
-        "subject": "Fixed mobile issues",
-        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/f2d69bf8797f942ef0684e190f9c353ac0694666"
+        "full_hash": "a2790eea7cc39418649dcb44d44389f65497779d",
+        "subject": "Fixed search bar stylings to be consistent",
+        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/a2790eea7cc39418649dcb44d44389f65497779d"
     },
     "deployment_information": {
-        "build_time": "2023-01-14T10:25:01Z"
+        "build_time": "2023-01-14T11:41:16Z"
     }
 }
