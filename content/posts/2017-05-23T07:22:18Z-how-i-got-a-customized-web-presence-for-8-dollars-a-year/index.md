@@ -191,9 +191,14 @@ as a company.
    by pointing its nameservers to Cloudflare. This page shows what
    you need to do, but I've included a step-by-step just in case here.
 ![](images/cloudflare-setup/5-dns-confirmation-informational-page.png)
-7. Head on over to Namecheap by going to `https://ap.www.namecheap.com/domains/domaincontrolpanel/<YOUR_DOMAIN_NAME_HERE>/domain`,
+7. Head on over to Namecheap by going to:
+
+   ```
+   https://ap.www.namecheap.com/domains/domaincontrolpanel/<YOUR_DOMAIN_NAME_HERE>/domain
+   ```
    and scroll down a bit to the `Nameserver` section for your domain
-![](images/cloudflare-setup/6-namecheap-where-to-change-nameservers.png)
+
+   ![](images/cloudflare-setup/6-namecheap-where-to-change-nameservers.png)
 8. Change your nameservers to point to Cloudflare's nameservers
     - `reza.ns.cloudflare.com`
     - `scott.ns.cloudflare.com`
