@@ -1,13 +1,13 @@
 {
     "git_information": {
-        "short_hash": "4a42e0e",
-        "commit_timestamp": "2023-01-14T10:20:46Z",
+        "short_hash": "f2d69bf",
+        "commit_timestamp": "2023-01-14T10:25:01Z",
         "author": "Jason Yao <Hello@JasonYao.com>",
-        "full_hash": "4a42e0e80ba456a58265bf7f5db3b3be4a642777",
+        "full_hash": "f2d69bf8797f942ef0684e190f9c353ac0694666",
         "subject": "Fixed mobile issues",
-        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/4a42e0e80ba456a58265bf7f5db3b3be4a642777"
+        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/f2d69bf8797f942ef0684e190f9c353ac0694666"
     },
     "deployment_information": {
-        "build_time": "2023-01-14T10:20:46Z"
+        "build_time": "2023-01-14T10:25:01Z"
     }
 }
