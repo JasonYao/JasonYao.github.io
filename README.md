@@ -82,6 +82,14 @@ https://www.jasonyao.com/sitemap.xml
 curl localhost:1313/sitemap.xml
 ```
 
+### Serving a world accessible version of local files via ngrok
+```sh
+# The --region=eu flag here is used to get around ngrok instances having issues,
+# see https://github.com/inconshreveable/ngrok/issues/611#issuecomment-688796415
+# for more information
+ngrok http --region=eu 1313
+```
+
 ## Analytics
 We use Google analytics here, which is spread out over 2 main consoles:
 - [Google Search Console](https://search.google.com/search-console?utm_source=about-page&resource_id=https://www.jasonyao.com/)
