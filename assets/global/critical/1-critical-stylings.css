@@ -212,3 +212,20 @@ img:-moz-loading {
 ul > li {
     line-height: 1.9em;
 }
+
+/* copied from theme except for line height */
+.post .post-content h3 {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.3em;
+}
+
+/* copied from theme except for line height */
+.post .post-content h4 {
+    font-size: 16px;
+    line-height: 1.3em;
+}
+
+.article-body ol > li {
+    line-height: 1.9em;
+}
