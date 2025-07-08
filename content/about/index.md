@@ -2,11 +2,13 @@
 title: "About Me"
 description: "Overselling myself since 2013. Young, Scrappy, Hungry, and musical-obsessed"
 date: "2023-01-12T02:38:30+08:00"
-aliases: ["about-me", "about-us", "contact"]
+publishdate: "2017-05-22T00:00:00+08:00"
+aliases: ["about-me", "contact"]
 ---
 Hi- if you're on this page you're likely either a friend looking
 for stuff to poke fun at me with, or a recruiter trying to figure
 out if I'm:
+
 1. Competent
 2. Looking for opportunities
 3. Am not a lizard person in a skin suit
@@ -18,8 +20,8 @@ Either way, welcome!
 ## General info
 I am:
 
-- A New York-based software engineer, currently working at **Google**
-  on **Google Search** since September 2021
+- A New York-based tech lead and senior software engineer, currently leading
+  the **Search Debugging** team at **Google** since September 2021
 - A guy that can talk your ear off about everything from public transportation
   to fire codes, and be able to tie it back somehow to software engineering
 - Somebody who once made [spicy rice cakes](https://www.google.com/search?q=Tteokbokki)
@@ -37,10 +39,12 @@ time.
 There may or may not be a video of me singing "Hey there Columbia" to
 the tune of "Hey there Delilah" floating around somewhere.
 
-Bachelor of Arts in Computer Science from Courant at New York University, 2017 grad.
+Bachelor of Arts in Computer Science from Courant at New York University,
+2017 grad.
 
 ## If you're a friend
-A hint: there's 7 secrets on this site.
+There are 7 secrets on this site. Try and find them on your own, but if
+you want some hints, see the [secret hints page](/secrets).
 
 Message on discord if you ever find them, and I'll treat you to a drink.
 
