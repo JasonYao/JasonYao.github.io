@@ -129,5 +129,13 @@
         ></script>
     {{ end }}
 
+    <!-- Easter egg secret #2 -->
+    {{ $marcoPoloJs := resources.Get "global/deferred/3-marco.js" }}
+    {{ $secureMarcoPoloJS := $marcoPoloJs |  resources.Minify | resources.Fingerprint "sha384" }}
+    <script defer type="text/javascript"
+            src="{{ $secureMarcoPoloJS.Permalink }}"
+            integrity="{{ $secureMarcoPoloJS.Data.Integrity }}"
+            crossorigin="anonymous"></script>
+
     {{- partial "analytics/google-tag.html" . -}}
 </head>

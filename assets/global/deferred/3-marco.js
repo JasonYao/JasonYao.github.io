@@ -1,0 +1,25 @@
+let callIntervalId = setInterval(marco, 8_000);
+let wasMarcoFound = false
+const marcoPoloFacts = [
+    "Marco Polo spent over 24 years away from his home during his travels from Venice to the east, and came back to Venice at war against Genoa, before essentially being captured immediately by the Genoans. Talk about a fall from grace after being a diplomatic emissary for Kublai Khan.",
+    "The 'Cathay' in 'Cathay Pacific' actually refers to an old European name for China's northern territories, and was the main area that Marco Polo travelled around for over 20 years as Kublai Khan's diplomatic emissary",
+    "The use of 'Cathay' to refer to China faded in the 19th century, which I personally find to be a shame. Instead of being called Chinese, people from that region could have been called Cathayan, which scientifically increases the cool factor by like 20% at least just from the name.",
+]
+
+function marco() {
+    if (wasMarcoFound) {
+        clearInterval(callIntervalId);
+        // release our intervalId from the variable
+        callIntervalId = null;
+        return
+    }
+    console.log("Marco!")
+}
+
+function polo() {
+    wasMarcoFound = true
+    console.log("Polo! You found secret #6, congrats!")
+    console.log("I used to play this a bunch as a kid, so it's nice to have a callback to childhood here.")
+    console.log("Some fun facts about Marco Polo's travels to the east:")
+    console.log(marcoPoloFacts[Math.floor(Math.random() * marcoPoloFacts.length)])
+}
