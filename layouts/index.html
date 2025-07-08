@@ -1,5 +1,10 @@
 {{ define "main" }}
-    <!-- Pretty much a copy of the anatole theme's index, but added in the reading time -->
+    <!--
+    Pretty much a copy of the anatole theme's index, but added in the reading time.
+    To regenerate this layouts/index.html file, git pull the anatole theme, copy/paste
+    it here, and then swap it from normal <div> tags to be <Article> tags instead
+
+     -->
     <div class="post {{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}">
         <!-- (Optional) Home
             -- on top of `mainSections` content (aka posts) ;
@@ -58,7 +63,7 @@
     {{ end }}
 
     <div class="pagination">
-        {{ template "_internal/pagination.html" . }}
+        {{ partial "pagination.html" . }}
     </div>
 
 {{ end }}
