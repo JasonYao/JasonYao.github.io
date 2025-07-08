@@ -16,7 +16,7 @@ on a particular secret and would like a hint.
 
 **Secret active as of**: 2025-07-08
 
-{{% comment %}} Safety pig can be found at /secrets/safety-pig {{% /comment %}}
+<!-- Safety pig can be found at /secrets/safety-pig -->
 
 Safety is very important folks, and a finding comfort in an old friend's
 friendly face is always appreciated when you're trying to _map out_ things on
@@ -26,9 +26,9 @@ a _site_.
 
 **Secret active as of**: 2025-07-08
 
-{{% comment %}} Marco Polo call-response is embedded on every page, and should show
+<!-- Marco Polo call-response is embedded on every page, and should show
 up in console.log()s, and can trigger the response by calling the console command
-`polo()`{{% /comment %}}
+`polo()` -->
 
 Call and response with the bravest of explorers, bridging the east and the west.
 
@@ -36,8 +36,8 @@ Call and response with the bravest of explorers, bridging the east and the west.
 
 **Secret active as of**: 2025-07-08
 
-{{% comment %}} X-Clacks-Overhead is an HTTP response header added to every response
-on this site through Cloudflare's transform rules{{% /comment %}}
+<!-- X-Clacks-Overhead is an HTTP response header added to every response
+on this site through Cloudflare's transform rules -->
 
 GNU Terry Pratchett.
 
