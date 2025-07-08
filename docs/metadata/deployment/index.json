@@ -1,13 +1,13 @@
 {
     "git_information": {
-        "short_hash": "fe20380",
-        "commit_timestamp": "2023-01-14T12:38:26Z",
+        "short_hash": "934d141",
+        "commit_timestamp": "2025-07-08T11:24:17Z",
         "author": "Jason Yao <Hello@JasonYao.com>",
-        "full_hash": "fe20380bf8f5a5da90e59616d0c2f77716fc8f62",
-        "subject": "Updated to guide and fixed styling for codeblocks",
-        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/fe20380bf8f5a5da90e59616d0c2f77716fc8f62"
+        "full_hash": "934d141b633cefd2f19730c10f77153bcd872cef",
+        "subject": "deploy fix attempt with adding in x-access-token",
+        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/934d141b633cefd2f19730c10f77153bcd872cef"
     },
     "deployment_information": {
-        "build_time": "2023-01-14T12:38:26Z"
+        "build_time": "2025-07-08T11:24:17Z"
     }
 }
