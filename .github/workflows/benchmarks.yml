@@ -8,6 +8,10 @@ on:
     branches:
       - publish
 
+  schedule:
+    # Runs on the 1st of every month at 3PM
+    - cron: "0 15 1 * *"
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -19,13 +23,13 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       # No need to deploy site, as the action will run its own server
       #   for more information, see https://github.com/treosh/lighthouse-ci-action#recipes
       #   under the "Test a static site without having to deploy it." section
       - name: Run Lighthouse against a static dist dir
-        uses: treosh/lighthouse-ci-action@v7
+        uses: treosh/lighthouse-ci-action@v12
         with:
           # no urls needed, since it uses local folder to scan .html files
           configPath: '.github/workflows/resources/lighthouserc.json'
