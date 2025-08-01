@@ -24,6 +24,8 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: publish
 
       # No need to deploy site, as the action will run its own server
       #   for more information, see https://github.com/treosh/lighthouse-ci-action#recipes
