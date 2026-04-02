@@ -8,7 +8,7 @@
 # Usage:
 #   - From the repo root, run bin/new-post.sh <title-name>
 #     - DON'T suffix with .md!
-#   - E.g. `bin/new-post.sh hello-world`
+#   - E.g. `bin/new-post hello-world`
 ##
 
 # Fails script if any line below fails
