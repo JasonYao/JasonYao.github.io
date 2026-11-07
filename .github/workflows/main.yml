@@ -31,8 +31,7 @@ jobs:
       # Ruby used for html lint, and node used for json lint
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.0.0 # Not needed with a .ruby-version file
-          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+          ruby-version: '3.4'
       - uses: actions/setup-node@v4
         with:
           node-version: '24.3.0'
