@@ -22,8 +22,10 @@ food recipes tossed in for variety.
 
 ## Dependency Installation
 ```sh
-brew install hugo
+brew install hugo node
 ```
+
+Node.js is used by `bin/validate` to check generated JSON files.
 
 ## Usage
 ### Local dev
