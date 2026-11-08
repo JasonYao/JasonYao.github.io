@@ -53,7 +53,7 @@ If you are a recruiter, please see this handy-dandy flowchart I made:
 
 ![](images/recruiter-flowchart.drawio.png)
 
-My [Linkedin](https://www.linkedin.com/in/jasonyaonyu/) should be up to date
+My [Linkedin](https://www.linkedin.com/in/tea-gremlin/) should be up to date
 with my work history, what I've worked on, things I've lead or done, etc.
 
 Unless there's a **lot** of pennies being thrown, I'm not looking to leave NYC,
