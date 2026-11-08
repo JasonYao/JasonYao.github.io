@@ -23,21 +23,14 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           submodules: true  # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
-      # Ruby used for html lint, and node used for json lint
-      - uses: ruby/setup-ruby@v1
+      - uses: actions/setup-node@v7
         with:
-          ruby-version: '3.4'
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '24.3.0'
-
-      - name: Setup lint dependencies
-        run: gem install html-proofer && npm install jsonlint -g
+          node-version: '26'
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
@@ -45,7 +38,7 @@ jobs:
           hugo-version: 'latest'
           # extended: true
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@v6
         with:
           path: /tmp/hugo_cache
           key: ${{ runner.os }}-hugomod-${{ hashFiles('**/go.sum') }}
