@@ -1,13 +1,13 @@
 {
     "git_information": {
-        "short_hash": "4ae00dc",
-        "commit_timestamp": "2026-11-08T18:25:43Z",
-        "author": "Copilot <198982749+Copilot@users.noreply.github.com>",
-        "full_hash": "4ae00dcbfd33693ad7b5be0fe9482c83e07536d2",
-        "subject": "Remove ruby from CI and updated workflows",
-        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/4ae00dcbfd33693ad7b5be0fe9482c83e07536d2"
+        "short_hash": "ab1ff06",
+        "commit_timestamp": "2026-11-08T18:39:04Z",
+        "author": "copilot-swe-agent[bot] <198982749+Copilot@users.noreply.github.com>",
+        "full_hash": "ab1ff06844138b62ea178c57201780c0ebdc382c",
+        "subject": "Replace Hugo setup action",
+        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/ab1ff06844138b62ea178c57201780c0ebdc382c"
     },
     "deployment_information": {
-        "build_time": "2026-11-08T18:25:43Z"
+        "build_time": "2026-11-08T18:39:04Z"
     }
 }
