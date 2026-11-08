@@ -15,7 +15,7 @@ func validate(path string) error {
 	defer file.Close()
 
 	decoder := json.NewDecoder(file)
-	var value any
+	var value json.RawMessage
 	if err := decoder.Decode(&value); err != nil {
 		return err
 	}
