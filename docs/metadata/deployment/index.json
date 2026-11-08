@@ -1,13 +1,13 @@
 {
     "git_information": {
-        "short_hash": "dee3e91",
-        "commit_timestamp": "2026-11-07T03:12:07Z",
-        "author": "JasonYao <3739191+JasonYao@users.noreply.github.com>",
-        "full_hash": "dee3e91b593d2305dd7f327614a29be76186dcce",
-        "subject": "Fix CI Ruby version",
-        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/dee3e91b593d2305dd7f327614a29be76186dcce"
+        "short_hash": "4ae00dc",
+        "commit_timestamp": "2026-11-08T18:25:43Z",
+        "author": "Copilot <198982749+Copilot@users.noreply.github.com>",
+        "full_hash": "4ae00dcbfd33693ad7b5be0fe9482c83e07536d2",
+        "subject": "Remove ruby from CI and updated workflows",
+        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/4ae00dcbfd33693ad7b5be0fe9482c83e07536d2"
     },
     "deployment_information": {
-        "build_time": "2026-11-07T03:12:07Z"
+        "build_time": "2026-11-08T18:25:43Z"
     }
 }
