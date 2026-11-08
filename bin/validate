@@ -46,11 +46,10 @@ fi
 # JSON lint
 info "Checking all generated JSON files for integrity"
 while IFS= read -r -d '' json_file; do
-    node -e '
-        const fs = require("node:fs");
+    bun -e '
         const file = process.argv[1];
         try {
-            JSON.parse(fs.readFileSync(file, "utf8"));
+            JSON.parse(await Bun.file(file).text());
         } catch (error) {
             console.error(`${file}: ${error.message}`);
             process.exitCode = 1;
