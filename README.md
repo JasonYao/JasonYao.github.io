@@ -18,14 +18,15 @@ food recipes tossed in for variety.
 
 ### TODO things to consider adding in later
 - Full OpenGraph support
-- Google AMP
 
 ## Dependency Installation
 ```sh
-brew install hugo node
-```
+brew install hugo
 
-Node.js is used by `bin/validate` to check generated JSON files.
+# Used for running lighthouse and json linting in bin/validate
+brew tap oven-sh/bun
+brew install bun
+```
 
 ## Usage
 ### Local dev
