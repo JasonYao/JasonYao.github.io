@@ -1,13 +1,13 @@
 {
     "git_information": {
-        "short_hash": "bebbb6f",
-        "commit_timestamp": "2026-11-09T02:00:28Z",
-        "author": "Copilot <198982749+Copilot@users.noreply.github.com>",
-        "full_hash": "bebbb6fc40c17cbda5db89f905418046f254b39c",
-        "subject": "Update LHCI CLI to v0.16.0 (#74)",
-        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/bebbb6fc40c17cbda5db89f905418046f254b39c"
+        "short_hash": "ee4b1aa",
+        "commit_timestamp": "2026-11-09T02:03:46Z",
+        "author": "copilot-swe-agent[bot] <198982749+Copilot@users.noreply.github.com>",
+        "full_hash": "ee4b1aa6626c2e6b3f6d4d78a39fece6abe3fed4",
+        "subject": "Update LinkedIn profile URL",
+        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/ee4b1aa6626c2e6b3f6d4d78a39fece6abe3fed4"
     },
     "deployment_information": {
-        "build_time": "2026-11-09T02:00:28Z"
+        "build_time": "2026-11-09T02:03:46Z"
     }
 }
