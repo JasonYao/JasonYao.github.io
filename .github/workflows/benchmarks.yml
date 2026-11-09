@@ -30,7 +30,7 @@ jobs:
       - uses: oven-sh/setup-bun@v2
 
       - name: Run Lighthouse against a static dist dir
-        run: bunx --yes @lhci/cli@0.14.0 autorun --config=.github/workflows/resources/lighthouserc.json --upload.target=temporary-public-storage
+        run: bunx --yes @lhci/cli@0.16.0 autorun --config=.github/workflows/resources/lighthouserc.json --upload.target=temporary-public-storage
 
       - name: Upload Lighthouse reports
         if: always()
