@@ -1,0 +1,32 @@
+name: Build and Lighthouse
+
+on:
+  push:
+    branches-ignore:
+      - source
+      - publish
+
+  pull_request:
+
+jobs:
+  create-a-build-and-then-lighthouse-that-build:
+    name: create-a-build-and-then-lighthouse-that-build
+    if: github.event_name != 'pull_request' || (github.head_ref != 'source' && github.head_ref != 'publish')
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          submodules: true
+          fetch-depth: 0
+
+      - uses: oven-sh/setup-bun@v2
+
+      - name: Setup Hugo
+        run: sudo snap install hugo
+
+      - name: Build site
+        run: bin/build
+
+      - name: Run Lighthouse against the build
+        run: bunx --yes @lhci/cli@0.16.0 autorun --config=.github/workflows/resources/lighthouserc-public.json --upload.target=temporary-public-storage

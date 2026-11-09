@@ -31,11 +31,3 @@ jobs:
 
       - name: Run Lighthouse against a static dist dir
         run: bunx --yes @lhci/cli@0.16.0 autorun --config=.github/workflows/resources/lighthouserc.json --upload.target=temporary-public-storage
-
-      - name: Upload Lighthouse reports
-        if: always()
-        uses: actions/upload-artifact@v7
-        with:
-          name: lighthouse-reports
-          path: .lighthouseci/
-          if-no-files-found: error
