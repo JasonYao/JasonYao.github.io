@@ -1,33 +1,30 @@
-# This is a basic workflow to help you get started with Actions
-
 name: Site Benchmarking
 
-# We only want to run our benchmarks on a new publish
 on:
   push:
     branches:
-      - publish
+      - source
+  pull_request:
+    branches:
+      - source
 
-  schedule:
-    # Runs on the 1st of every month at 3PM
-    - cron: "0 15 1 * *"
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  benchmark:
-    # The type of runner that the job will run on
+  create-a-build-and-then-lighthouse-that-build:
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v7
         with:
-          ref: publish
+          submodules: true
+          fetch-depth: 0
 
       - uses: oven-sh/setup-bun@v2
 
-      - name: Run Lighthouse against a static dist dir
+      - name: Setup Hugo
+        run: sudo snap install hugo
+
+      - name: Build site
+        run: bin/build
+
+      - name: Run Lighthouse against the build
         run: bunx --yes @lhci/cli@0.16.0 autorun --config=.github/workflows/resources/lighthouserc.json --upload.target=temporary-public-storage
