@@ -1,13 +1,13 @@
 {
     "git_information": {
-        "short_hash": "1e051d7",
-        "commit_timestamp": "2026-11-08T18:51:15Z",
+        "short_hash": "bebbb6f",
+        "commit_timestamp": "2026-11-09T02:00:28Z",
         "author": "Copilot <198982749+Copilot@users.noreply.github.com>",
-        "full_hash": "1e051d757736995fe19c5d0aefddb4c989e1f934",
-        "subject": "Migrated node -> bun and replaced treosh lighthouse CI",
-        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/1e051d757736995fe19c5d0aefddb4c989e1f934"
+        "full_hash": "bebbb6fc40c17cbda5db89f905418046f254b39c",
+        "subject": "Update LHCI CLI to v0.16.0 (#74)",
+        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/bebbb6fc40c17cbda5db89f905418046f254b39c"
     },
     "deployment_information": {
-        "build_time": "2026-11-08T18:51:15Z"
+        "build_time": "2026-11-09T02:00:28Z"
     }
 }
