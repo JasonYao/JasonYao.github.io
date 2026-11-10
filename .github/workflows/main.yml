@@ -50,9 +50,7 @@ jobs:
         run: bin/validate
 
       - name: Benchmark
-        run: |
-          python3 bin/lighthouse_config.py > "${RUNNER_TEMP}/lighthouserc.json"
-          bunx --yes @lhci/cli@0.16.0 autorun --config="${RUNNER_TEMP}/lighthouserc.json" --upload.target=filesystem
+        run: bin/benchmark
 
       - name: Generate Lighthouse score screenshots
         if: github.event_name == 'push' && github.ref_name != 'source' && github.ref_name != 'publish'

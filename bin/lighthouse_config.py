@@ -1,21 +1,41 @@
 import json
 import sys
 import xml.etree.ElementTree as ET
+from pathlib import Path
+from typing import Any
 from urllib.parse import urlsplit
 
 
-with open(".github/workflows/resources/lighthouserc.json", encoding="utf-8") as file:
-    config = json.load(file)
+CONFIG_PATH = Path(".github/workflows/resources/lighthouserc.json")
+SITEMAP_PATH = Path("public/sitemap.xml")
+NAMESPACE = "{http://www.sitemaps.org/schemas/sitemap/0.9}"
 
-sitemap = ET.parse("public/sitemap.xml")
-namespace = "{http://www.sitemaps.org/schemas/sitemap/0.9}"
-pages = sitemap.findall(f"{namespace}url")
-if not pages:
-    raise ValueError("Sitemap contains no page URLs")
 
-urls = []
-for page in pages:
-    location = page.findtext(f"{namespace}loc", "").strip()
+def main() -> None:
+    config = load_config(CONFIG_PATH)
+    config["ci"]["collect"]["url"] = sitemap_urls(SITEMAP_PATH)
+    json.dump(config, sys.stdout, indent=2)
+
+
+def load_config(path: Path) -> dict[str, Any]:
+    with path.open(encoding="utf-8") as file:
+        return json.load(file)
+
+
+def sitemap_urls(path: Path) -> list[str]:
+    sitemap = ET.parse(path)
+    pages = sitemap.findall(f"{NAMESPACE}url")
+    if not pages:
+        raise ValueError("Sitemap contains no page URLs")
+
+    urls = [
+        local_url(page.findtext(f"{NAMESPACE}loc", "").strip())
+        for page in pages
+    ]
+    return list(dict.fromkeys(urls))
+
+
+def local_url(location: str) -> str:
     parsed = urlsplit(location)
     if (
         parsed.scheme not in ("http", "https")
@@ -27,7 +47,8 @@ for page in pages:
         or parsed.fragment
     ):
         raise ValueError(f"Invalid sitemap URL: {location!r}")
-    urls.append(f"http://localhost{parsed.path}")
+    return f"http://localhost{parsed.path}"
 
-config["ci"]["collect"]["url"] = list(dict.fromkeys(urls))
-json.dump(config, sys.stdout, indent=2)
+
+if __name__ == "__main__":
+    main()
