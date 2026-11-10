@@ -29,7 +29,7 @@ function fail () {
 
 # Builds the static site with minified info
 info "Starting hugo build"
-hugo --gc --minify --enableGitInfo
+hugo --gc --minify --enableGitInfo --panicOnWarning
 success "Hugo built static site successfully"
 
 # Overwrites the site metadata to include deployment info

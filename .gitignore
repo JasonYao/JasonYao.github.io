@@ -3,6 +3,7 @@ public/
 
 # Build dir
 /resources
+.hugo_build.lock
 
 # Platform ignores
 .DS_Store
