@@ -37,10 +37,9 @@ info "The CURRENT_BRANCH value is: ${CURRENT_BRANCH}"
 CURRENT_BUILD_SHA=$(git rev-parse --short "${GITHUB_SHA}")
 info "The CURRENT_BUILD_SHA value is: ${CURRENT_BUILD_SHA}"
 
-GITHUB_DEPLOYMENT_TOKEN=$2
-
 # Publishes a new build to the publish branch
 if [[ "$CURRENT_BRANCH" == "source" ]]; then
+    : "${SOURCE_DEPLOY_PAT:?SOURCE_DEPLOY_PAT must be set to deploy from source}"
     info "Deployment: Starting deployment of site"
 
     # Converts the generated site into its own repo
@@ -57,7 +56,7 @@ if [[ "$CURRENT_BRANCH" == "source" ]]; then
     # Sets up the repo to push as myself
     git config user.name "Jason Yao"
     git config user.email "Hello@JasonYao.com"
-    git remote add upstream "https://x-access-token:${GITHUB_DEPLOYMENT_TOKEN}@github.com/JasonYao/JasonYao.github.io.git"
+    git remote add upstream "https://x-access-token:${SOURCE_DEPLOY_PAT}@github.com/JasonYao/JasonYao.github.io.git"
 
     # Commit a new build and push to the publishing branch (which will auto deploy to Github Pages)
     git fetch upstream

@@ -10,3 +10,4 @@ public/
 # IDE ignores
 .idea/
 
+.lighthouseci/

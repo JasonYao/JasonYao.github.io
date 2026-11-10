@@ -1,0 +1,92 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+if [[ -z "${DEPLOY_ACCESS_TOKEN:-}" || -z "${ARTIFACT_URL:-}" || ! "${GITHUB_REPOSITORY_ID:-}" =~ ^[0-9]+$ ]]; then
+    printf 'DEPLOY_ACCESS_TOKEN, ARTIFACT_URL, and GITHUB_REPOSITORY_ID must be set to comment on a pull request.\n' >&2
+    exit 1
+fi
+
+if [[ "${GITHUB_EVENT_NAME}" == "pull_request" ]]; then
+    pull_number="$(jq -er '.number' "${GITHUB_EVENT_PATH}")"
+    head_repository="$(jq -er '.pull_request.head.repo.full_name // empty' "${GITHUB_EVENT_PATH}")"
+    if [[ "${head_repository}" != "${GITHUB_REPOSITORY}" ]]; then
+        printf 'Skipping benchmark comment for a pull request from another repository.\n'
+        exit 0
+    fi
+else
+    pulls="$(curl --silent --show-error --fail-with-body \
+        --oauth2-bearer "${DEPLOY_ACCESS_TOKEN}" \
+        --header "Accept: application/vnd.github+json" \
+        --get \
+        --data-urlencode "state=open" \
+        --data-urlencode "head=${GITHUB_REPOSITORY_OWNER}:${GITHUB_REF_NAME}" \
+        --data-urlencode "per_page=100" \
+        "${GITHUB_API_URL}/repos/${GITHUB_REPOSITORY}/pulls")"
+    pull_number="$(jq -er \
+        --arg ref "${GITHUB_REF_NAME}" \
+        --arg repository "${GITHUB_REPOSITORY}" \
+        '[.[] | select(.head.ref == $ref and .head.repo != null and .head.repo.full_name == $repository)][0].number // empty' \
+        <<< "${pulls}" || true)"
+fi
+
+if [[ -z "${pull_number}" ]]; then
+    printf 'No open pull request found for this branch; skipping benchmark comment.\n'
+    exit 0
+fi
+
+screenshots_dir=".lighthouseci/screenshots"
+shopt -s nullglob
+screenshots=("${screenshots_dir}"/*.png)
+if (( ${#screenshots[@]} == 0 )); then
+    printf 'No Lighthouse score screenshots found in %s.\n' "${screenshots_dir}" >&2
+    exit 1
+fi
+
+function upload_attachment() {
+    local file_name="$1"
+    local encoded_name
+    local response
+    local status
+
+    encoded_name="$(jq -rn --arg name "$(basename "${file_name}")" '$name | @uri')"
+    response="$(curl --silent --show-error \
+        --request POST \
+        --header "Authorization: token ${DEPLOY_ACCESS_TOKEN}" \
+        --header "Accept: application/vnd.github+json" \
+        --header "X-GitHub-Api-Version: 2022-11-28" \
+        --header "Content-Type: application/octet-stream" \
+        --data-binary "@${file_name}" \
+        --write-out $'\n%{http_code}' \
+        "https://uploads.github.com/user-attachments/assets?name=${encoded_name}&content_type=image%2Fpng&repository_id=${GITHUB_REPOSITORY_ID}")"
+
+    status="${response##*$'\n'}"
+    response="${response%$'\n'*}"
+    if [[ "${status}" != 201 ]]; then
+        printf 'Attachment upload failed for %s (HTTP %s): %s\n' "${file_name}" "${status}" "${response}" >&2
+        return 1
+    fi
+
+    jq -er '.url' <<< "${response}"
+}
+
+table_rows=()
+for screenshot in "${screenshots[@]}"; do
+    report_name="$(basename "${screenshot%.png}")"
+    report_json=".lighthouseci/${report_name}.json"
+    page_url="$(jq -er '.requestedUrl // .finalUrl' "${report_json}" | sed -E 's#https?://[^/]+##; s#^$#/#; s/[|]/%7C/g')"
+    image_url="$(upload_attachment "${screenshot}")"
+    table_rows+=("| ${page_url} | ![Lighthouse scores for ${page_url}](${image_url}) |")
+done
+
+report_table="$(printf '| Page | Lighthouse scores |\n|---|---|\n%s' "$(printf '%s\n' "${table_rows[@]}")")"
+comment_body="$(printf 'Lighthouse benchmark reports: [Download the workflow artifact](%s).\n\n%s' "${ARTIFACT_URL}" "${report_table}")"
+comment_payload="$(jq -n --arg body "${comment_body}" '{body: $body}')"
+
+curl --silent --show-error --fail-with-body \
+    --request POST \
+    --oauth2-bearer "${DEPLOY_ACCESS_TOKEN}" \
+    --header "Accept: application/vnd.github+json" \
+    --header "Content-Type: application/json" \
+    --data "${comment_payload}" \
+    "${GITHUB_API_URL}/repos/${GITHUB_REPOSITORY}/issues/${pull_number}/comments" > /dev/null
