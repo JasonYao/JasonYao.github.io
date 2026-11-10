@@ -1,13 +1,13 @@
 {
     "git_information": {
-        "short_hash": "727655a",
-        "commit_timestamp": "2026-11-10T04:49:18Z",
+        "short_hash": "a344f48",
+        "commit_timestamp": "2026-11-10T05:36:36Z",
         "author": "Copilot <198982749+Copilot@users.noreply.github.com>",
-        "full_hash": "727655ad5ea8c8f1a44c961ece140d6c79284ddf",
-        "subject": "Fail hugo builds on emitted warnings",
-        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/727655ad5ea8c8f1a44c961ece140d6c79284ddf"
+        "full_hash": "a344f487f20b1dd5fa9f26b9297cd997bac7be41",
+        "subject": "Add semantic HTML validation (#81)",
+        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/a344f487f20b1dd5fa9f26b9297cd997bac7be41"
     },
     "deployment_information": {
-        "build_time": "2026-11-10T04:49:18Z"
+        "build_time": "2026-11-10T05:36:36Z"
     }
 }
