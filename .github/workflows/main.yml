@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: build-and-benchmark
 
 # We don't want another build triggered from our deployment branch (master in this instance)
 on:
@@ -40,12 +40,15 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-hugomod-
 
-      - name: build site
+      - name: Build site
         run: bin/build
 
       # Runs a whole bunch of linters for config, generated JSON/html
-      - name: validate build
+      - name: Validate build
         run: bin/validate
+
+      - name: Benchmark
+        run: bunx --yes @lhci/cli@0.16.0 autorun --config=.github/workflows/resources/lighthouserc.json --upload.target=temporary-public-storage
 
       # The weird github ref thing below just extracts out the branch
       #   name for us, similar to $TRAVIS_BRANCH
