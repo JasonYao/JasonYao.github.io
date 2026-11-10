@@ -6,18 +6,18 @@
     <meta itemprop="description" content="{{ .Site.Data.biography.general.description }}">
 
     <!-- Social -->
-    <meta itemprop="email" content="{{ .Site.Data.biography.general.email }}" rel="me" aria-label="e-mail">
-    <meta itemprop="sameAs" content="{{ .Site.Data.biography.general.github }}" rel="me" aria-label="Github">
-    <meta itemprop="sameAs" content="{{ .Site.Data.biography.general.linkedin }}" rel="me" aria-label="Linkedin">
+    <meta itemprop="email" content="{{ .Site.Data.biography.general.email | replaceRE "^mailto:" "" }}">
+    <meta itemprop="sameAs" content="{{ .Site.Data.biography.general.github }}">
+    <meta itemprop="sameAs" content="{{ .Site.Data.biography.general.linkedin }}">
 
     <!-- Current job -->
     {{ with .Site.Data.biography.work.current }}
     <div class="meta">
         <meta itemprop="jobTitle" content="{{ .title }}">
 
-        <span itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
+        <span itemscope itemprop="worksFor" itemtype="https://schema.org/Organization">
             <span itemprop="name">{{ .organization_name }}</span>
-            <span itemprop="start" itemref="person1" itemtype="http://schema.org/Person">
+            <span itemprop="start" itemref="person1" itemtype="https://schema.org/Person">
                 <meta itemprop="roleName" content="{{ .title }}">
                 <meta itemprop="startDate" content="{{ .start_date }}">
                 <meta itemprop="sameAs" content="{{ .link }}">
@@ -41,9 +41,9 @@
     <!-- Previous jobs -->
     {{ range .Site.Data.biography.work.previous }}
     <div class="meta" itemprop="alumniOf" itemscope itemtype="https://schema.org/OrganizationRole">
-        <div itemprop="alumniOf" itemscope itemtype="http://schema.org/Organization">
+        <div itemprop="alumniOf" itemscope itemtype="https://schema.org/Organization">
             <span itemprop="name">{{ .organization_name }}</span>
-            <span itemprop="start" itemref="person1" itemtype="http://schema.org/Person">
+            <span itemprop="start" itemref="person1" itemtype="https://schema.org/Person">
                 <meta itemprop="roleName" content="{{ .title }}">
                 <meta itemprop="startDate" content="{{ .start_date }}">
                 <meta itemprop="endDate" content="{{ .end_date }}">

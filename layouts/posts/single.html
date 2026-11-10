@@ -1,7 +1,7 @@
 {{ define "main" }}
   <!-- Typo fix that displays the metadata properly on the post. Also adds in OpenGraph metadata and semantic elements instead of just divs everywhere  -->
-    <article class="post {{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}" itemscope itemtype="http://schema.org/BlogPosting">
-        <main class="post-content">
+    <article class="post {{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}" itemscope itemtype="https://schema.org/BlogPosting">
+        <div class="post-content">
 
             {{ if hasPrefix .Params.thumbnail "global" }}
                 {{ partial "global/image" (dict "linked_location" .RelPermalink "image_location" .Params.thumbnail "thumbnail_alt_text" .Params.thumbnail_alt_text "classes" "post-hero") }}
@@ -11,7 +11,7 @@
             {{ end }}
 
             <div class="post-title">
-                <h3 itemprop="headline">{{ .Title }}</h3>
+                <h1 itemprop="headline">{{ .Title }}</h1>
 
                 {{ partial "global/authorship" . }}
 
@@ -42,7 +42,7 @@
               {{- partial "contact.html" . -}}
             {{- end -}}
 
-        </main>
+        </div>
         <div class="post-footer">
             <div class="info">
                 {{ with .Page.Params.Categories }}{{ partial "taxonomy/categories.html" . }}{{ end }}

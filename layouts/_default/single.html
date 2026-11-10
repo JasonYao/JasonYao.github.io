@@ -7,7 +7,7 @@
             <img class="post-thumbnail" src="{{ .Params.thumbnail | absURL }}" alt="{{ .Params.thumbnail_alt_text }}">
             {{ end }}
             <div class="post-title">
-                <h3>{{ .Title }}</h3>
+                <h1>{{ .Title }}</h1>
                 {{ if eq .Type "posts"}}
 
                 {{ partial "global/authorship" . }}
