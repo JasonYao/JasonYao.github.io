@@ -1,13 +1,13 @@
 {
     "git_information": {
-        "short_hash": "2081995",
-        "commit_timestamp": "2026-11-10T04:24:47Z",
-        "author": "Jason Yao <Hello@JasonYao.com>",
-        "full_hash": "2081995d3e1aeeab9670ebae99896d2192ee4b69",
-        "subject": "Swapped to apt",
-        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/2081995d3e1aeeab9670ebae99896d2192ee4b69"
+        "short_hash": "727655a",
+        "commit_timestamp": "2026-11-10T04:49:18Z",
+        "author": "Copilot <198982749+Copilot@users.noreply.github.com>",
+        "full_hash": "727655ad5ea8c8f1a44c961ece140d6c79284ddf",
+        "subject": "Fail hugo builds on emitted warnings",
+        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/727655ad5ea8c8f1a44c961ece140d6c79284ddf"
     },
     "deployment_information": {
-        "build_time": "2026-11-10T04:24:47Z"
+        "build_time": "2026-11-10T04:49:18Z"
     }
 }
