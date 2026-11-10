@@ -23,7 +23,7 @@ food recipes tossed in for variety.
 ```sh
 brew install hugo
 
-# Used for running lighthouse and json linting in bin/validate
+# Used for running Lighthouse, JSON linting, and generated HTML validation in bin/validate
 brew tap oven-sh/bun
 brew install bun
 ```

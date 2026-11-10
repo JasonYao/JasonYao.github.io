@@ -9,19 +9,19 @@
     <ul class="social-links">
 
         <li>
-            <a href="{{ .Site.Data.biography.general.linkedin }}" rel="me" aria-label="Linkedin" itemprop=”sameAs”>
+            <a href="{{ .Site.Data.biography.general.linkedin }}" rel="me" aria-label="Linkedin" itemprop="sameAs">
                 {{ partial "global/icon" (dict "icon_name" "icon-linkedin" "icon_size" "3em") }}
             </a>
         </li>
 
         <li>
-            <a href="{{ .Site.Data.biography.general.github }}" rel="me" aria-label="Github" itemprop=”sameAs”>
+            <a href="{{ .Site.Data.biography.general.github }}" rel="me" aria-label="Github" itemprop="sameAs">
                 {{ partial "global/icon" (dict "icon_name" "icon-github" "icon_size" "3em") }}
             </a>
         </li>
 
         <li>
-            <a href="{{ .Site.Data.biography.general.email }}" rel="me" aria-label="Email" itemprop=”email”>
+            <a href="{{ .Site.Data.biography.general.email }}" rel="me" aria-label="Email" itemprop="email">
                 {{ partial "global/icon" (dict "icon_name" "icon-email" "icon_size" "3em") }}
             </a>
         </li>
@@ -37,9 +37,9 @@
     <div class="meta">
         <meta itemprop="jobTitle" content="{{ .title }}">
 
-        <span itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
+        <span itemscope itemprop="worksFor" itemtype="https://schema.org/Organization">
             <span itemprop="name">{{ .organization_name }}</span>
-            <span itemprop="start" itemref="person1" itemtype="http://schema.org/Person">
+            <span itemprop="start" itemref="person1" itemtype="https://schema.org/Person">
                 <meta itemprop="roleName" content="{{ .title }}">
                 <meta itemprop="startDate" content="{{ .start_date }}">
                 <meta itemprop="sameAs" content="{{ .link }}">
@@ -63,9 +63,9 @@
     <!-- Previous jobs -->
     {{ range .Site.Data.biography.work.previous }}
     <div class="meta" itemprop="alumniOf" itemscope itemtype="https://schema.org/OrganizationRole">
-        <div itemprop="alumniOf" itemscope itemtype="http://schema.org/Organization">
+        <div itemprop="alumniOf" itemscope itemtype="https://schema.org/Organization">
             <span itemprop="name">{{ .organization_name }}</span>
-            <span itemprop="start" itemref="person1" itemtype="http://schema.org/Person">
+            <span itemprop="start" itemref="person1" itemtype="https://schema.org/Person">
                 <meta itemprop="roleName" content="{{ .title }}">
                 <meta itemprop="startDate" content="{{ .start_date }}">
                 <meta itemprop="endDate" content="{{ .end_date }}">

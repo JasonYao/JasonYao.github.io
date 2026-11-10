@@ -9,13 +9,13 @@
 <div class="main">
     {{ partial "navbar.html" . }}
     <div class="autopagerize_page_element">
-        <div class="content">
+        <main class="content">
           <!-- Search results -->
           <section id="search-results" class="search-results"></section>
 
           <!-- Copy of anatole theme's layout, but adding in the search results -->
             {{- block "main" . }}{{- end }}
-        </div>
+        </main>
     </div>
 </div>
 

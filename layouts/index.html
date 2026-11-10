@@ -6,6 +6,7 @@
 
      -->
     <div class="post {{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}">
+        <h1>{{ .Site.Params.title }}</h1>
         <!-- (Optional) Home
             -- on top of `mainSections` content (aka posts) ;
             -- as declared in content/_index.md
@@ -18,7 +19,7 @@
     {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
     {{ range $paginator.Pages }}
 
-        <article class="post {{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}" itemscope itemtype="http://schema.org/BlogPosting">
+        <article class="post {{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}" itemscope itemtype="https://schema.org/BlogPosting">
             {{ if hasPrefix .Params.thumbnail "global" }}
                 {{ partial "global/image" (dict "linked_location" .RelPermalink "image_location" .Params.thumbnail "thumbnail_alt_text" .Params.thumbnail_alt_text "classes" "post-thumbnail") }}
             {{ else }}
@@ -26,12 +27,12 @@
             {{ end }}
 
             <div class="post-title" >
-                <a href="{{ .RelPermalink }}"><h3 itemprop="headline">{{ .Title }}</h3></a>
+                <a href="{{ .RelPermalink }}"><h2 itemprop="headline">{{ .Title }}</h2></a>
                 {{ partial "global/authorship" . }}
             </div>
 
             <div class="post-content" itemprop="description">
-                <div class="p_part"><p>{{ .Summary }}</p></div>
+                <div class="p_part">{{ .Summary }}</div>
             </div>
 
             <div class="post-footer">
