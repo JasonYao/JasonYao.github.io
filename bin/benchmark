@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+config="$(mktemp "${RUNNER_TEMP:-${TMPDIR:-/tmp}}/lighthouserc.XXXXXX.json")"
+trap 'rm -f -- "$config"' EXIT
+
+python3 bin/lighthouse_config.py "$config"
+bunx --yes @lhci/cli@0.16.0 autorun --config="$config" --upload.target=filesystem
