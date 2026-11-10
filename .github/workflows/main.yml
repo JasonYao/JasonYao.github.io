@@ -28,13 +28,6 @@ jobs:
 
       - uses: oven-sh/setup-bun@v2
 
-      - uses: actions/setup-node@v7.1.0
-        with:
-          node-version: 22
-
-      - name: Install Puppeteer
-        run: npm ci
-
       - name: Setup Hugo
         run: sudo snap install hugo
 
@@ -56,7 +49,7 @@ jobs:
 
       - name: Generate Lighthouse score screenshots
         if: github.event_name == 'push' && github.ref_name != 'source' && github.ref_name != 'publish'
-        run: node bin/lighthouse_screenshots.mjs
+        run: bun run bin/lighthouse_screenshots.ts
 
       - name: Upload Lighthouse reports
         id: upload-lighthouse-reports

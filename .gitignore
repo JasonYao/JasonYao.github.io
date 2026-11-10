@@ -10,5 +10,4 @@ public/
 # IDE ignores
 .idea/
 
-node_modules/
 .lighthouseci/
