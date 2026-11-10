@@ -1,13 +1,13 @@
 {
     "git_information": {
-        "short_hash": "a344f48",
-        "commit_timestamp": "2026-11-10T05:36:36Z",
+        "short_hash": "463af29",
+        "commit_timestamp": "2026-11-10T05:57:25Z",
         "author": "Copilot <198982749+Copilot@users.noreply.github.com>",
-        "full_hash": "a344f487f20b1dd5fa9f26b9297cd997bac7be41",
-        "subject": "Add semantic HTML validation (#81)",
-        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/a344f487f20b1dd5fa9f26b9297cd997bac7be41"
+        "full_hash": "463af29b35bf7b7448a2aed531b6999c8eadef4a",
+        "subject": "Benchmark local pages with Lighthouse (#84)",
+        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/463af29b35bf7b7448a2aed531b6999c8eadef4a"
     },
     "deployment_information": {
-        "build_time": "2026-11-10T05:36:36Z"
+        "build_time": "2026-11-10T05:57:25Z"
     }
 }
