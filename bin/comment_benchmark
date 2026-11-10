@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+if [[ -z "${DEPLOY_ACCESS_TOKEN:-}" || -z "${ARTIFACT_URL:-}" ]]; then
+    printf 'DEPLOY_ACCESS_TOKEN and ARTIFACT_URL must be set to comment on a pull request.\n' >&2
+    exit 1
+fi
+
+if [[ "${GITHUB_EVENT_NAME}" == "pull_request" ]]; then
+    pull_number="$(jq -er '.number' "${GITHUB_EVENT_PATH}")"
+    head_repository="$(jq -er '.pull_request.head.repo.full_name // empty' "${GITHUB_EVENT_PATH}")"
+    if [[ "${head_repository}" != "${GITHUB_REPOSITORY}" ]]; then
+        printf 'Skipping benchmark comment for a pull request from another repository.\n'
+        exit 0
+    fi
+else
+    pulls="$(curl --silent --show-error --fail-with-body \
+        --oauth2-bearer "${DEPLOY_ACCESS_TOKEN}" \
+        --header "Accept: application/vnd.github+json" \
+        --get \
+        --data-urlencode "state=open" \
+        --data-urlencode "head=${GITHUB_REPOSITORY_OWNER}:${GITHUB_REF_NAME}" \
+        --data-urlencode "per_page=100" \
+        "${GITHUB_API_URL}/repos/${GITHUB_REPOSITORY}/pulls")"
+    pull_number="$(jq -er \
+        --arg ref "${GITHUB_REF_NAME}" \
+        --arg repository "${GITHUB_REPOSITORY}" \
+        '[.[] | select(.head.ref == $ref and .head.repo != null and .head.repo.full_name == $repository)][0].number // empty' \
+        <<< "${pulls}" || true)"
+fi
+
+if [[ -z "${pull_number}" ]]; then
+    printf 'No open pull request found for this branch; skipping benchmark comment.\n'
+    exit 0
+fi
+
+comment_body="Lighthouse benchmark reports: [Download the workflow artifact](${ARTIFACT_URL})."
+comment_payload="$(jq -n --arg body "${comment_body}" '{body: $body}')"
+
+curl --silent --show-error --fail-with-body \
+    --request POST \
+    --oauth2-bearer "${DEPLOY_ACCESS_TOKEN}" \
+    --header "Accept: application/vnd.github+json" \
+    --header "Content-Type: application/json" \
+    --data "${comment_payload}" \
+    "${GITHUB_API_URL}/repos/${GITHUB_REPOSITORY}/issues/${pull_number}/comments" > /dev/null

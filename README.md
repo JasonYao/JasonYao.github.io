@@ -28,6 +28,22 @@ brew tap oven-sh/bun
 brew install bun
 ```
 
+## Repo PAT Setup
+The repository uses two personal access tokens (PATs):
+
+1. `DEPLOY_ACCESS_TOKEN`
+    - Kind: Repository-level secret
+    - Permissions:
+        - Read-only: Contents
+        - Read-write: Pull requests
+    - Usage: Creates a comment on an open pull request from a non-`source`, non-`publish` branch with a link to the Lighthouse workflow artifact.
+2. `SOURCE_DEPLOY_PAT`
+    - Kind: Environment-level secret
+    - Environment: `deploy`
+    - Permissions:
+        - Read-write: Contents
+    - Usage: Deploys builds from the `source` branch to the `publish` branch.
+
 ## Usage
 ### Local dev
 Run dev site
