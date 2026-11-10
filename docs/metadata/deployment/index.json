@@ -1,13 +1,13 @@
 {
     "git_information": {
-        "short_hash": "d88b4f1",
-        "commit_timestamp": "2026-11-10T04:14:24Z",
-        "author": "Copilot <198982749+Copilot@users.noreply.github.com>",
-        "full_hash": "d88b4f129075f7b65c6c909e7a3f3577c2d7d6e9",
-        "subject": "Run lighthouse on all PRs and upload screenshots to PRs",
-        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/d88b4f129075f7b65c6c909e7a3f3577c2d7d6e9"
+        "short_hash": "2081995",
+        "commit_timestamp": "2026-11-10T04:24:47Z",
+        "author": "Jason Yao <Hello@JasonYao.com>",
+        "full_hash": "2081995d3e1aeeab9670ebae99896d2192ee4b69",
+        "subject": "Swapped to apt",
+        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/2081995d3e1aeeab9670ebae99896d2192ee4b69"
     },
     "deployment_information": {
-        "build_time": "2026-11-10T04:14:24Z"
+        "build_time": "2026-11-10T04:24:47Z"
     }
 }
