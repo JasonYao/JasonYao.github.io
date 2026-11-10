@@ -1,13 +1,13 @@
 {
     "git_information": {
-        "short_hash": "ee4b1aa",
-        "commit_timestamp": "2026-11-09T02:03:46Z",
-        "author": "copilot-swe-agent[bot] <198982749+Copilot@users.noreply.github.com>",
-        "full_hash": "ee4b1aa6626c2e6b3f6d4d78a39fece6abe3fed4",
-        "subject": "Update LinkedIn profile URL",
-        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/ee4b1aa6626c2e6b3f6d4d78a39fece6abe3fed4"
+        "short_hash": "d88b4f1",
+        "commit_timestamp": "2026-11-10T04:14:24Z",
+        "author": "Copilot <198982749+Copilot@users.noreply.github.com>",
+        "full_hash": "d88b4f129075f7b65c6c909e7a3f3577c2d7d6e9",
+        "subject": "Run lighthouse on all PRs and upload screenshots to PRs",
+        "commit_link": "https://github.com/JasonYao/JasonYao.github.io/commit/d88b4f129075f7b65c6c909e7a3f3577c2d7d6e9"
     },
     "deployment_information": {
-        "build_time": "2026-11-09T02:03:46Z"
+        "build_time": "2026-11-10T04:14:24Z"
     }
 }

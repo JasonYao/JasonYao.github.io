@@ -1,8 +1,5 @@
-# This is a basic workflow to help you get started with Actions
+name: build-and-benchmark
 
-name: CI
-
-# We don't want another build triggered from our deployment branch (master in this instance)
 on:
   push:
     branches-ignore:
@@ -15,18 +12,19 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+permissions:
+  contents: read
+
 jobs:
   build_and_deploy:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v7
         with:
-          submodules: true  # Fetch Hugo themes (true OR recursive)
-          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+          submodules: true
+          fetch-depth: 0
+          persist-credentials: false
 
       - uses: oven-sh/setup-bun@v2
 
@@ -40,20 +38,63 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-hugomod-
 
-      - name: build site
+      - name: Build site
         run: bin/build
 
-      # Runs a whole bunch of linters for config, generated JSON/html
-      - name: validate build
+      - name: Validate build
         run: bin/validate
 
-      # The weird github ref thing below just extracts out the branch
-      #   name for us, similar to $TRAVIS_BRANCH
-      - name: Deploy site
-        run: bin/deploy ${GITHUB_REF##*/} ${{secrets.DEPLOYMENT_TOKEN}}
+      - name: Benchmark
+        run: bunx --yes @lhci/cli@0.16.0 autorun --config=.github/workflows/resources/lighthouserc.json --upload.target=filesystem
 
-      # # Runs a set of commands using the runners shell
-      # - name: Run a multi-line script
-      #   run: |
-      #     echo Add other actions to build,
-      #     echo test, and deploy your project.
+      - name: Generate Lighthouse score screenshots
+        if: github.event_name == 'push' && github.ref_name != 'source' && github.ref_name != 'publish'
+        run: bun run bin/lighthouse_screenshots.ts
+
+      - name: Upload Lighthouse reports
+        id: upload-lighthouse-reports
+        uses: actions/upload-artifact@v7
+        with:
+          name: lighthouse-reports
+          path: .lighthouseci/
+          if-no-files-found: error
+          include-hidden-files: true
+
+      - name: Comment on pull request with benchmark artifact
+        if: >-
+          (github.event_name == 'push' &&
+          github.ref_name != 'source' && github.ref_name != 'publish')
+        env:
+          DEPLOY_ACCESS_TOKEN: ${{ secrets.DEPLOY_ACCESS_TOKEN }}
+          ARTIFACT_URL: ${{ steps.upload-lighthouse-reports.outputs.artifact-url }}
+          GITHUB_REPOSITORY_ID: ${{ github.repository_id }}
+        run: bin/pr_comment
+
+      - name: Upload site for deployment
+        if: github.event_name == 'push' && github.ref == 'refs/heads/source'
+        uses: actions/upload-artifact@v7
+        with:
+          name: site-public
+          path: public/
+          if-no-files-found: error
+
+  deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/source'
+    needs: build_and_deploy
+    runs-on: ubuntu-latest
+    environment: deploy
+
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - uses: actions/download-artifact@v7
+        with:
+          name: site-public
+          path: public/
+
+      - name: Deploy site
+        env:
+          SOURCE_DEPLOY_PAT: ${{ secrets.SOURCE_DEPLOY_PAT }}
+        run: bin/deploy source
