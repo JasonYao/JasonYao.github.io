@@ -36,7 +36,7 @@ The repository uses two personal access tokens (PATs):
     - Permissions:
         - Read-only: Contents
         - Read-write: Pull requests
-    - Usage: Creates a comment on an open pull request from a non-`source`, non-`publish` branch with a link to the Lighthouse workflow artifact.
+    - Usage: Adds inline Lighthouse score screenshots and a workflow artifact link to an open pull request from a non-`source`, non-`publish` branch.
 2. `SOURCE_DEPLOY_PAT`
     - Kind: Environment-level secret
     - Environment: `deploy`
