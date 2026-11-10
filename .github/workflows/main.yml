@@ -4,7 +4,6 @@ on:
   push:
     branches-ignore:
       - publish
-  pull_request:
 
   schedule:
     # Runs on the 1st of every month at 2PM
@@ -58,9 +57,6 @@ jobs:
 
       - name: Comment on pull request with benchmark artifact
         if: >-
-          (github.event_name == 'pull_request' &&
-          github.event.pull_request.head.repo.full_name == github.repository &&
-          github.head_ref != 'source' && github.head_ref != 'publish') ||
           (github.event_name == 'push' &&
           github.ref_name != 'source' && github.ref_name != 'publish')
         env:
