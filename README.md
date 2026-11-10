@@ -115,7 +115,7 @@ We use Google analytics here, which is spread out over 2 main consoles:
 - [Google Analytics Console](https://analytics.google.com/analytics/web/#/a99838993w146543783p151312757/admin/property/settings)
 
 ## Semantic markup and SEO
-The layouts emit Schema.org Microdata for blog posts, the author, and images, along with canonical, Open Graph, and Twitter Card metadata. `bin/validate` runs `html-validate` against the generated `public/` directory to catch invalid HTML and common accessibility/semantic markup issues. The linter allows unquoted attributes and inline styles because Hugo minifies HTML and the theme emits inline styles; other recommended rules remain enabled. This checks HTML structure, not the validity or search-engine eligibility of Schema.org data.
+The layouts emit Schema.org Microdata for blog posts, the author, and images, along with canonical, Open Graph, and Twitter Card metadata. `bin/validate` runs `html-validate` against the generated `public/` directory. Rules that report Hugo's minified output, theme markup, generated redirects, or existing content are disabled in `.htmlvalidate.json`; other recommended rules remain enabled. This checks HTML structure, not the validity or search-engine eligibility of Schema.org data.
 
 The template audit found outdated HTTP Schema.org URLs, malformed quoted microdata attributes, and nested/missing main landmarks; these have been corrected. The email microdata value is now an email address rather than a `mailto:` URL, and blog listing summaries are emitted without wrapping potentially paragraph-containing HTML in another paragraph. Validate Microdata independently with the tools below, since the HTML linter does not check Schema.org property vocabulary or search-engine eligibility.
 
