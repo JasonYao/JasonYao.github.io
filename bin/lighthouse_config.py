@@ -1,5 +1,5 @@
+import argparse
 import json
-import sys
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from typing import Any
@@ -12,9 +12,14 @@ NAMESPACE = "{http://www.sitemaps.org/schemas/sitemap/0.9}"
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("output", type=Path, help="Path to the generated Lighthouse configuration")
+    args = parser.parse_args()
+
     config = load_config(CONFIG_PATH)
     config["ci"]["collect"]["url"] = sitemap_urls(SITEMAP_PATH)
-    json.dump(config, sys.stdout, indent=2)
+    with args.output.open("w", encoding="utf-8") as file:
+        json.dump(config, file, indent=2)
 
 
 def load_config(path: Path) -> dict[str, Any]:
