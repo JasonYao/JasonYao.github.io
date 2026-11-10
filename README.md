@@ -45,6 +45,10 @@ The repository uses two personal access tokens (PATs):
     - Usage: Deploys builds from the `source` branch to the `publish` branch.
 
 ## Usage
+### Lighthouse benchmarks
+The workflow benchmarks every page in the built sitemap against the local `public/` directory.
+Pages excluded from the sitemap are not benchmarked.
+
 ### Local dev
 Run dev site
 ```sh

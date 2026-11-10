@@ -1,14 +1,7 @@
 {
   "ci": {
     "collect": {
-      "staticDistDir": "./public",
-      "url": [
-        "http://localhost/",
-        "http://localhost/posts/",
-        "http://localhost/about/",
-        "http://localhost/resume/",
-        "http://localhost/posts/2021/09/28/2021-tech-stack-migration-guide-domains/"
-      ]
+      "staticDistDir": "./public"
     }
   }
 }
