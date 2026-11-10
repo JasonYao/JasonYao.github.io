@@ -114,17 +114,6 @@ We use Google analytics here, which is spread out over 2 main consoles:
 - [Google Search Console](https://search.google.com/search-console?utm_source=about-page&resource_id=https://www.jasonyao.com/)
 - [Google Analytics Console](https://analytics.google.com/analytics/web/#/a99838993w146543783p151312757/admin/property/settings)
 
-## Semantic markup and SEO
-The template audit found outdated HTTP Schema.org URLs, malformed quoted microdata attributes, and nested/missing main landmarks; these have been corrected. The email microdata value is now an email address rather than a `mailto:` URL, and blog listing summaries are emitted without wrapping potentially paragraph-containing HTML in another paragraph. Validate Microdata independently with the tools below, since the HTML linter does not check Schema.org property vocabulary or search-engine eligibility.
-
-SEO can be assessed separately with:
-- Google Search Console for indexing, crawl errors, and search queries.
-- Google Rich Results Test and Schema Markup Validator for structured data.
-- Bing Webmaster Tools for Bing indexing and crawl diagnostics.
-- Lighthouse or PageSpeed Insights for performance and accessibility signals; these do not measure search visibility directly.
-
-These are investigation options only; no new SEO integrations are configured by this change.
-
 ## Notes
 ### Commenting
 To disable commenting on a specific post,
