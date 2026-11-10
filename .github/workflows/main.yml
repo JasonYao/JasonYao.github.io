@@ -28,8 +28,13 @@ jobs:
 
       - uses: oven-sh/setup-bun@v2
 
+      # We use apt here instead of sudo snap install hugo
+      # since there have been lots of instances of that step hanging
+      # For multiple minutes on "INFO Waiting for automatic snapd restart..."
       - name: Setup Hugo
-        run: sudo snap install hugo
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y hugo
 
       - uses: actions/cache@v6
         with:
