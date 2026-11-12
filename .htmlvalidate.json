@@ -3,7 +3,6 @@
   "rules": {
     "attr-quotes": "off",
     "no-inline-style": "off",
-    "attribute-allowed-values": "off",
     "close-order": "off",
     "doctype-style": "off",
     "element-permitted-content": "off",
@@ -13,7 +12,6 @@
     "no-raw-characters": "off",
     "prefer-native-element": "off",
     "prefer-tbody": "off",
-    "script-type": "off",
     "wcag/h37": "off"
   }
 }

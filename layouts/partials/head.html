@@ -50,7 +50,7 @@
     <!-- JavaScript -->
     {{ $anatoleHeader := resources.Get "js/anatole-header.js" }}
     {{ $secureHeaderJS := $anatoleHeader |  resources.Minify | resources.Fingerprint "sha384" }}
-    <script defer type="text/javascript"
+    <script defer
             src="{{ $secureHeaderJS.Permalink }}"
             integrity="{{ $secureHeaderJS.Data.Integrity }}"
             crossorigin="anonymous"></script>
@@ -59,7 +59,7 @@
     {{ if not .Site.Params.disableThemeSwitcher }}
         {{ $anatoleThemeSwitcher := resources.Get "global/deferred/2-theme-switcher.js" }}
         {{ $secureThemeSwitcherJS := $anatoleThemeSwitcher |  resources.Minify | resources.Fingerprint "sha384" }}
-        <script defer type="text/javascript"
+        <script defer
                 src="{{ $secureThemeSwitcherJS.Permalink }}"
                 integrity="{{ $secureThemeSwitcherJS.Data.Integrity }}"
                 crossorigin="anonymous"></script>
@@ -83,7 +83,7 @@
 
     {{- if ne $js "" -}}
     {{- $secureJS := $js |  resources.Minify | resources.Fingerprint "sha384" -}}
-    <script type="text/javascript"
+    <script
             src="{{ $secureJS.Permalink }}"
             integrity="{{ $secureJS.Data.Integrity }}"
             crossorigin="anonymous"></script>
@@ -98,12 +98,12 @@
     <!-- Search library, serving up vendored library that's fronted by a CDN -->
     {{ $vendoredSearchJs := resources.Get "vendor/lunr@2.3.9/lunr.js" }}
     {{ $minifiedVendoredSearchJs := $vendoredSearchJs |  resources.Minify | resources.Fingerprint "sha384" }}
-    <script defer type="text/javascript" src="{{ $minifiedVendoredSearchJs.Permalink }}" integrity='{{ $minifiedVendoredSearchJs.Data.Integrity }}' crossorigin='anonymous'></script>
+    <script defer src="{{ $minifiedVendoredSearchJs.Permalink }}" integrity='{{ $minifiedVendoredSearchJs.Data.Integrity }}' crossorigin='anonymous'></script>
 
     <!-- We don't want to index or fetch the raw metadata until after everything else is working, so we use defer here (See https://flaviocopes.com/javascript-async-defer/) -->
     {{ $searchJs := resources.Get "search/search.js" }}
     {{ $secureSearchJS := $searchJs |  resources.Minify | resources.Fingerprint "sha384" }}
-    <script defer type="text/javascript"
+    <script defer
         src="{{ $secureSearchJS.Permalink }}"
         integrity="{{ $secureSearchJS.Data.Integrity }}"
         crossorigin="anonymous"></script>
@@ -132,7 +132,7 @@
     <!-- Easter egg secret #2 -->
     {{ $marcoPoloJs := resources.Get "global/deferred/3-marco.js" }}
     {{ $secureMarcoPoloJS := $marcoPoloJs |  resources.Minify | resources.Fingerprint "sha384" }}
-    <script defer type="text/javascript"
+    <script defer
             src="{{ $secureMarcoPoloJS.Permalink }}"
             integrity="{{ $secureMarcoPoloJS.Data.Integrity }}"
             crossorigin="anonymous"></script>

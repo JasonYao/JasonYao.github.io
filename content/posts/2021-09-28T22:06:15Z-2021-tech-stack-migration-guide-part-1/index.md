@@ -90,11 +90,11 @@ register the domain [HelloThereGeneralKenobi.com](https://www.youtube.com/watch?
 
 |Registrar|Price per .com domain per annum|How I feel|
 |--|--|--|
-|Namecheap|$10.87 USD|{{<basic-image src="images/emojis/meow-heart.png" width="40px" height="40px">}}|
-|Cloudflare|$8.03 USD|{{<basic-image src="images/emojis/cat-jam.gif" width="40px" height="40px">}}|
-|Wix|$12.95 USD|{{<basic-image src="images/emojis/not-like-this.png" width="40px" height="40px">}}|
-|GoDaddy|$18.99 USD|{{<basic-image src="images/emojis/dumpster-fire.gif" width="40px" height="40px">}}|
-|Squarespace|$20.00 USD|{{<basic-image src="images/emojis/awkward-monkey-look.gif" width="40px" height="40px">}}|
+|Namecheap|$10.87 USD|{{<basic-image src="images/emojis/meow-heart.png" width="40" height="40">}}|
+|Cloudflare|$8.03 USD|{{<basic-image src="images/emojis/cat-jam.gif" width="40" height="40">}}|
+|Wix|$12.95 USD|{{<basic-image src="images/emojis/not-like-this.png" width="40" height="40">}}|
+|GoDaddy|$18.99 USD|{{<basic-image src="images/emojis/dumpster-fire.gif" width="40" height="40">}}|
+|Squarespace|$20.00 USD|{{<basic-image src="images/emojis/awkward-monkey-look.gif" width="40" height="40">}}|
 
 For those of you that know me, you'll know one of my favorite phrases is
 
